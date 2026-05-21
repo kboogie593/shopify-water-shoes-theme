@@ -1,0 +1,94 @@
+<section class="section-padding faq-section">
+  <div class="page-width">
+    <div class="faq-layout">
+      <div class="faq-intro">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h2>{{ section.settings.heading }}</h2>
+        {%- if section.settings.subtitle != blank -%}
+          <p>{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+        {%- if section.settings.cta_label != blank -%}
+          <a href="{{ section.settings.cta_link | default: '/pages/contact' }}" class="btn btn--secondary mt-4">{{ section.settings.cta_label }}</a>
+        {%- endif -%}
+      </div>
+
+      <div class="faq-list">
+        {%- for block in section.blocks -%}
+          <details class="faq-item" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
+            <summary>
+              <span>{{ block.settings.question }}</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>{{ block.settings.answer }}</p>
+            </div>
+          </details>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Questions, answered"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Everything you wanted to know"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Real answers from real customers. Still curious? Our team replies to every email within one business day."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "Contact support"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    }
+  ],
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "What are water shoes used for?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Water shoes protect your feet on wet or sharp surfaces while letting water drain quickly." }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "question", "settings": { "question": "What are water shoes used for?", "answer": "Water shoes protect your feet on wet, slippery, or sharp surfaces while letting water drain out quickly. They are ideal for paddleboarding, kayaking, beach walking, rocky rivers, snorkeling, and pool decks. AquaStep shoes are also light enough to wear all day as casual footwear." } },
+      { "type": "question", "settings": { "question": "How should I size AquaStep water shoes?", "answer": "AquaStep shoes fit true to size for most adults. If you are between sizes, size down for a snugger sock-like fit (recommended for swimming) or size up for more toe room (recommended for hiking). A full size chart is on every product page." } },
+      { "type": "question", "settings": { "question": "How quickly do they dry?", "answer": "The breathable knit upper and drainage ports in the sole let most of the water out within seconds. Fully air-dry time is typically 30–60 minutes depending on humidity. They will not retain odor like neoprene booties." } },
+      { "type": "question", "settings": { "question": "Are they good for rocky beaches and reefs?", "answer": "Yes. The outsole uses a reinforced rubber compound with multidirectional lugs that grip wet rocks, coral, and slippery boat decks. The upper is made from tightly-knit polyester that resists punctures from shells and small stones." } },
+      { "type": "question", "settings": { "question": "Are they machine washable?", "answer": "Yes. Rinse off sand or salt first, then machine wash on a cold gentle cycle inside a mesh bag. Air dry only — never put them in the dryer or in direct sunlight for extended periods." } },
+      { "type": "question", "settings": { "question": "What is your return policy?", "answer": "We offer a 60-day try-them-anywhere guarantee. If you are not happy for any reason, return them for a full refund or exchange — even if they have been worn outside." } },
+      { "type": "question", "settings": { "question": "Where does AquaStep ship?", "answer": "AquaStep ships worldwide. Free standard shipping is included on orders over $79 USD. Most orders arrive within 5–10 business days." } }
+    ]
+  },
+  "presets": [
+    { "name": "FAQ" }
+  ]
+}
+{% endschema %}

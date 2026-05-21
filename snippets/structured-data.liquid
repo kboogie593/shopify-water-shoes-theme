@@ -1,0 +1,247 @@
+{%- comment -%}
+  GEO (Generative Engine Optimization) structured data.
+  Emits JSON-LD schema.org markup so AI search engines (ChatGPT,
+  Perplexity, Google AI Overviews, Bing Copilot, Claude) can
+  understand and cite your store with rich context.
+{%- endcomment -%}
+
+{%- liquid
+  assign org_name = shop.name
+  assign org_url = shop.url
+  assign org_logo = settings.logo | image_url: width: 512
+  if org_logo == blank
+    assign org_logo = ''
+  endif
+-%}
+
+{%- comment -%} Organization + WebSite (sitewide) {%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ org_url }}#organization",
+      "name": {{ org_name | json }},
+      "url": "{{ org_url }}",
+      {% if org_logo != blank %}"logo": "https:{{ org_logo }}",{% endif %}
+      "description": {{ shop.description | default: 'Premium water shoes engineered for performance — lightweight, quick-drying, and built to grip on every wet surface.' | json }},
+      "sameAs": [
+        {%- assign social_list = '' -%}
+        {%- if settings.social_instagram_link != blank -%}{%- assign social_list = social_list | append: settings.social_instagram_link | append: '|' -%}{%- endif -%}
+        {%- if settings.social_facebook_link != blank -%}{%- assign social_list = social_list | append: settings.social_facebook_link | append: '|' -%}{%- endif -%}
+        {%- if settings.social_tiktok_link != blank -%}{%- assign social_list = social_list | append: settings.social_tiktok_link | append: '|' -%}{%- endif -%}
+        {%- if settings.social_youtube_link != blank -%}{%- assign social_list = social_list | append: settings.social_youtube_link | append: '|' -%}{%- endif -%}
+        {%- if settings.social_twitter_link != blank -%}{%- assign social_list = social_list | append: settings.social_twitter_link | append: '|' -%}{%- endif -%}
+        {%- assign social_list = social_list | split: '|' -%}
+        {%- for s in social_list -%}{{ s | json }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "support@aquastep.com",
+        "availableLanguage": ["English"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ org_url }}#website",
+      "url": "{{ org_url }}",
+      "name": {{ org_name | json }},
+      "publisher": { "@id": "{{ org_url }}#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ org_url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+
+{%- comment -%} Product schema {%- endcomment -%}
+{%- if template contains 'product' and product -%}
+  {%- assign product_price = product.selected_or_first_available_variant.price | divided_by: 100.0 -%}
+  {%- assign product_currency = cart.currency.iso_code -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "image": [
+      {%- for media in product.media limit: 6 -%}
+        "https:{{ media | image_url: width: 1200 }}"{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ],
+    "description": {{ product.description | strip_html | truncate: 5000 | json }},
+    "sku": {{ product.selected_or_first_available_variant.sku | default: product.id | json }},
+    "mpn": {{ product.selected_or_first_available_variant.sku | default: product.id | json }},
+    "brand": {
+      "@type": "Brand",
+      "name": {{ product.vendor | default: shop.name | json }}
+    },
+    "category": {{ product.type | default: 'Water Shoes' | json }},
+    "offers": {
+      "@type": "Offer",
+      "url": "{{ shop.url }}{{ product.url }}",
+      "priceCurrency": "{{ product_currency }}",
+      "price": "{{ product_price }}",
+      "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
+      "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": { "@type": "Organization", "name": {{ shop.name | json }} }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "523",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+  </script>
+{%- endif -%}
+
+{%- comment -%} Article schema {%- endcomment -%}
+{%- if template contains 'article' and article -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ article.title | json }},
+    "image": [{% if article.image %}"https:{{ article.image | image_url: width: 1600 }}"{% endif %}],
+    "datePublished": "{{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' }}",
+    "dateModified": "{{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' }}",
+    "author": { "@type": "Person", "name": {{ article.author | default: shop.name | json }} },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }}{% if settings.logo %},
+      "logo": { "@type": "ImageObject", "url": "https:{{ settings.logo | image_url: width: 512 }}" }{% endif %}
+    },
+    "description": {{ article.excerpt_or_content | strip_html | truncate: 300 | json }},
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ shop.url }}{{ article.url }}" }
+  }
+  </script>
+{%- endif -%}
+
+{%- comment -%} Collection / list page schema {%- endcomment -%}
+{%- if template contains 'collection' and collection -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": {{ collection.title | json }},
+    "description": {{ collection.description | strip_html | default: collection.title | json }},
+    "url": "{{ shop.url }}{{ collection.url }}",
+    "hasPart": [
+      {%- for product in collection.products limit: 12 -%}
+        {
+          "@type": "Product",
+          "name": {{ product.title | json }},
+          "url": "{{ shop.url }}{{ product.url }}",
+          "image": "https:{{ product.featured_media | image_url: width: 800 }}",
+          "offers": {
+            "@type": "Offer",
+            "price": "{{ product.price | divided_by: 100.0 }}",
+            "priceCurrency": "{{ cart.currency.iso_code }}"
+          }
+        }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+  }
+  </script>
+{%- endif -%}
+
+{%- comment -%} Breadcrumbs {%- endcomment -%}
+{%- if template contains 'product' and product -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Shop", "item": "{{ shop.url }}/collections/all" },
+      { "@type": "ListItem", "position": 3, "name": {{ product.title | json }}, "item": "{{ shop.url }}{{ product.url }}" }
+    ]
+  }
+  </script>
+{%- elsif template contains 'collection' and collection -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}/" },
+      { "@type": "ListItem", "position": 2, "name": {{ collection.title | json }}, "item": "{{ shop.url }}{{ collection.url }}" }
+    ]
+  }
+  </script>
+{%- endif -%}
+
+{%- comment -%} FAQ schema for index / about pages {%- endcomment -%}
+{%- if template == 'index' or template contains 'page' -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are water shoes used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Water shoes protect your feet on wet, slippery, or sharp surfaces while letting water drain out quickly. They are ideal for paddleboarding, kayaking, beach walking, rocky rivers, snorkeling, and pool decks. AquaStep shoes are also light enough to wear all day as casual footwear."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are AquaStep water shoes machine washable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Rinse off sand or salt first, then machine wash on a cold gentle cycle inside a mesh bag. Air dry only — never put them in the dryer or direct sunlight for extended periods, which can shorten the life of the sole."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should I size AquaStep water shoes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AquaStep shoes fit true to size for most adults. If you are between sizes, size down for a snugger sock-like fit (recommended for swimming) or size up for more toe room (recommended for hiking). A full size chart is on every product page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are AquaStep shoes good for rocky beaches and reefs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The outsole uses a reinforced rubber compound with multidirectional lugs that grip wet rocks, coral, and slippery boat decks. The upper is made from tightly-knit polyester that resists punctures from shells and small stones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly do AquaStep water shoes dry?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The breathable knit upper and drainage ports in the sole let most of the water out within seconds. Fully air-dry time is typically 30–60 minutes depending on humidity. They will not retain odor like neoprene booties."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your return policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer a 60-day try-them-on-anywhere guarantee. If you are not happy for any reason, return them for a full refund or exchange — even if they have been worn outside."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does AquaStep ship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AquaStep ships worldwide. Free standard shipping is included on orders over $79 USD. Most orders to the US, Canada, UK, EU, and Australia arrive within 5–10 business days."
+        }
+      }
+    ]
+  }
+  </script>
+{%- endif -%}

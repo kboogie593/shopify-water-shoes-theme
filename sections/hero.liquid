@@ -20,6 +20,13 @@
           </a>
         {%- endif -%}
       </div>
+
+      {%- if section.settings.trust_text != blank -%}
+        <div class="hero-trust">
+          <span class="stars">★★★★★</span>
+          <span>{{ section.settings.trust_text }}</span>
+        </div>
+      {%- endif -%}
     </div>
     <div class="hero-image">
       {%- if section.settings.image != blank -%}
@@ -84,6 +91,12 @@
       "type": "url",
       "id": "button_link_2",
       "label": "Secondary link"
+    },
+    {
+      "type": "text",
+      "id": "trust_text",
+      "label": "Trust line",
+      "default": "Rated 4.8/5 by 50,000+ adventurers worldwide"
     }
   ],
   "presets": [

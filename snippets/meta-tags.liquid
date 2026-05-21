@@ -1,40 +1,87 @@
-{%- if template contains 'product' and product -%}
-  {%- assign og_title = product.title | escape -%}
-  {%- assign og_url = shop.url | append: product.url -%}
-  {%- assign og_type = 'product' -%}
-  {%- assign og_description = product.description | strip_html | truncate: 300 | escape -%}
-  {%- if product.featured_media -%}
-    {%- assign og_image = product.featured_media | image_url: width: 1200 -%}
-  {%- endif -%}
-{%- elsif template contains 'article' and article -%}
-  {%- assign og_title = article.title | escape -%}
-  {%- assign og_url = shop.url | append: article.url -%}
-  {%- assign og_type = 'article' -%}
-  {%- assign og_description = article.excerpt_or_content | strip_html | truncate: 300 | escape -%}
-  {%- if article.image -%}
-    {%- assign og_image = article.image | image_url: width: 1200 -%}
-  {%- endif -%}
-{%- else -%}
-  {%- assign og_title = page_title | escape -%}
-  {%- assign og_url = canonical_url -%}
-  {%- assign og_type = 'website' -%}
-  {%- assign og_description = page_description | default: shop.description | escape -%}
-{%- endif -%}
+{%- liquid
+  if template contains 'product' and product
+    assign og_title = product.title | escape
+    assign og_url = shop.url | append: product.url
+    assign og_type = 'product'
+    assign og_description = product.description | strip_html | truncate: 300 | escape
+    if product.featured_media
+      assign og_image = product.featured_media | image_url: width: 1200
+    endif
+    assign keywords = product.tags | join: ', '
+  elsif template contains 'article' and article
+    assign og_title = article.title | escape
+    assign og_url = shop.url | append: article.url
+    assign og_type = 'article'
+    assign og_description = article.excerpt_or_content | strip_html | truncate: 300 | escape
+    if article.image
+      assign og_image = article.image | image_url: width: 1200
+    endif
+    assign keywords = article.tags | join: ', '
+  elsif template contains 'collection' and collection
+    assign og_title = collection.title | escape
+    assign og_url = shop.url | append: collection.url
+    assign og_type = 'website'
+    assign og_description = collection.description | strip_html | truncate: 300 | escape | default: 'Shop premium water shoes for every surface.'
+    if collection.image
+      assign og_image = collection.image | image_url: width: 1200
+    endif
+  else
+    assign og_title = page_title | escape
+    assign og_url = canonical_url
+    assign og_type = 'website'
+    assign og_description = page_description | default: shop.description | escape
+  endif
+-%}
 
+{%- comment -%} Standard meta {%- endcomment -%}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+{%- if keywords != blank -%}
+  <meta name="keywords" content="{{ keywords }}">
+{%- endif -%}
+<meta name="author" content="{{ shop.name }}">
+
+{%- comment -%} GEO: hints for AI search engines (Google AI Overviews, Perplexity, ChatGPT, Claude, Bing Copilot) {%- endcomment -%}
+<meta name="generator" content="Shopify">
+<meta name="application-name" content="{{ shop.name }}">
+<meta http-equiv="content-language" content="{{ request.locale.iso_code }}">
+
+{%- comment -%} AI training / citation signals (Apple AI, Common Crawl, etc.) — allow indexing but identify the canonical source {%- endcomment -%}
+<link rel="alternate" type="application/json+oembed" href="{{ shop.url }}/oembed?url={{ canonical_url | url_encode }}">
+
+{%- comment -%} Open Graph {%- endcomment -%}
 <meta property="og:site_name" content="{{ shop.name }}">
 <meta property="og:title" content="{{ og_title }}">
 <meta property="og:url" content="{{ og_url }}">
 <meta property="og:type" content="{{ og_type }}">
+<meta property="og:locale" content="{{ request.locale.iso_code | replace: '-', '_' }}">
 {%- if og_description != blank -%}
   <meta property="og:description" content="{{ og_description }}">
 {%- endif -%}
 {%- if og_image -%}
   <meta property="og:image" content="https:{{ og_image }}">
   <meta property="og:image:secure_url" content="https:{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:alt" content="{{ og_title }}">
 {%- endif -%}
 
+{%- comment -%} Product-specific OG {%- endcomment -%}
+{%- if template contains 'product' and product -%}
+  <meta property="product:price:amount" content="{{ product.price | divided_by: 100.0 }}">
+  <meta property="product:price:currency" content="{{ cart.currency.iso_code }}">
+  <meta property="product:availability" content="{% if product.available %}in stock{% else %}out of stock{% endif %}">
+  <meta property="product:brand" content="{{ product.vendor | default: shop.name }}">
+  <meta property="product:condition" content="new">
+{%- endif -%}
+
+{%- comment -%} Twitter / X {%- endcomment -%}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title }}">
 {%- if og_description != blank -%}
   <meta name="twitter:description" content="{{ og_description }}">
 {%- endif -%}
+{%- if og_image -%}
+  <meta name="twitter:image" content="https:{{ og_image }}">
+{%- endif -%}
+
+{%- comment -%} Sitemap discoverability {%- endcomment -%}
+<link rel="sitemap" type="application/xml" href="{{ shop.url }}/sitemap.xml">
