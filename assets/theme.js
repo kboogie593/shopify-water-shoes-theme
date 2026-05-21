@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearchDrawer();
   initCookieBanner();
   initProductFormAjax();
+  initFacets();
 });
 
 /* ---------- Menu ---------- */
@@ -308,6 +309,70 @@ async function predictiveSearch(query, container) {
 
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+}
+
+/* ---------- Facets (collection page filters) ---------- */
+function initFacets() {
+  // Auto-submit on filter change
+  const form = document.querySelector('[data-facet-form]');
+  if (form) {
+    let priceDebounce;
+    form.addEventListener('change', (e) => {
+      // Debounce price inputs (typing)
+      if (e.target.type === 'number') return;
+      submitFacetForm(form);
+    });
+    form.addEventListener('input', (e) => {
+      if (e.target.type !== 'number') return;
+      clearTimeout(priceDebounce);
+      priceDebounce = setTimeout(() => submitFacetForm(form), 600);
+    });
+  }
+
+  // Mobile drawer
+  const drawer = document.querySelector('[data-facet-drawer]');
+  const overlay = document.querySelector('[data-facet-overlay]');
+  const openBtn = document.querySelector('[data-facet-toggle]');
+  const closeBtn = document.querySelector('[data-facet-close]');
+  if (!drawer) return;
+
+  drawer.setAttribute('aria-hidden', 'true');
+  const open = () => {
+    drawer.setAttribute('aria-hidden', 'false');
+    if (overlay) overlay.dataset.open = '';
+    document.body.style.overflow = 'hidden';
+  };
+  const close = () => {
+    drawer.setAttribute('aria-hidden', 'true');
+    if (overlay) delete overlay.dataset.open;
+    document.body.style.overflow = '';
+  };
+
+  openBtn?.addEventListener('click', open);
+  closeBtn?.addEventListener('click', close);
+  overlay?.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+  // On large viewports, ensure not aria-hidden so contents are readable
+  const mq = window.matchMedia('(min-width: 901px)');
+  const syncDesktop = () => {
+    if (mq.matches) drawer.removeAttribute('aria-hidden');
+    else drawer.setAttribute('aria-hidden', 'true');
+  };
+  mq.addEventListener('change', syncDesktop);
+  syncDesktop();
+}
+
+function submitFacetForm(form) {
+  // Build URL from checked inputs + price; preserve sort_by if present
+  const params = new URLSearchParams();
+  form.querySelectorAll('input').forEach((input) => {
+    if (input.type === 'hidden' && input.value) params.append(input.name, input.value);
+    else if (input.type === 'checkbox' && input.checked) params.append(input.name, input.value);
+    else if (input.type === 'number' && input.value) params.append(input.name, input.value);
+  });
+  const baseUrl = window.location.pathname;
+  window.location.href = `${baseUrl}?${params.toString()}`;
 }
 
 /* ---------- Cookie Banner ---------- */

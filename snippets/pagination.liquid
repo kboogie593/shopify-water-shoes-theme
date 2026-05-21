@@ -1,0 +1,45 @@
+{%- comment -%}
+  Pagination — pass `paginate` object.
+{%- endcomment -%}
+
+{%- if paginate.pages > 1 -%}
+  <nav class="pagination" aria-label="Pagination">
+    {%- if paginate.previous -%}
+      <a href="{{ paginate.previous.url }}" class="pagination__nav" rel="prev" aria-label="Previous page">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Previous
+      </a>
+    {%- else -%}
+      <span class="pagination__nav is-disabled" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Previous
+      </span>
+    {%- endif -%}
+
+    <ul class="pagination__pages">
+      {%- for part in paginate.parts -%}
+        {%- if part.is_link -%}
+          <li><a href="{{ part.url }}">{{ part.title }}</a></li>
+        {%- else -%}
+          {%- if part.title == paginate.current_page -%}
+            <li><span class="pagination__current" aria-current="page">{{ part.title }}</span></li>
+          {%- else -%}
+            <li><span class="pagination__ellipsis">{{ part.title }}</span></li>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+
+    {%- if paginate.next -%}
+      <a href="{{ paginate.next.url }}" class="pagination__nav" rel="next" aria-label="Next page">
+        Next
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    {%- else -%}
+      <span class="pagination__nav is-disabled" aria-hidden="true">
+        Next
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </span>
+    {%- endif -%}
+  </nav>
+{%- endif -%}

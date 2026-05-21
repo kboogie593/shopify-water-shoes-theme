@@ -1,0 +1,25 @@
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ routes.root_url }}">Home</a></li>
+    {%- if template contains 'product' and product -%}
+      {%- if collection -%}
+        <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+      {%- else -%}
+        <li><a href="{{ routes.collections_url }}">Shop</a></li>
+      {%- endif -%}
+      <li aria-current="page">{{ product.title }}</li>
+    {%- elsif template contains 'collection' and collection -%}
+      <li><a href="{{ routes.collections_url }}">Collections</a></li>
+      <li aria-current="page">{{ collection.title }}</li>
+    {%- elsif template contains 'article' and article -%}
+      <li><a href="{{ blog.url }}">{{ blog.title }}</a></li>
+      <li aria-current="page">{{ article.title }}</li>
+    {%- elsif template contains 'blog' and blog -%}
+      <li aria-current="page">{{ blog.title }}</li>
+    {%- elsif template contains 'page' and page -%}
+      <li aria-current="page">{{ page.title }}</li>
+    {%- elsif template contains 'search' -%}
+      <li aria-current="page">Search results</li>
+    {%- endif -%}
+  </ol>
+</nav>
