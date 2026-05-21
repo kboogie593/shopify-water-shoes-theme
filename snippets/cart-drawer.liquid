@@ -1,0 +1,94 @@
+<cart-drawer class="cart-drawer" data-cart-drawer aria-hidden="true">
+  <div class="cart-drawer__overlay" data-cart-close></div>
+
+  <aside class="cart-drawer__panel" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <header class="cart-drawer__header">
+      <h2>Your cart <span class="cart-drawer__count" data-cart-count>{{ cart.item_count }}</span></h2>
+      <button type="button" class="cart-drawer__close" data-cart-close aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </header>
+
+    {%- if settings.show_free_shipping_bar -%}
+      {%- assign threshold_cents = settings.free_shipping_threshold | times: 100 -%}
+      {%- assign remaining_cents = threshold_cents | minus: cart.total_price -%}
+      {%- assign progress = cart.total_price | times: 100.0 | divided_by: threshold_cents -%}
+      {%- if progress > 100 -%}{%- assign progress = 100 -%}{%- endif -%}
+
+      <div class="shipping-bar" data-shipping-bar data-threshold="{{ threshold_cents }}">
+        <div class="shipping-bar__message" data-shipping-message>
+          {%- if cart.total_price >= threshold_cents -%}
+            🎉 You unlocked <strong>free shipping</strong>!
+          {%- else -%}
+            Add <strong>{{ remaining_cents | money }}</strong> more for <strong>free shipping</strong>
+          {%- endif -%}
+        </div>
+        <div class="shipping-bar__track">
+          <div class="shipping-bar__fill" data-shipping-fill style="width: {{ progress }}%"></div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="cart-drawer__body" data-cart-body>
+      {%- if cart.item_count > 0 -%}
+        <ul class="cart-drawer__items" data-cart-items>
+          {%- for item in cart.items -%}
+            <li class="cart-drawer__item" data-cart-line="{{ item.key }}">
+              <a href="{{ item.url }}" class="cart-drawer__item-image">
+                {%- if item.image -%}
+                  <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.image.alt | escape | default: item.title }}" width="80" height="80" loading="lazy">
+                {%- endif -%}
+              </a>
+              <div class="cart-drawer__item-info">
+                <a href="{{ item.url }}" class="cart-drawer__item-title">{{ item.product.title }}</a>
+                {%- unless item.product.has_only_default_variant -%}
+                  <div class="cart-drawer__item-variant">{{ item.variant.title }}</div>
+                {%- endunless -%}
+                <div class="cart-drawer__item-row">
+                  <div class="product-quantity product-quantity--sm">
+                    <button type="button" data-cart-qty-change="-1" data-line="{{ forloop.index }}" aria-label="Decrease">−</button>
+                    <input type="number" value="{{ item.quantity }}" min="0" data-cart-qty data-line="{{ forloop.index }}" aria-label="Quantity">
+                    <button type="button" data-cart-qty-change="1" data-line="{{ forloop.index }}" aria-label="Increase">+</button>
+                  </div>
+                  <span class="cart-drawer__item-price">{{ item.final_line_price | money }}</span>
+                </div>
+                <button type="button" class="cart-drawer__item-remove" data-cart-remove data-line="{{ forloop.index }}">Remove</button>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- else -%}
+        <div class="cart-drawer__empty" data-cart-empty>
+          <div class="cart-drawer__empty-icon">🛒</div>
+          <h3>Your cart is empty</h3>
+          <p>Add a pair of AquaStep shoes to get started.</p>
+          <a href="{{ routes.collections_url }}" class="btn" data-cart-close>Shop water shoes</a>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if cart.item_count > 0 -%}
+      <footer class="cart-drawer__footer">
+        {%- if settings.show_order_note -%}
+          <details class="cart-drawer__note">
+            <summary>Add order note</summary>
+            <textarea name="note" rows="3" placeholder="Special instructions for your order" form="CartForm">{{ cart.note }}</textarea>
+          </details>
+        {%- endif -%}
+
+        <div class="cart-drawer__subtotal">
+          <span>Subtotal</span>
+          <span data-cart-subtotal>{{ cart.total_price | money }}</span>
+        </div>
+        <p class="cart-drawer__notice">Taxes &amp; shipping calculated at checkout</p>
+
+        <form action="{{ routes.cart_url }}" method="post" id="CartForm">
+          <button type="submit" name="checkout" class="btn btn--large cart-drawer__checkout">
+            Checkout
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+      </footer>
+    {%- endif -%}
+  </aside>
+</cart-drawer>

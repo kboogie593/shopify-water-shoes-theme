@@ -1,18 +1,24 @@
-<section class="page-template">
-  <div class="page-width" style="max-width:760px;">
-    <h1>My addresses</h1>
+<section class="account-page">
+  <div class="page-width">
+    <header class="account-header">
+      <div>
+        <p class="eyebrow">Account</p>
+        <h1>Addresses</h1>
+      </div>
+      <a href="{{ routes.account_url }}" class="btn btn--secondary">Back to account</a>
+    </header>
 
     {%- paginate customer.addresses by 6 -%}
-      {%- for address in customer.addresses -%}
-        <div style="padding:20px;border:1px solid #e2e8f0;border-radius:12px;margin-bottom:16px;">
-          {%- if address == customer.default_address -%}
-            <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--color-primary-dark);font-weight:700;margin-bottom:8px;">Default</div>
-          {%- endif -%}
-          <p>{{ address | format_address }}</p>
-        </div>
-      {%- endfor -%}
+      <div class="address-grid">
+        {%- for address in customer.addresses -%}
+          <div class="address-card{% if address == customer.default_address %} address-card--default{% endif %}">
+            {%- if address == customer.default_address -%}
+              <span class="address-card__badge">Default</span>
+            {%- endif -%}
+            <p>{{ address | format_address }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
     {%- endpaginate -%}
-
-    <p class="text-center mt-8"><a href="{{ routes.account_url }}" class="btn btn--secondary">Back to account</a></p>
   </div>
 </section>

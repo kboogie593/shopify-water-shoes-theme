@@ -21,20 +21,27 @@
     </nav>
 
     <div class="header-actions">
-      <a href="{{ routes.search_url }}" class="header-icon" aria-label="Search">
+      <button type="button" class="header-icon" aria-label="Search" data-search-open>
         {% render 'icon-search' %}
-      </a>
+      </button>
       {%- if shop.customer_accounts_enabled -%}
         <a href="{{ routes.account_url }}" class="header-icon" aria-label="Account">
           {% render 'icon-account' %}
         </a>
       {%- endif -%}
-      <a href="{{ routes.cart_url }}" class="header-icon" aria-label="Cart">
-        {% render 'icon-cart' %}
-        {%- if cart.item_count > 0 -%}
-          <span class="cart-count-bubble">{{ cart.item_count }}</span>
-        {%- endif -%}
-      </a>
+      {%- if settings.cart_type == 'drawer' -%}
+        <button type="button" class="header-icon" aria-label="Cart" data-cart-open>
+          {% render 'icon-cart' %}
+          <span class="cart-count-bubble" data-cart-count-bubble {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
+        </button>
+      {%- else -%}
+        <a href="{{ routes.cart_url }}" class="header-icon" aria-label="Cart">
+          {% render 'icon-cart' %}
+          {%- if cart.item_count > 0 -%}
+            <span class="cart-count-bubble">{{ cart.item_count }}</span>
+          {%- endif -%}
+        </a>
+      {%- endif -%}
       <button type="button" class="header-icon menu-toggle" aria-expanded="false" aria-label="Menu">
         {% render 'icon-menu' %}
       </button>

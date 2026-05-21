@@ -1,18 +1,38 @@
-<section class="page-template">
-  <div class="page-width" style="max-width:480px;">
-    <h1 class="text-center">Log in</h1>
-    {%- form 'customer_login' -%}
-      {%- if form.errors -%}
-        <p style="color:#dc2626;margin-bottom:16px;">{{ form.errors | default_errors }}</p>
-      {%- endif -%}
-      <div style="display:flex;flex-direction:column;gap:14px;margin-top:24px;">
-        <input type="email" name="customer[email]" placeholder="Email" required style="padding:14px 18px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:15px;">
-        <input type="password" name="customer[password]" placeholder="Password" required style="padding:14px 18px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:15px;">
-        <button type="submit" class="btn">Sign in</button>
-      </div>
-      <p class="text-center mt-4" style="font-size:14px;">
-        <a href="{{ routes.account_register_url }}">Create account</a> · <a href="{{ routes.account_recover_url }}">Forgot password?</a>
-      </p>
-    {%- endform -%}
+<section class="auth-page">
+  <div class="page-width">
+    <div class="auth-card">
+      <h1>Welcome back</h1>
+      <p class="auth-subtitle">Sign in to your AquaStep account</p>
+
+      {%- form 'customer_login', class: 'auth-form' -%}
+        {%- if form.errors -%}
+          <div class="auth-alert auth-alert--error">{{ form.errors | default_errors }}</div>
+        {%- endif -%}
+
+        <label class="auth-field">
+          <span>Email</span>
+          <input type="email" name="customer[email]" autocomplete="email" required>
+        </label>
+
+        <label class="auth-field">
+          <span>Password</span>
+          <input type="password" name="customer[password]" autocomplete="current-password" required>
+        </label>
+
+        <button type="submit" class="btn btn--large">Sign in</button>
+
+        <div class="auth-links">
+          <a href="{{ routes.account_recover_url }}">Forgot password?</a>
+          <span>·</span>
+          <a href="{{ routes.account_register_url }}">Create account</a>
+        </div>
+      {%- endform -%}
+    </div>
   </div>
 </section>
+
+{%- form 'recover_customer_password' -%}
+  {%- if form.posted_successfully? -%}
+    <script>alert('We sent you a password reset email.');</script>
+  {%- endif -%}
+{%- endform -%}

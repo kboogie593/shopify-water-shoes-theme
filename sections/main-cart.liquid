@@ -3,7 +3,26 @@
     <h1>{{ 'sections.cart.title' | t }}</h1>
 
     {%- if cart.item_count > 0 -%}
-      <form action="{{ routes.cart_url }}" method="post" novalidate>
+      {%- if settings.show_free_shipping_bar -%}
+        {%- assign threshold_cents = settings.free_shipping_threshold | times: 100 -%}
+        {%- assign remaining_cents = threshold_cents | minus: cart.total_price -%}
+        {%- assign progress = cart.total_price | times: 100.0 | divided_by: threshold_cents -%}
+        {%- if progress > 100 -%}{%- assign progress = 100 -%}{%- endif -%}
+        <div class="shipping-bar shipping-bar--page">
+          <div class="shipping-bar__message">
+            {%- if cart.total_price >= threshold_cents -%}
+              🎉 You unlocked <strong>free shipping</strong>!
+            {%- else -%}
+              Add <strong>{{ remaining_cents | money }}</strong> more for <strong>free shipping</strong>
+            {%- endif -%}
+          </div>
+          <div class="shipping-bar__track">
+            <div class="shipping-bar__fill" style="width: {{ progress }}%"></div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="cart-page__layout">
         <div class="cart-items">
           {%- for item in cart.items -%}
             <div class="cart-item">
@@ -12,39 +31,74 @@
                   <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.image.alt | escape | default: item.title }}" width="100" height="100">
                 {%- endif -%}
               </a>
-              <div>
+              <div class="cart-item__info">
                 <a href="{{ item.url }}" class="cart-item__title">{{ item.product.title }}</a>
                 {%- unless item.product.has_only_default_variant -%}
                   <div class="cart-item__variant">{{ item.variant.title }}</div>
                 {%- endunless -%}
+                <a href="{{ item.url_to_remove }}" class="cart-item__remove">Remove</a>
               </div>
               <div class="product-quantity">
                 <button type="button" data-action="minus" aria-label="Decrease">−</button>
                 <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="Quantity">
                 <button type="button" data-action="plus" aria-label="Increase">+</button>
               </div>
-              <div>
-                <div style="font-weight:600">{{ item.final_line_price | money }}</div>
-                <a href="{{ item.url_to_remove }}" style="font-size:12px;color:#94a3b8;">Remove</a>
-              </div>
+              <div class="cart-item__price">{{ item.final_line_price | money }}</div>
             </div>
           {%- endfor -%}
         </div>
 
-        <div class="cart-summary">
+        <aside class="cart-summary">
+          {%- if settings.show_order_note -%}
+            <details class="cart-summary__note">
+              <summary>Add order note</summary>
+              <textarea name="note" rows="3" placeholder="Special instructions...">{{ cart.note }}</textarea>
+            </details>
+          {%- endif -%}
+
+          <div class="cart-summary__row">
+            <span>Subtotal</span>
+            <span>{{ cart.total_price | money }}</span>
+          </div>
           <div class="cart-summary__row total">
             <span>{{ 'sections.cart.estimated_total' | t }}</span>
             <span>{{ cart.total_price | money }}</span>
           </div>
-          <p style="font-size:13px;color:#64748b;">{{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}</p>
+          <p class="cart-summary__notice">{{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}</p>
+
           <button type="submit" name="update" class="btn btn--secondary">Update cart</button>
           <button type="submit" name="checkout" class="btn btn--large">{{ 'sections.cart.checkout' | t }}</button>
-        </div>
+
+          <div class="cart-summary__badges">
+            <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure checkout</div>
+            <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> 60-day returns</div>
+          </div>
+        </aside>
       </form>
+
+      {%- if section.settings.cross_sell_collection != blank -%}
+        {%- assign cross = collections[section.settings.cross_sell_collection] -%}
+        {%- if cross.products.size > 0 -%}
+          <section class="cart-cross-sell">
+            <div class="section-heading" style="margin-bottom:32px">
+              <span class="eyebrow">You might also like</span>
+              <h2 style="font-size:clamp(22px,3vw,28px)">Complete your kit</h2>
+            </div>
+            <div class="product-grid">
+              {%- for p in cross.products limit: 4 -%}
+                {% render 'product-card', product: p %}
+              {%- endfor -%}
+            </div>
+          </section>
+        {%- endif -%}
+      {%- endif -%}
+
     {%- else -%}
       <div class="cart-empty">
-        <p>{{ 'sections.cart.empty' | t }}</p>
-        <a href="{{ routes.collections_url }}" class="btn">Continue shopping</a>
+        <div class="cart-empty__icon">🛒</div>
+        <h2>{{ 'sections.cart.empty' | t }}</h2>
+        <p>Your cart is waiting. Find your next pair of water shoes.</p>
+        <a href="{{ routes.collections_url }}" class="btn btn--large">Continue shopping</a>
       </div>
     {%- endif -%}
   </div>
@@ -53,6 +107,13 @@
 {% schema %}
 {
   "name": "Cart",
-  "settings": []
+  "settings": [
+    {
+      "type": "collection",
+      "id": "cross_sell_collection",
+      "label": "Cross-sell collection",
+      "info": "Shown below cart items as 'You might also like'"
+    }
+  ]
 }
 {% endschema %}

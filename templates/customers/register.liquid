@@ -1,20 +1,41 @@
-<section class="page-template">
-  <div class="page-width" style="max-width:480px;">
-    <h1 class="text-center">Create account</h1>
-    {%- form 'create_customer' -%}
-      {%- if form.errors -%}
-        <p style="color:#dc2626;margin-bottom:16px;">{{ form.errors | default_errors }}</p>
-      {%- endif -%}
-      <div style="display:flex;flex-direction:column;gap:14px;margin-top:24px;">
-        <input type="text" name="customer[first_name]" placeholder="First name" style="padding:14px 18px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:15px;">
-        <input type="text" name="customer[last_name]" placeholder="Last name" style="padding:14px 18px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:15px;">
-        <input type="email" name="customer[email]" placeholder="Email" required style="padding:14px 18px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:15px;">
-        <input type="password" name="customer[password]" placeholder="Password" required style="padding:14px 18px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:15px;">
-        <button type="submit" class="btn">Create account</button>
-      </div>
-      <p class="text-center mt-4" style="font-size:14px;">
-        Already have an account? <a href="{{ routes.account_login_url }}">Sign in</a>
-      </p>
-    {%- endform -%}
+<section class="auth-page">
+  <div class="page-width">
+    <div class="auth-card">
+      <h1>Create account</h1>
+      <p class="auth-subtitle">Join the AquaStep crew &mdash; get 10% off your first order.</p>
+
+      {%- form 'create_customer', class: 'auth-form' -%}
+        {%- if form.errors -%}
+          <div class="auth-alert auth-alert--error">{{ form.errors | default_errors }}</div>
+        {%- endif -%}
+
+        <div class="auth-row">
+          <label class="auth-field">
+            <span>First name</span>
+            <input type="text" name="customer[first_name]" autocomplete="given-name">
+          </label>
+          <label class="auth-field">
+            <span>Last name</span>
+            <input type="text" name="customer[last_name]" autocomplete="family-name">
+          </label>
+        </div>
+
+        <label class="auth-field">
+          <span>Email</span>
+          <input type="email" name="customer[email]" autocomplete="email" required>
+        </label>
+
+        <label class="auth-field">
+          <span>Password</span>
+          <input type="password" name="customer[password]" autocomplete="new-password" required minlength="5">
+        </label>
+
+        <button type="submit" class="btn btn--large">Create account</button>
+
+        <div class="auth-links">
+          Already have an account? <a href="{{ routes.account_login_url }}">Sign in</a>
+        </div>
+      {%- endform -%}
+    </div>
   </div>
 </section>

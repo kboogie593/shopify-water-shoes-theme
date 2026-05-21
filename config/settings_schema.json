@@ -167,6 +167,36 @@
         "id": "show_vendor",
         "label": "Show vendor",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_free_shipping_bar",
+        "label": "Show free shipping progress bar",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Free shipping threshold (in store currency)",
+        "default": 79
+      },
+      {
+        "type": "checkbox",
+        "id": "show_order_note",
+        "label": "Allow order notes",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cookie_banner",
+        "label": "Show cookie consent banner",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_country_selector",
+        "label": "Show country / currency selector in footer",
+        "default": true
       }
     ]
   }

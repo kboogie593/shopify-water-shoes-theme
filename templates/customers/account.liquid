@@ -1,41 +1,59 @@
-<section class="page-template">
+<section class="account-page">
   <div class="page-width">
-    <h1>My account</h1>
-    <p style="text-align:center;color:#64748b;margin-bottom:32px;">Welcome back, {{ customer.first_name | default: customer.email }}</p>
-
-    <div style="display:grid;grid-template-columns:1fr 2fr;gap:32px;max-width:1000px;margin:0 auto;">
-      <aside>
-        <h3 style="font-size:14px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;">Account</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-          <li><a href="{{ routes.account_addresses_url }}">Addresses</a></li>
-          <li><a href="{{ routes.account_logout_url }}">Log out</a></li>
-        </ul>
-      </aside>
+    <header class="account-header">
       <div>
-        <h2 style="font-size:24px;margin-bottom:20px;">Order history</h2>
+        <p class="eyebrow">Account</p>
+        <h1>Welcome, {{ customer.first_name | default: customer.email }}</h1>
+      </div>
+      <a href="{{ routes.account_logout_url }}" class="btn btn--secondary">Log out</a>
+    </header>
+
+    <div class="account-grid">
+      <aside class="account-sidebar">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="{{ routes.account_url }}" class="account-nav-link active">Order history</a></li>
+          <li><a href="{{ routes.account_addresses_url }}" class="account-nav-link">Addresses ({{ customer.addresses_count }})</a></li>
+          <li><a href="{{ routes.account_logout_url }}" class="account-nav-link">Log out</a></li>
+        </ul>
+
+        <div class="account-promo">
+          <strong>Free shipping over $79</strong>
+          <p>Restock your favorites — and earn rewards on every order.</p>
+          <a href="{{ routes.collections_url }}" class="btn btn--secondary" style="width:100%">Shop now</a>
+        </div>
+      </aside>
+
+      <div class="account-main">
+        <h2>Order history</h2>
         {%- if customer.orders.size > 0 -%}
-          <table style="width:100%;border-collapse:collapse;">
-            <thead>
-              <tr style="text-align:left;border-bottom:1px solid #e2e8f0;">
-                <th style="padding:10px 0;">Order</th>
-                <th>Date</th>
-                <th>Total</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {%- for order in customer.orders -%}
-                <tr style="border-bottom:1px solid #e2e8f0;">
-                  <td style="padding:14px 0;"><a href="{{ order.customer_url }}">{{ order.name }}</a></td>
-                  <td>{{ order.created_at | date: '%b %-d, %Y' }}</td>
-                  <td>{{ order.total_price | money }}</td>
-                  <td>{{ order.financial_status_label }}</td>
-                </tr>
-              {%- endfor -%}
-            </tbody>
-          </table>
+          <div class="order-table">
+            <div class="order-table__head">
+              <div>Order</div>
+              <div>Date</div>
+              <div>Total</div>
+              <div>Status</div>
+              <div></div>
+            </div>
+            {%- for order in customer.orders -%}
+              <div class="order-table__row">
+                <div><strong>{{ order.name }}</strong></div>
+                <div>{{ order.created_at | date: '%b %-d, %Y' }}</div>
+                <div>{{ order.total_price | money }}</div>
+                <div>
+                  <span class="order-status order-status--{{ order.financial_status }}">{{ order.financial_status_label }}</span>
+                </div>
+                <div><a href="{{ order.customer_url }}" class="account-link">View →</a></div>
+              </div>
+            {%- endfor -%}
+          </div>
         {%- else -%}
-          <p>You haven't placed any orders yet.</p>
+          <div class="account-empty">
+            <div class="account-empty__icon">📦</div>
+            <h3>No orders yet</h3>
+            <p>When you place your first order, it will show up here.</p>
+            <a href="{{ routes.collections_url }}" class="btn">Browse water shoes</a>
+          </div>
         {%- endif -%}
       </div>
     </div>

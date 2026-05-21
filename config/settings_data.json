@@ -18,7 +18,12 @@
     "social_youtube_link": "",
     "social_twitter_link": "",
     "cart_type": "drawer",
-    "show_vendor": false
+    "show_vendor": false,
+    "show_free_shipping_bar": true,
+    "free_shipping_threshold": 79,
+    "show_order_note": true,
+    "show_cookie_banner": true,
+    "show_country_selector": true
   },
   "presets": {
     "AquaStep Default": {

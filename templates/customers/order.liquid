@@ -1,24 +1,56 @@
-<section class="page-template">
+<section class="account-page">
   <div class="page-width">
-    <h1>Order {{ order.name }}</h1>
-    <p style="text-align:center;color:#64748b;margin-bottom:32px;">Placed on {{ order.created_at | date: '%B %-d, %Y' }}</p>
-
-    <div class="rte">
-      <h2>Items</h2>
-      <ul style="list-style:none;padding:0;">
-        {%- for line_item in order.line_items -%}
-          <li style="padding:14px 0;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;">
-            <span>{{ line_item.title }} × {{ line_item.quantity }}</span>
-            <span>{{ line_item.final_line_price | money }}</span>
-          </li>
-        {%- endfor -%}
-      </ul>
-      <p style="margin-top:24px;text-align:right;font-size:20px;font-weight:700;">Total: {{ order.total_price | money }}</p>
-      <p style="margin-top:24px;">Status: <strong>{{ order.financial_status_label }}</strong> · {{ order.fulfillment_status_label }}</p>
-    </div>
-
-    <div class="text-center mt-8">
+    <header class="account-header">
+      <div>
+        <p class="eyebrow">Order details</p>
+        <h1>Order {{ order.name }}</h1>
+        <p class="account-subtitle">Placed on {{ order.created_at | date: '%B %-d, %Y' }} · {{ order.financial_status_label }}</p>
+      </div>
       <a href="{{ routes.account_url }}" class="btn btn--secondary">Back to account</a>
+    </header>
+
+    <div class="order-detail">
+      <div class="order-detail__items">
+        <h2>Items</h2>
+        {%- for item in order.line_items -%}
+          <div class="order-line">
+            {%- if item.image -%}
+              <div class="order-line__image">
+                <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title }}" width="80" height="80">
+              </div>
+            {%- endif -%}
+            <div class="order-line__info">
+              <a href="{{ item.product.url }}" class="order-line__title">{{ item.product.title }}</a>
+              {%- unless item.product.has_only_default_variant -%}
+                <div class="order-line__variant">{{ item.variant.title }}</div>
+              {%- endunless -%}
+              <div class="order-line__qty">Qty: {{ item.quantity }}</div>
+            </div>
+            <div class="order-line__price">{{ item.final_line_price | money }}</div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <aside class="order-detail__summary">
+        <h3>Summary</h3>
+        <div class="cart-summary__row"><span>Subtotal</span><span>{{ order.subtotal_price | money }}</span></div>
+        {%- if order.shipping_price > 0 -%}
+          <div class="cart-summary__row"><span>Shipping</span><span>{{ order.shipping_price | money }}</span></div>
+        {%- endif -%}
+        {%- if order.tax_price > 0 -%}
+          <div class="cart-summary__row"><span>Tax</span><span>{{ order.tax_price | money }}</span></div>
+        {%- endif -%}
+        <div class="cart-summary__row total"><span>Total</span><span>{{ order.total_price | money }}</span></div>
+
+        <h4 class="order-detail__section">Status</h4>
+        <p>Payment: <strong>{{ order.financial_status_label }}</strong></p>
+        <p>Fulfillment: <strong>{{ order.fulfillment_status_label }}</strong></p>
+
+        {%- if order.shipping_address -%}
+          <h4 class="order-detail__section">Shipping address</h4>
+          <p>{{ order.shipping_address | format_address }}</p>
+        {%- endif -%}
+      </aside>
     </div>
   </div>
 </section>

@@ -1,16 +1,30 @@
-<section class="page-template">
-  <div class="page-width" style="max-width:480px;">
-    <h1 class="text-center">Activate account</h1>
-    <p class="text-center" style="color:#64748b;margin-bottom:24px;">Create a password to activate your account.</p>
-    {%- form 'activate_customer_password' -%}
-      {%- if form.errors -%}
-        <p style="color:#dc2626;margin-bottom:16px;">{{ form.errors | default_errors }}</p>
-      {%- endif -%}
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <input type="password" name="customer[password]" placeholder="Password" required style="padding:14px 18px;border:1.5px solid #e2e8f0;border-radius:8px;">
-        <input type="password" name="customer[password_confirmation]" placeholder="Confirm password" required style="padding:14px 18px;border:1.5px solid #e2e8f0;border-radius:8px;">
-        <button type="submit" class="btn">Activate</button>
-      </div>
-    {%- endform -%}
+<section class="auth-page">
+  <div class="page-width">
+    <div class="auth-card">
+      <h1>Activate account</h1>
+      <p class="auth-subtitle">Create a password to activate your account.</p>
+
+      {%- form 'activate_customer_password', class: 'auth-form' -%}
+        {%- if form.errors -%}
+          <div class="auth-alert auth-alert--error">{{ form.errors | default_errors }}</div>
+        {%- endif -%}
+
+        <label class="auth-field">
+          <span>Password</span>
+          <input type="password" name="customer[password]" required autocomplete="new-password" minlength="5">
+        </label>
+
+        <label class="auth-field">
+          <span>Confirm password</span>
+          <input type="password" name="customer[password_confirmation]" required autocomplete="new-password">
+        </label>
+
+        <button type="submit" class="btn btn--large">Activate</button>
+
+        <div class="auth-links">
+          <a href="{{ routes.account_logout_url }}">Decline invitation</a>
+        </div>
+      {%- endform -%}
+    </div>
   </div>
 </section>
