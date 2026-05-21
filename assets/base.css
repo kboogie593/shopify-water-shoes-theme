@@ -1300,20 +1300,7 @@ p { line-height: 1.7; }
 }
 .password-page__card input:focus { border-color: var(--color-primary); }
 
-/* ------- 404 ------- */
-.template-404 { text-align: center; padding: 140px 24px; }
-.template-404 h1 {
-  font-size: 140px;
-  color: var(--color-primary-dark);
-  letter-spacing: -6px;
-  line-height: 1;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.template-404 h2 { font-size: 32px; margin: 18px 0 14px; }
-.template-404 p { color: #64748b; margin-bottom: 32px; font-size: 17px; }
+/* ------- 404 styles live in sections/main-404.liquid ------- */
 
 /* ------- Search ------- */
 .search-page { padding: 64px 0 96px; }
