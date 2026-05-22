@@ -9,22 +9,23 @@
     <div class="collection-list" style="--cols:{{ section.settings.columns }};">
       {%- for block in section.blocks -%}
         {%- assign coll = collections[block.settings.collection] -%}
-        {%- if coll == empty or coll == nil -%}{%- continue -%}{%- endif -%}
-        <a href="{{ coll.url }}" class="collection-card" {{ block.shopify_attributes }}>
+        {%- assign card_url = coll.url | default: '/collections/all' -%}
+        {%- assign card_title = block.settings.heading_override | default: coll.title | default: block.settings.fallback_title -%}
+        <a href="{{ card_url }}" class="collection-card" {{ block.shopify_attributes }}>
           <div class="collection-card__media">
             {%- if block.settings.image != blank -%}
-              <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ coll.title }}" loading="lazy">
+              <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ card_title | escape }}" loading="lazy">
             {%- elsif coll.image -%}
-              <img src="{{ coll.image | image_url: width: 1000 }}" alt="{{ coll.title }}" loading="lazy">
+              <img src="{{ coll.image | image_url: width: 1000 }}" alt="{{ card_title | escape }}" loading="lazy">
             {%- elsif coll.products.first.featured_media -%}
-              <img src="{{ coll.products.first.featured_media | image_url: width: 1000 }}" alt="{{ coll.title }}" loading="lazy">
+              <img src="{{ coll.products.first.featured_media | image_url: width: 1000 }}" alt="{{ card_title | escape }}" loading="lazy">
             {%- else -%}
-              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              <div class="collection-card__placeholder"></div>
             {%- endif -%}
           </div>
-          <div class="collection-card__body">
-            <h3>{{ block.settings.heading_override | default: coll.title }}</h3>
-            <span class="collection-card__cta">Shop now →</span>
+          <div class="collection-card__caption">
+            <h3>{{ card_title }}</h3>
+            <p>{{ block.settings.subtitle | default: 'Display everything' }}</p>
           </div>
         </a>
       {%- endfor -%}
@@ -44,31 +45,52 @@
   .collection-card {
     position: relative;
     display: block;
-    aspect-ratio: 4/5;
-    border-radius: 20px;
+    aspect-ratio: 1/1.15;
+    border-radius: 24px;
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
     isolation: isolate;
+    background: linear-gradient(180deg, #0ea5e9 0%, #0369a1 100%);
   }
-  .collection-card:hover { transform: translateY(-6px); }
+  .collection-card:hover { transform: translateY(-8px); }
   .collection-card__media { position: absolute; inset: 0; }
   .collection-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
   .collection-card:hover .collection-card__media img { transform: scale(1.08); }
-  .collection-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 30%, rgba(15, 23, 42, 0.7));
+  .collection-card__placeholder {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 50% 80%, rgba(255,255,255,0.2), transparent 60%),
+      linear-gradient(180deg, #38bdf8 0%, #0369a1 100%);
   }
-  .collection-card__body {
+
+  /* Floating white caption card at the top (aqua.shoes style) */
+  .collection-card__caption {
     position: absolute;
-    inset: auto 0 0 0;
-    padding: 24px;
-    color: #fff;
-    z-index: 1;
+    top: 24px; left: 24px; right: 24px;
+    z-index: 2;
+    background: #fff;
+    padding: 18px 24px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 18px 40px -16px rgba(15, 23, 42, 0.25);
+    transition: transform 0.3s ease;
   }
-  .collection-card__body h3 { color: #fff; font-size: clamp(20px, 2.2vw, 26px); margin-bottom: 4px; }
-  .collection-card__cta { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .collection-card:hover .collection-card__caption {
+    transform: translateY(-2px);
+  }
+  .collection-card__caption h3 {
+    color: var(--color-primary-dark);
+    font-size: clamp(18px, 2vw, 22px);
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .collection-card__caption p {
+    color: var(--color-primary-dark);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.2px;
+  }
 </style>
 
 {% schema %}
@@ -89,10 +111,21 @@
       "settings": [
         { "type": "collection", "id": "collection", "label": "Collection" },
         { "type": "image_picker", "id": "image", "label": "Image (overrides collection image)" },
-        { "type": "text", "id": "heading_override", "label": "Heading override" }
+        { "type": "text", "id": "heading_override", "label": "Heading override" },
+        { "type": "text", "id": "fallback_title", "label": "Fallback title (if collection not set)", "default": "Shop" },
+        { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Display everything" }
       ]
     }
   ],
-  "presets": [ { "name": "Collection list", "blocks": [ { "type": "collection" }, { "type": "collection" }, { "type": "collection" } ] } ]
+  "presets": [
+    {
+      "name": "Collection list",
+      "blocks": [
+        { "type": "collection", "settings": { "fallback_title": "Women's Water Shoes", "subtitle": "Display everything" } },
+        { "type": "collection", "settings": { "fallback_title": "Men's Water Shoes",   "subtitle": "Display everything" } },
+        { "type": "collection", "settings": { "fallback_title": "Kids Water Shoes",    "subtitle": "Display everything" } }
+      ]
+    }
+  ]
 }
 {% endschema %}

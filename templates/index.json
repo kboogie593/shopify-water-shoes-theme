@@ -13,6 +13,21 @@
         "trust_text": "Rated 4.8/5 by 50,000+ adventurers worldwide"
       }
     },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "c1": { "type": "collection", "settings": { "fallback_title": "Women's Water Shoes", "subtitle": "Display everything" } },
+        "c2": { "type": "collection", "settings": { "fallback_title": "Men's Water Shoes",   "subtitle": "Display everything" } },
+        "c3": { "type": "collection", "settings": { "fallback_title": "Kids Water Shoes",    "subtitle": "Display everything" } }
+      },
+      "block_order": ["c1", "c2", "c3"],
+      "settings": {
+        "eyebrow": "Shop by category",
+        "heading": "Find your fit",
+        "subtitle": "From kids' shore explorers to women's sport shoes — every foot, every wave.",
+        "columns": 3
+      }
+    },
     "stats": {
       "type": "stats",
       "blocks": {
@@ -119,6 +134,7 @@
   },
   "order": [
     "hero",
+    "collection-list",
     "stats",
     "features",
     "featured-collection",

@@ -64,8 +64,22 @@ function initMenuToggle() {
   // Close on ESC
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 
-  // Close after picking a link
-  nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+  // Close after picking a link (but not the parent of an accordion submenu on mobile)
+  nav.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      // On mobile (< 900px), clicking the parent of a submenu opens accordion instead of navigating
+      const isMobile = window.matchMedia('(max-width: 900px)').matches;
+      if (isMobile) {
+        const item = a.closest('.has-submenu');
+        if (item && a === item.querySelector('.header-nav__link')) {
+          e.preventDefault();
+          item.classList.toggle('is-open');
+          return;
+        }
+      }
+      close();
+    });
+  });
 }
 
 /* ---------- Quantity steppers ---------- */
