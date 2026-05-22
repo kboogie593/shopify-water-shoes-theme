@@ -11,14 +11,25 @@
         {%- assign coll = collections[block.settings.collection] -%}
         {%- assign card_url = coll.url | default: '/collections/all' -%}
         {%- assign card_title = block.settings.heading_override | default: coll.title | default: block.settings.fallback_title -%}
+
+        {%- comment -%} Resolve the image source defensively — only emit <img> when we actually have a non-blank URL. {%- endcomment -%}
+        {%- assign img_src = '' -%}
+        {%- assign img_alt = card_title -%}
+        {%- if block.settings.image != blank -%}
+          {%- assign img_src = block.settings.image | image_url: width: 1200 -%}
+        {%- elsif coll.image != blank -%}
+          {%- assign img_src = coll.image | image_url: width: 1200 -%}
+          {%- if coll.image.alt != blank -%}{%- assign img_alt = coll.image.alt -%}{%- endif -%}
+        {%- elsif coll.products.first.featured_media != blank -%}
+          {%- assign img_src = coll.products.first.featured_media | image_url: width: 1200 -%}
+        {%- elsif block.settings.builtin_image != blank and block.settings.builtin_image != 'none' -%}
+          {%- assign img_src = block.settings.builtin_image | asset_url -%}
+        {%- endif -%}
+
         <a href="{{ card_url }}" class="collection-card" {{ block.shopify_attributes }}>
           <div class="collection-card__media">
-            {%- if block.settings.image != blank -%}
-              <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ card_title | escape }}" loading="lazy">
-            {%- elsif coll.image -%}
-              <img src="{{ coll.image | image_url: width: 1000 }}" alt="{{ card_title | escape }}" loading="lazy">
-            {%- elsif coll.products.first.featured_media -%}
-              <img src="{{ coll.products.first.featured_media | image_url: width: 1000 }}" alt="{{ card_title | escape }}" loading="lazy">
+            {%- if img_src != '' -%}
+              <img src="{{ img_src }}" alt="{{ img_alt | escape }}" loading="lazy">
             {%- else -%}
               <div class="collection-card__placeholder"></div>
             {%- endif -%}
@@ -110,10 +121,21 @@
       "name": "Collection",
       "settings": [
         { "type": "collection", "id": "collection", "label": "Collection" },
-        { "type": "image_picker", "id": "image", "label": "Image (overrides collection image)" },
+        { "type": "image_picker", "id": "image", "label": "Image (overrides everything)" },
         { "type": "text", "id": "heading_override", "label": "Heading override" },
         { "type": "text", "id": "fallback_title", "label": "Fallback title (if collection not set)", "default": "Shop" },
-        { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Display everything" }
+        { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Display everything" },
+        {
+          "type": "select",
+          "id": "builtin_image",
+          "label": "Built-in fallback image",
+          "info": "Shown when no custom image and no collection image is set",
+          "options": [
+            { "value": "featured-shoe-teal.jpg", "label": "Teal water shoe" },
+            { "value": "none", "label": "Use color gradient" }
+          ],
+          "default": "featured-shoe-teal.jpg"
+        }
       ]
     }
   ],

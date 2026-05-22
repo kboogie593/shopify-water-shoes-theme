@@ -38,9 +38,9 @@
     "collection-list": {
       "type": "collection-list",
       "blocks": {
-        "c1": { "type": "collection", "settings": { "fallback_title": "Women's Water Shoes", "subtitle": "Display everything" } },
-        "c2": { "type": "collection", "settings": { "fallback_title": "Men's Water Shoes",   "subtitle": "Display everything" } },
-        "c3": { "type": "collection", "settings": { "fallback_title": "Kids Water Shoes",    "subtitle": "Display everything" } }
+        "c1": { "type": "collection", "settings": { "fallback_title": "Women's Water Shoes", "subtitle": "Display everything", "builtin_image": "featured-shoe-teal.jpg" } },
+        "c2": { "type": "collection", "settings": { "fallback_title": "Men's Water Shoes",   "subtitle": "Display everything", "builtin_image": "featured-shoe-teal.jpg" } },
+        "c3": { "type": "collection", "settings": { "fallback_title": "Kids Water Shoes",    "subtitle": "Display everything", "builtin_image": "featured-shoe-teal.jpg" } }
       },
       "block_order": ["c1", "c2", "c3"],
       "settings": {
