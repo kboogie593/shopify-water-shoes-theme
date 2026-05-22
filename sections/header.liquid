@@ -80,38 +80,38 @@
             <div class="page-width">
               <div class="mega-menu__grid">
                 <div class="mega-menu__col">
-                  <a href="/collections/women" class="mega-menu__heading">Women</a>
+                  <a href="{% render 'collection-url', handle: 'women' %}" class="mega-menu__heading">Women</a>
                   <ul>
-                    <li><a href="/collections/womens-water-shoes">Women's Water Shoes</a></li>
-                    <li><a href="/collections/womens-beach-shoes">Women's Beach Shoes</a></li>
-                    <li><a href="/collections/womens-sport">Women's Sport</a></li>
-                    <li><a href="/collections/womens-fashion">Women's Fashion</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'womens-water-shoes' %}">Women's Water Shoes</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'womens-beach-shoes' %}">Women's Beach Shoes</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'womens-sport' %}">Women's Sport</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'womens-fashion' %}">Women's Fashion</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="/collections/men" class="mega-menu__heading">Men</a>
+                  <a href="{% render 'collection-url', handle: 'men' %}" class="mega-menu__heading">Men</a>
                   <ul>
-                    <li><a href="/collections/mens-water-shoes">Men's Water Shoes</a></li>
-                    <li><a href="/collections/mens-beach-shoes">Men's Beach Shoes</a></li>
-                    <li><a href="/collections/mens-sport">Men's Sport</a></li>
-                    <li><a href="/collections/mens-fashion">Men's Fashion</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'mens-water-shoes' %}">Men's Water Shoes</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'mens-beach-shoes' %}">Men's Beach Shoes</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'mens-sport' %}">Men's Sport</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'mens-fashion' %}">Men's Fashion</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="/collections/kids" class="mega-menu__heading">Kids</a>
+                  <a href="{% render 'collection-url', handle: 'kids' %}" class="mega-menu__heading">Kids</a>
                   <ul>
-                    <li><a href="/collections/kids-beach-shoes">Kids Beach Shoes</a></li>
-                    <li><a href="/collections/kids-water-shoes">Kids Water Shoes</a></li>
-                    <li><a href="/collections/kids-clogs">Kids Clogs</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'kids-beach-shoes' %}">Kids Beach Shoes</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'kids-water-shoes' %}">Kids Water Shoes</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'kids-clogs' %}">Kids Clogs</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
                   <a href="/collections/all" class="mega-menu__heading">Shop All</a>
                   <ul>
                     <li><a href="/collections/all">All Products</a></li>
-                    <li><a href="/collections/best-sellers">Best Sellers</a></li>
-                    <li><a href="/collections/new-arrivals">New Arrivals</a></li>
-                    <li><a href="/collections/sale">Sale</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'best-sellers' %}">Best Sellers</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'new-arrivals' %}">New Arrivals</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'sale' %}">Sale</a></li>
                   </ul>
                 </div>
 
@@ -130,7 +130,7 @@
         </div>
 
         <div class="header-nav__item has-submenu" data-mega-trigger>
-          <a href="/collections/beach" class="header-nav__link{% if request.path contains 'beach' %} is-active{% endif %}">
+          <a href="{% render 'collection-url', handle: 'beach' %}" class="header-nav__link{% if request.path contains 'beach' %} is-active{% endif %}">
             Beach
             <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
@@ -138,26 +138,26 @@
             <div class="page-width">
               <div class="mega-menu__grid">
                 <div class="mega-menu__col">
-                  <a href="/collections/womens-beach-shoes" class="mega-menu__heading">Women's Beach</a>
+                  <a href="{% render 'collection-url', handle: 'womens-beach-shoes' %}" class="mega-menu__heading">Women's Beach</a>
                   <ul>
-                    <li><a href="/collections/aquasoft">Aquasoft</a></li>
-                    <li><a href="/collections/aquabeach">Aquabeach</a></li>
-                    <li><a href="/collections/mayabay">MayaBay</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'aquasoft' %}">Aquasoft</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'aquabeach' %}">Aquabeach</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'mayabay' %}">MayaBay</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="/collections/mens-beach-shoes" class="mega-menu__heading">Men's Beach</a>
+                  <a href="{% render 'collection-url', handle: 'mens-beach-shoes' %}" class="mega-menu__heading">Men's Beach</a>
                   <ul>
-                    <li><a href="/collections/aquasoft">Aquasoft</a></li>
-                    <li><a href="/collections/aquabeach">Aquabeach</a></li>
-                    <li><a href="/collections/mayabay">MayaBay</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'aquasoft' %}">Aquasoft</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'aquabeach' %}">Aquabeach</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'mayabay' %}">MayaBay</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="/collections/kids-beach-shoes" class="mega-menu__heading">Kids Beach</a>
+                  <a href="{% render 'collection-url', handle: 'kids-beach-shoes' %}" class="mega-menu__heading">Kids Beach</a>
                   <ul>
-                    <li><a href="/collections/kids-aquasoft">Kids Aquasoft</a></li>
-                    <li><a href="/collections/kids-clogs">Beach Clogs</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'kids-aquasoft' %}">Kids Aquasoft</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'kids-clogs' %}">Beach Clogs</a></li>
                   </ul>
                 </div>
               </div>
@@ -166,7 +166,7 @@
         </div>
 
         <div class="header-nav__item has-submenu" data-mega-trigger>
-          <a href="/collections/sport" class="header-nav__link{% if request.path contains 'sport' %} is-active{% endif %}">
+          <a href="{% render 'collection-url', handle: 'sport' %}" class="header-nav__link{% if request.path contains 'sport' %} is-active{% endif %}">
             Sport
             <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
@@ -174,25 +174,25 @@
             <div class="page-width">
               <div class="mega-menu__grid">
                 <div class="mega-menu__col">
-                  <a href="/collections/womens-sport" class="mega-menu__heading">Women's Sport</a>
+                  <a href="{% render 'collection-url', handle: 'womens-sport' %}" class="mega-menu__heading">Women's Sport</a>
                   <ul>
-                    <li><a href="/collections/motion">Motion</a></li>
-                    <li><a href="/collections/arcachon">Arcachon</a></li>
-                    <li><a href="/collections/aquastyl">AquaStyl</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'motion' %}">Motion</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'arcachon' %}">Arcachon</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'aquastyl' %}">AquaStyl</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="/collections/mens-sport" class="mega-menu__heading">Men's Sport</a>
+                  <a href="{% render 'collection-url', handle: 'mens-sport' %}" class="mega-menu__heading">Men's Sport</a>
                   <ul>
-                    <li><a href="/collections/motion">Motion</a></li>
-                    <li><a href="/collections/arcachon">Arcachon</a></li>
-                    <li><a href="/collections/aquastyl">AquaStyl</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'motion' %}">Motion</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'arcachon' %}">Arcachon</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'aquastyl' %}">AquaStyl</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="/collections/kids-sport" class="mega-menu__heading">Kids Sport</a>
+                  <a href="{% render 'collection-url', handle: 'kids-sport' %}" class="mega-menu__heading">Kids Sport</a>
                   <ul>
-                    <li><a href="/collections/kids-water-shoes">Kids Water Shoes</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'kids-water-shoes' %}">Kids Water Shoes</a></li>
                   </ul>
                 </div>
               </div>
@@ -201,7 +201,7 @@
         </div>
 
         <div class="header-nav__item has-submenu" data-mega-trigger>
-          <a href="/collections/fashion" class="header-nav__link{% if request.path contains 'fashion' %} is-active{% endif %}">
+          <a href="{% render 'collection-url', handle: 'fashion' %}" class="header-nav__link{% if request.path contains 'fashion' %} is-active{% endif %}">
             Fashion
             <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
@@ -209,24 +209,24 @@
             <div class="page-width">
               <div class="mega-menu__grid">
                 <div class="mega-menu__col">
-                  <a href="/collections/graphik" class="mega-menu__heading">Graphik</a>
+                  <a href="{% render 'collection-url', handle: 'graphik' %}" class="mega-menu__heading">Graphik</a>
                   <ul>
-                    <li><a href="/collections/graphik-women">Women's Graphik</a></li>
-                    <li><a href="/collections/graphik-men">Men's Graphik</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'graphik-women' %}">Women's Graphik</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'graphik-men' %}">Men's Graphik</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="/collections/bright-colors" class="mega-menu__heading">Bright Colors</a>
+                  <a href="{% render 'collection-url', handle: 'bright-colors' %}" class="mega-menu__heading">Bright Colors</a>
                   <ul>
-                    <li><a href="/collections/teal">Teal</a></li>
-                    <li><a href="/collections/pink">Pink</a></li>
-                    <li><a href="/collections/orange">Orange</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'teal' %}">Teal</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'pink' %}">Pink</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'orange' %}">Orange</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="/collections/limited" class="mega-menu__heading">Limited Edition</a>
+                  <a href="{% render 'collection-url', handle: 'limited' %}" class="mega-menu__heading">Limited Edition</a>
                   <ul>
-                    <li><a href="/collections/summer-2025">Summer 2025</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'summer-2025' %}">Summer 2025</a></li>
                   </ul>
                 </div>
               </div>
