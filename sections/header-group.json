@@ -26,6 +26,7 @@
       "type": "header",
       "settings": {
         "logo_width": 140,
+        "use_builtin_menu": true,
         "menu": "main-menu",
         "mega_promo_heading": "Summer 2025 — new colors",
         "mega_promo_cta": "Shop the drop →",

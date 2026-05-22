@@ -52,54 +52,132 @@
   {%- comment -%} ──── Row 2 : Navigation strip ──── {%- endcomment -%}
   <div class="header-nav-wrap">
     <nav class="page-width header-nav" aria-label="Main navigation">
-      {%- assign current_url = request.path -%}
-      {%- for link in section.settings.menu.links -%}
-        {%- assign is_promo = false -%}
-        {%- if link.title contains '🚀' or link.title contains '✨' or link.title contains '🔥' or link.title contains '⚡' -%}
-          {%- assign is_promo = true -%}
-        {%- endif -%}
+      {%- comment -%}
+        Decide which menu to render: built-in English (default) or the
+        Shopify admin link_list (for power users who want to customize).
+      {%- endcomment -%}
+      {%- assign use_builtin = section.settings.use_builtin_menu -%}
+      {%- if section.settings.menu.links.size == 0 -%}
+        {%- assign use_builtin = true -%}
+      {%- endif -%}
 
-        {%- if link.links.size > 0 -%}
-          <div class="header-nav__item has-submenu" data-mega-trigger>
-            <a href="{{ link.url }}" class="header-nav__link{% if link.active %} is-active{% endif %}{% if is_promo %} is-promo{% endif %}">
-              {{ link.title }}
-              <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </a>
-            <div class="mega-menu" data-mega-menu>
-              <div class="page-width">
-                <div class="mega-menu__grid">
-                  {%- for sublink in link.links -%}
-                    <div class="mega-menu__col">
-                      <a href="{{ sublink.url }}" class="mega-menu__heading">{{ sublink.title }}</a>
-                      {%- if sublink.links.size > 0 -%}
-                        <ul>
-                          {%- for grandchild in sublink.links -%}
-                            <li><a href="{{ grandchild.url }}">{{ grandchild.title }}</a></li>
-                          {%- endfor -%}
-                        </ul>
-                      {%- endif -%}
-                    </div>
-                  {%- endfor -%}
+      {%- if use_builtin -%}
+        {%- comment -%} ───── Built-in English navigation ───── {%- endcomment -%}
+        <a href="/" class="header-nav__link{% if request.path == '/' %} is-active{% endif %}">Home</a>
 
-                  {%- if section.settings.mega_promo_image != blank -%}
-                    <a href="{{ section.settings.mega_promo_link | default: '#' }}" class="mega-menu__promo">
-                      <img src="{{ section.settings.mega_promo_image | image_url: width: 600 }}" alt="{{ section.settings.mega_promo_heading | escape }}" loading="lazy">
-                      <div class="mega-menu__promo-body">
-                        <strong>{{ section.settings.mega_promo_heading }}</strong>
-                        <span>{{ section.settings.mega_promo_cta | default: 'Shop now →' }}</span>
-                      </div>
-                    </a>
-                  {%- endif -%}
+        <div class="header-nav__item has-submenu" data-mega-trigger>
+          <a href="/collections/all" class="header-nav__link{% if request.path contains '/collections' %} is-active{% endif %}">
+            Shop
+            <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="mega-menu" data-mega-menu>
+            <div class="page-width">
+              <div class="mega-menu__grid">
+                <div class="mega-menu__col">
+                  <a href="/collections/all" class="mega-menu__heading">All Collections</a>
+                  <ul>
+                    <li><a href="/collections/all">All Water Shoes</a></li>
+                    <li><a href="/collections/best-sellers">Best Sellers</a></li>
+                    <li><a href="/collections/new-arrivals">New Arrivals</a></li>
+                    <li><a href="/collections/sale">Sale</a></li>
+                  </ul>
                 </div>
+                <div class="mega-menu__col">
+                  <a href="/collections/beach" class="mega-menu__heading">For Beach</a>
+                  <ul>
+                    <li><a href="/collections/aquasoft">Aquasoft</a></li>
+                    <li><a href="/collections/aquabeach">Aquabeach</a></li>
+                    <li><a href="/collections/mayabay">MayaBay</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__col">
+                  <a href="/collections/sport" class="mega-menu__heading">For Sport</a>
+                  <ul>
+                    <li><a href="/collections/motion">Motion</a></li>
+                    <li><a href="/collections/arcachon">Arcachon</a></li>
+                    <li><a href="/collections/aquastyl">AquaStyl</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__col">
+                  <a href="/collections/style" class="mega-menu__heading">For Style</a>
+                  <ul>
+                    <li><a href="/collections/graphik">Graphik</a></li>
+                    <li><a href="/collections/colors">Bright Colors</a></li>
+                    <li><a href="/collections/kids">Kids</a></li>
+                  </ul>
+                </div>
+
+                {%- if section.settings.mega_promo_image != blank -%}
+                  <a href="{{ section.settings.mega_promo_link | default: '/collections/all' }}" class="mega-menu__promo">
+                    <img src="{{ section.settings.mega_promo_image | image_url: width: 600 }}" alt="{{ section.settings.mega_promo_heading | escape }}" loading="lazy">
+                    <div class="mega-menu__promo-body">
+                      <strong>{{ section.settings.mega_promo_heading }}</strong>
+                      <span>{{ section.settings.mega_promo_cta | default: 'Shop now →' }}</span>
+                    </div>
+                  </a>
+                {%- endif -%}
               </div>
             </div>
           </div>
-        {%- else -%}
-          <a href="{{ link.url }}" class="header-nav__link{% if link.active %} is-active{% endif %}{% if is_promo %} is-promo{% endif %}">
-            {{ link.title }}
-          </a>
-        {%- endif -%}
-      {%- endfor -%}
+        </div>
+
+        <a href="/collections/best-sellers" class="header-nav__link{% if request.path contains 'best-sellers' %} is-active{% endif %}">Best Sellers</a>
+        <a href="/collections/new-arrivals" class="header-nav__link{% if request.path contains 'new-arrivals' %} is-active{% endif %}">New Arrivals</a>
+        <a href="/blogs/news" class="header-nav__link{% if request.path contains '/blogs' %} is-active{% endif %}">Journal</a>
+        <a href="/pages/about" class="header-nav__link{% if request.path == '/pages/about' %} is-active{% endif %}">About</a>
+        <a href="/pages/contact" class="header-nav__link{% if request.path == '/pages/contact' %} is-active{% endif %}">Contact</a>
+        <a href="/pages/shipping" class="header-nav__link is-promo">🚀 Express Delivery</a>
+
+      {%- else -%}
+        {%- comment -%} ───── Custom Shopify menu ───── {%- endcomment -%}
+        {%- for link in section.settings.menu.links -%}
+          {%- assign is_promo = false -%}
+          {%- if link.title contains '🚀' or link.title contains '✨' or link.title contains '🔥' or link.title contains '⚡' -%}
+            {%- assign is_promo = true -%}
+          {%- endif -%}
+
+          {%- if link.links.size > 0 -%}
+            <div class="header-nav__item has-submenu" data-mega-trigger>
+              <a href="{{ link.url }}" class="header-nav__link{% if link.active %} is-active{% endif %}{% if is_promo %} is-promo{% endif %}">
+                {{ link.title }}
+                <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </a>
+              <div class="mega-menu" data-mega-menu>
+                <div class="page-width">
+                  <div class="mega-menu__grid">
+                    {%- for sublink in link.links -%}
+                      <div class="mega-menu__col">
+                        <a href="{{ sublink.url }}" class="mega-menu__heading">{{ sublink.title }}</a>
+                        {%- if sublink.links.size > 0 -%}
+                          <ul>
+                            {%- for grandchild in sublink.links -%}
+                              <li><a href="{{ grandchild.url }}">{{ grandchild.title }}</a></li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </div>
+                    {%- endfor -%}
+
+                    {%- if section.settings.mega_promo_image != blank -%}
+                      <a href="{{ section.settings.mega_promo_link | default: '#' }}" class="mega-menu__promo">
+                        <img src="{{ section.settings.mega_promo_image | image_url: width: 600 }}" alt="{{ section.settings.mega_promo_heading | escape }}" loading="lazy">
+                        <div class="mega-menu__promo-body">
+                          <strong>{{ section.settings.mega_promo_heading }}</strong>
+                          <span>{{ section.settings.mega_promo_cta | default: 'Shop now →' }}</span>
+                        </div>
+                      </a>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- else -%}
+            <a href="{{ link.url }}" class="header-nav__link{% if link.active %} is-active{% endif %}{% if is_promo %} is-promo{% endif %}">
+              {{ link.title }}
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
     </nav>
   </div>
 </header>
@@ -110,7 +188,14 @@
   "settings": [
     { "type": "image_picker", "id": "logo", "label": "Logo image (overrides script text)" },
     { "type": "range", "id": "logo_width", "min": 80, "max": 320, "step": 10, "unit": "px", "label": "Logo width", "default": 220 },
-    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    {
+      "type": "checkbox",
+      "id": "use_builtin_menu",
+      "label": "Use built-in English navigation",
+      "info": "Uncheck to use a custom Shopify menu (Online Store → Navigation).",
+      "default": true
+    },
+    { "type": "link_list", "id": "menu", "label": "Custom Shopify menu (only used when checkbox above is unchecked)", "default": "main-menu" },
     { "type": "header", "content": "Mega menu promo card" },
     { "type": "image_picker", "id": "mega_promo_image", "label": "Promo image" },
     { "type": "text", "id": "mega_promo_heading", "label": "Promo heading", "default": "New: Summer 2025" },
