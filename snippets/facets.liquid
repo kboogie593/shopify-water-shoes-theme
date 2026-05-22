@@ -82,19 +82,6 @@
                 <p class="filter-price__hint">Range: {{ 0 | money }} – {{ filter.range_max | money }}</p>
               </div>
 
-            {%- when 'boolean' -%}
-              {%- for value in filter.true_value, filter.false_value -%}
-                <label class="filter-option">
-                  <input
-                    type="checkbox"
-                    name="{{ value.param_name }}"
-                    value="{{ value.value }}"
-                    {% if value.active %}checked{% endif %}>
-                  <span class="filter-option__label">{{ value.label }}</span>
-                  <span class="filter-option__count">{{ value.count }}</span>
-                </label>
-              {%- endfor -%}
-
             {%- else -%}
               {%- comment -%} list filter (color, size, vendor, etc.) {%- endcomment -%}
               {%- assign is_color = false -%}
