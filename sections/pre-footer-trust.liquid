@@ -51,30 +51,26 @@
   </div>
 
   {%- comment -%}
-    Animated ocean — 3 stacked wave layers sliding at different
-    speeds (parallax), with a slow color-cycle between the
-    footer color and a lighter sky-blue.  Plus bubble particles.
+    Animated wave edge — single layer, 2x viewport wide,
+    slides exactly 50% so it tiles seamlessly on any screen.
+    Color cycles slowly between footer color and lighter sky blue.
   {%- endcomment -%}
   <div class="ocean" aria-hidden="true">
-    <svg class="ocean__svg" viewBox="0 0 2880 120" preserveAspectRatio="none">
-      {%- comment -%} Back wave — slowest, most transparent {%- endcomment -%}
-      <path class="ocean__wave ocean__wave--back" d="M0,60 C360,30 720,90 1080,60 C1440,30 1800,90 2160,60 C2520,30 2880,90 2880,60 L2880,120 L0,120 Z"/>
-      {%- comment -%} Middle wave — medium speed {%- endcomment -%}
-      <path class="ocean__wave ocean__wave--mid" d="M0,70 C240,40 480,100 720,70 C960,40 1200,100 1440,70 C1680,40 1920,100 2160,70 C2400,40 2640,100 2880,70 L2880,120 L0,120 Z"/>
-      {%- comment -%} Front wave — fastest, fully opaque {%- endcomment -%}
-      <path class="ocean__wave ocean__wave--front" d="M0,80 C180,55 360,105 540,80 C720,55 900,105 1080,80 C1260,55 1440,105 1620,80 C1800,55 1980,105 2160,80 C2340,55 2520,105 2700,80 C2790,68 2880,92 2880,80 L2880,120 L0,120 Z"/>
+    <svg class="ocean__svg" viewBox="0 0 2880 80" preserveAspectRatio="none">
+      {%- comment -%}
+        Path = 2 identical halves (0-1440 and 1440-2880).
+        Each half has 2 full wave periods (720 units each).
+      {%- endcomment -%}
+      <path class="ocean__wave"
+            d="M0,30 C180,5 540,55 720,30 C900,5 1260,55 1440,30 C1620,5 1980,55 2160,30 C2340,5 2700,55 2880,30 L2880,80 L0,80 Z"/>
     </svg>
 
-    {%- comment -%} Bubble particles floating up through the water {%- endcomment -%}
-    <span class="ocean__bubble" style="left:6%;  width:8px;  height:8px;  animation-duration:7s;  animation-delay:0s;"></span>
-    <span class="ocean__bubble" style="left:14%; width:14px; height:14px; animation-duration:9s;  animation-delay:-2s;"></span>
-    <span class="ocean__bubble" style="left:22%; width:6px;  height:6px;  animation-duration:6s;  animation-delay:-1s;"></span>
-    <span class="ocean__bubble" style="left:34%; width:10px; height:10px; animation-duration:8s;  animation-delay:-4s;"></span>
-    <span class="ocean__bubble" style="left:46%; width:18px; height:18px; animation-duration:11s; animation-delay:-3s;"></span>
-    <span class="ocean__bubble" style="left:58%; width:8px;  height:8px;  animation-duration:7.5s;animation-delay:-5s;"></span>
-    <span class="ocean__bubble" style="left:70%; width:12px; height:12px; animation-duration:9s;  animation-delay:-6s;"></span>
-    <span class="ocean__bubble" style="left:82%; width:6px;  height:6px;  animation-duration:7s;  animation-delay:-2s;"></span>
-    <span class="ocean__bubble" style="left:92%; width:16px; height:16px; animation-duration:10s; animation-delay:-7s;"></span>
+    {%- comment -%} Sparse bubbles drifting up across the wave {%- endcomment -%}
+    <span class="ocean__bubble" style="left:14%; width:8px;  height:8px;  animation-duration:9s;  animation-delay:0s;"></span>
+    <span class="ocean__bubble" style="left:30%; width:12px; height:12px; animation-duration:11s; animation-delay:-3s;"></span>
+    <span class="ocean__bubble" style="left:48%; width:6px;  height:6px;  animation-duration:8s;  animation-delay:-1s;"></span>
+    <span class="ocean__bubble" style="left:64%; width:14px; height:14px; animation-duration:12s; animation-delay:-5s;"></span>
+    <span class="ocean__bubble" style="left:82%; width:9px;  height:9px;  animation-duration:10s; animation-delay:-7s;"></span>
   </div>
 </section>
 
@@ -119,82 +115,60 @@
     letter-spacing: 0.2px;
     margin: 0;
   }
-  /* ====== Animated ocean wave ====== */
+  /* ====== Single animated wave edge ====== */
   .ocean {
     position: absolute;
     bottom: -1px; left: 0; right: 0;
     width: 100%;
-    height: 130px;
+    height: 90px;
     pointer-events: none;
     overflow: hidden;
   }
   .ocean__svg {
     position: absolute;
     bottom: 0; left: 0;
-    width: 200%;
+    width: 200%;          /* 2x viewport so we can slide -50% seamlessly */
     height: 100%;
     display: block;
-    /* color cycle: footer color → light sky-blue → back, ~14s */
-    animation: ocean-color 14s ease-in-out infinite alternate;
     color: {{ section.settings.wave_color | default: '#0F766E' }};
+    animation: ocean-color 12s ease-in-out infinite alternate;
   }
   .ocean__wave {
     fill: currentColor;
     will-change: transform;
-  }
-  .ocean__wave--back {
-    opacity: 0.35;
-    animation: wave-slide-rev 26s linear infinite;
-  }
-  .ocean__wave--mid {
-    opacity: 0.6;
-    animation: wave-slide 18s linear infinite;
-    transform: translateX(-720px);
-  }
-  .ocean__wave--front {
-    opacity: 1;
-    animation: wave-slide 12s linear infinite;
+    transform-origin: left center;
+    animation: wave-slide 14s linear infinite;
   }
 
+  /* Slide exactly half the SVG width = one full wave period */
   @keyframes wave-slide {
     from { transform: translateX(0); }
-    to   { transform: translateX(-1440px); }
-  }
-  /* Mid wave starts offset so layers don't sync */
-  @keyframes wave-slide-mid {
-    from { transform: translateX(-720px); }
-    to   { transform: translateX(-2160px); }
-  }
-  @keyframes wave-slide-rev {
-    from { transform: translateX(-1440px); }
-    to   { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
   }
 
+  /* Color cycle — current footer color ↔ light sky-blue */
   @keyframes ocean-color {
     0%   { color: {{ section.settings.wave_color | default: '#0F766E' }}; }
-    50%  { color: #38bdf8; }   /* sky-400 — bright water */
-    100% { color: #7dd3fc; }   /* sky-300 — pale water */
+    50%  { color: #38bdf8; }   /* sky-400 */
+    100% { color: #7dd3fc; }   /* sky-300 */
   }
 
-  /* Use the middle keyframes explicitly */
-  .ocean__wave--mid { animation-name: wave-slide-mid; }
-
-  /* ====== Bubbles ====== */
+  /* ====== Bubbles drifting through the wave ====== */
   .ocean__bubble {
     position: absolute;
-    bottom: -20px;
+    bottom: 0;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.35));
     box-shadow: inset 0 -1px 2px rgba(15, 118, 110, 0.25);
     opacity: 0;
-    animation: bubble-rise 8s ease-in-out infinite;
+    animation: bubble-rise 9s ease-in-out infinite;
     will-change: transform, opacity;
   }
   @keyframes bubble-rise {
     0%   { transform: translateY(0) scale(0.6); opacity: 0; }
-    10%  { opacity: 0.85; }
-    50%  { transform: translateY(-80px) translateX(-6px) scale(1.05); opacity: 0.95; }
-    100% { transform: translateY(-160px) translateX(8px) scale(0.7); opacity: 0; }
+    15%  { opacity: 0.85; }
+    50%  { transform: translateY(-50px) translateX(-4px) scale(1); opacity: 0.9; }
+    100% { transform: translateY(-110px) translateX(6px) scale(0.6); opacity: 0; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -203,12 +177,12 @@
 
   @media (max-width: 900px) {
     .pre-footer-trust__grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
-    .ocean { height: 90px; }
+    .ocean { height: 64px; }
   }
   @media (max-width: 480px) {
     .pre-footer-trust__grid { grid-template-columns: 1fr; }
-    .pre-footer-trust { padding: 56px 0 100px; }
-    .ocean { height: 70px; }
+    .pre-footer-trust { padding: 56px 0 80px; }
+    .ocean { height: 50px; }
   }
 </style>
 
