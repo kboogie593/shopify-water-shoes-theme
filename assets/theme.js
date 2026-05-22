@@ -29,10 +29,43 @@ function initMenuToggle() {
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.header-nav-wrap') || document.querySelector('.header-nav');
   if (!toggle || !nav) return;
+
+  const close = () => {
+    nav.classList.remove('open');
+    document.body.classList.remove('has-nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+  const open = () => {
+    nav.classList.add('open');
+    document.body.classList.add('has-nav-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  };
+
   toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (nav.classList.contains('open')) close();
+    else open();
   });
+
+  // Close when clicking the X area inside drawer (top-right pseudo button)
+  nav.addEventListener('click', (e) => {
+    const r = nav.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    if (x >= r.width - 56 && x <= r.width - 12 && y >= 12 && y <= 56) close();
+  });
+
+  // Close on backdrop click
+  document.addEventListener('click', (e) => {
+    if (!nav.classList.contains('open')) return;
+    if (nav.contains(e.target) || toggle.contains(e.target)) return;
+    close();
+  });
+
+  // Close on ESC
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+  // Close after picking a link
+  nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
 }
 
 /* ---------- Quantity steppers ---------- */

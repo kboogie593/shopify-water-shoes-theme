@@ -15,18 +15,21 @@
     </a>
 
     <div class="header-actions">
-      <button type="button" class="header-icon" aria-label="Search" data-search-open>
+      <button type="button" class="header-icon hide-mobile" aria-label="Search" data-search-open>
         {% render 'icon-search' %}
       </button>
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{{ routes.account_url }}" class="header-icon" aria-label="Account">
+        <a href="{{ routes.account_url }}" class="header-icon hide-mobile" aria-label="Account">
           {% render 'icon-account' %}
         </a>
       {%- endif -%}
-      <a href="/pages/wishlist" class="header-icon header-icon--wishlist" aria-label="Wishlist" data-wishlist-link>
+      <a href="/pages/wishlist" class="header-icon header-icon--wishlist hide-mobile" aria-label="Wishlist" data-wishlist-link>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         <span class="cart-count-bubble" data-wishlist-count-bubble hidden>0</span>
       </a>
+      <button type="button" class="header-icon show-mobile" aria-label="Search" data-search-open>
+        {% render 'icon-search' %}
+      </button>
       {%- if settings.cart_type == 'drawer' -%}
         <button type="button" class="header-icon header-icon--cart" aria-label="Cart" data-cart-open>
           {% render 'icon-cart' %}

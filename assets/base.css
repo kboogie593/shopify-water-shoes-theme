@@ -284,31 +284,101 @@ p { line-height: 1.7; }
 .cart-count-bubble[hidden] { display: none; }
 
 .menu-toggle { display: none; }
+.show-mobile { display: none; }
+
 @media (max-width: 900px) {
-  .header-nav-wrap { display: none; }
+  /* Compact header on mobile */
+  .header-top { padding: 14px 0 12px; gap: 12px; }
+  .header-logo--script .header-logo__text { font-size: 32px; }
+  .header-logo img { max-height: 40px; }
+
+  /* Hide desktop-only icons, show single mobile search */
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: inline-flex; }
+  .header-actions { gap: 0; }
+  .header-icon { width: 44px; height: 44px; }
+
+  /* Nav becomes a side drawer */
   .menu-toggle { display: inline-flex; }
-  .header-nav-wrap.open {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
+  .header-nav-wrap {
+    position: fixed;
+    top: 0; right: 0;
+    width: min(320px, 86vw);
+    height: 100vh;
     background: #fff;
-    border-top: 1px solid var(--color-border);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-    z-index: 90;
+    border-top: 0;
+    border-bottom: 0;
+    box-shadow: -20px 0 60px -20px rgba(0,0,0,0.25);
+    z-index: 210;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(.2,.8,.2,1);
+    overflow-y: auto;
+    display: block;
   }
-  .header-nav-wrap.open .header-nav {
+  .header-nav-wrap.open { transform: translateX(0); }
+
+  .header-nav-wrap .header-nav {
     flex-direction: column;
     align-items: stretch;
-    padding: 16px 0;
+    padding: 72px 0 24px;
     gap: 2px;
   }
-  .header-nav-wrap.open .header-nav__link {
-    padding: 14px 16px;
+  .header-nav-wrap .header-nav__link {
+    padding: 16px 28px;
     border-radius: 0;
-    font-size: 16px;
+    font-size: 17px;
+    justify-content: space-between;
   }
-  .header-nav-wrap.open .mega-menu { display: none; }
+  .header-nav-wrap .header-nav__link.is-active {
+    background: var(--color-primary-dark);
+    color: #fff;
+  }
+  .header-nav-wrap .mega-menu { display: none; }
+
+  /* Close button at top of drawer */
+  .header-nav-wrap::before {
+    content: "";
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 28px; height: 28px;
+    background:
+      linear-gradient(45deg, transparent 44%, #475569 44%, #475569 56%, transparent 56%),
+      linear-gradient(-45deg, transparent 44%, #475569 44%, #475569 56%, transparent 56%);
+    cursor: pointer;
+    pointer-events: auto;
+    border-radius: 50%;
+  }
+
+  /* Add mobile-only nav extras: account, wishlist as full-width rows */
+  .header-nav-wrap .header-nav::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: var(--color-border);
+    margin: 14px 28px;
+  }
+
+  /* Overlay backdrop */
+  body.has-nav-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    z-index: 200;
+    animation: backdrop-in 0.25s ease;
+  }
+  @keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+}
+
+@media (max-width: 480px) {
+  .page-width { padding: 0 16px; }
+  .header-logo--script .header-logo__text { font-size: 28px; }
+  .header-logo img { max-height: 34px; }
+  .header-top { padding: 12px 0 10px; }
+  .header-icon { width: 40px; height: 40px; }
+  .header-actions { gap: -2px; }
 }
 
 /* ------- Hero ------- */

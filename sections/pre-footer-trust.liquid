@@ -51,18 +51,17 @@
   </div>
 
   {%- comment -%}
-    Animated wave edge — single layer, 2x viewport wide,
-    slides exactly 50% so it tiles seamlessly on any screen.
-    Color cycles slowly between footer color and lighter sky blue.
+    Two identical wave tiles, each 100% parent width, sit side-by-
+    side and both translateX(-100%) of their own width. The 2nd
+    tile slides into where the 1st was; both reset to start
+    together — pixel-perfect tiling at any viewport size.
   {%- endcomment -%}
   <div class="ocean" aria-hidden="true">
-    <svg class="ocean__svg" viewBox="0 0 2880 80" preserveAspectRatio="none">
-      {%- comment -%}
-        Path = 2 identical halves (0-1440 and 1440-2880).
-        Each half has 2 full wave periods (720 units each).
-      {%- endcomment -%}
-      <path class="ocean__wave"
-            d="M0,30 C180,5 540,55 720,30 C900,5 1260,55 1440,30 C1620,5 1980,55 2160,30 C2340,5 2700,55 2880,30 L2880,80 L0,80 Z"/>
+    <svg class="ocean__tile" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,30 C150,5 450,55 600,30 C750,5 1050,55 1200,30 L1200,80 L0,80 Z" fill="currentColor"/>
+    </svg>
+    <svg class="ocean__tile" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,30 C150,5 450,55 600,30 C750,5 1050,55 1200,30 L1200,80 L0,80 Z" fill="currentColor"/>
     </svg>
 
     {%- comment -%} Sparse bubbles drifting up across the wave {%- endcomment -%}
@@ -115,7 +114,7 @@
     letter-spacing: 0.2px;
     margin: 0;
   }
-  /* ====== Single animated wave edge ====== */
+  /* ====== Animated wave (2-tile seamless tile) ====== */
   .ocean {
     position: absolute;
     bottom: -1px; left: 0; right: 0;
@@ -123,27 +122,25 @@
     height: 90px;
     pointer-events: none;
     overflow: hidden;
-  }
-  .ocean__svg {
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 200%;          /* 2x viewport so we can slide -50% seamlessly */
-    height: 100%;
-    display: block;
+    display: flex;
     color: {{ section.settings.wave_color | default: '#0F766E' }};
     animation: ocean-color 12s ease-in-out infinite alternate;
   }
-  .ocean__wave {
-    fill: currentColor;
+  .ocean__tile {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: block;
     will-change: transform;
-    transform-origin: left center;
-    animation: wave-slide 14s linear infinite;
+    animation: wave-march 14s linear infinite;
   }
 
-  /* Slide exactly half the SVG width = one full wave period */
-  @keyframes wave-slide {
+  /* Each tile shifts left by its OWN width (100%). When the first
+     tile is fully out of view, the second has slid into its place
+     and we're at the same visual state as start — instant loop. */
+  @keyframes wave-march {
     from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    to   { transform: translateX(-100%); }
   }
 
   /* Color cycle — current footer color ↔ light sky-blue */
