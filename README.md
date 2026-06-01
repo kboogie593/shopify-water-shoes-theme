@@ -117,8 +117,10 @@ discovery link, and the URL is referenced in the JSON-LD).
 
 - `docs/furquiet-10k-roadmap.md` — $10K/month revenue math, traffic system, and current gaps
 - `docs/furquiet-product-development-qa.md` — 1688 supplier screening, sample tests, and claim policy
+- `docs/furquiet-1688-supplier-message-cn.md` — Chinese supplier outreach script for sample and QA details
 - `docs/furquiet-shopify-launch-runbook.md` — Shopify page/media/theme launch checklist
 - `data/furquiet-geo-content-backlog.csv` — GEO/SEO page and FAQ backlog
+- `data/furquiet-supplier-scorecard.csv` — supplier reply and sample-readiness scoring table
 - `data/furquiet-video-shot-list.csv` — short-video production shot list
 - `data/furquiet-organic-channel-scoreboard.csv` — weekly organic traffic and revenue scoreboard
 - `data/furquiet-comment-to-content-log.csv` — comment/query-to-content tracking log

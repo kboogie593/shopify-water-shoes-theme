@@ -1,0 +1,4 @@
+Supplier,1688 URL,Contact Date,Sample Available,Sample Cost,MOQ,Plug Options,Voltage Label,Cert Docs,Replacement Filters,English Manual,Packaging Dimensions,Media Permission,Lead Time Days,Score,Decision,Next Action
+TBD supplier 1,,2026-06-01,Unknown,Unknown,Unknown,Ask,Ask,Ask,Ask,Ask,Ask,Ask,Unknown,0,Pending,Send supplier QA message and request sample quote
+TBD supplier 2,,2026-06-01,Unknown,Unknown,Unknown,Ask,Ask,Ask,Ask,Ask,Ask,Ask,Unknown,0,Pending,Compare against supplier 1 after reply
+TBD supplier 3,,2026-06-01,Unknown,Unknown,Unknown,Ask,Ask,Ask,Ask,Ask,Ask,Ask,Unknown,0,Pending,Keep as backup if first two fail sample gate

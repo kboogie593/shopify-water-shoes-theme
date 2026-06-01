@@ -1,0 +1,211 @@
+<section class="section-padding sample-qa-section">
+  <div class="page-width">
+    <div class="sample-qa-layout">
+      <div class="sample-qa-copy">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h1>{{ section.settings.heading }}</h1>
+        <p>{{ section.settings.text }}</p>
+        <div class="sample-qa-media">
+          <img
+            src="{{ section.settings.builtin_image | default: 'furquiet-kit-flatlay-ai.jpg' | asset_url }}"
+            alt="{{ section.settings.image_alt | default: 'FurQuiet sample QA kit checklist' | escape }}"
+            width="1254"
+            height="1254"
+            loading="lazy">
+        </div>
+      </div>
+
+      <div class="sample-qa-panel">
+        <div class="sample-qa-status">
+          <span>{{ section.settings.status_label }}</span>
+          <strong>{{ section.settings.status_text }}</strong>
+          <p>{{ section.settings.status_note }}</p>
+        </div>
+
+        <div class="sample-qa-steps">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'test' -%}
+              <article class="sample-qa-step" {{ block.shopify_attributes }}>
+                <div class="sample-qa-step__head">
+                  <span>{{ block.settings.stage }}</span>
+                  <strong>{{ block.settings.status }}</strong>
+                </div>
+                <h2>{{ block.settings.heading }}</h2>
+                <p>{{ block.settings.text }}</p>
+                {%- if block.settings.evidence != blank -%}
+                  <small>{{ block.settings.evidence }}</small>
+                {%- endif -%}
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        <div class="sample-qa-actions">
+          <a href="{{ section.settings.primary_link | default: '/pages/first-batch' }}" class="btn">{{ section.settings.primary_label }}</a>
+          <a href="{{ section.settings.secondary_link | default: '/pages/faq' }}" class="btn btn--secondary">{{ section.settings.secondary_label }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sample QA log",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Sample QA log"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What FurQuiet must prove before checkout scales."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "A public checklist for noise, fur capture, filter care, packaging, plug labels, and launch-market readiness. This page should be updated when the physical sample arrives."
+    },
+    {
+      "type": "select",
+      "id": "builtin_image",
+      "label": "Built-in image",
+      "options": [
+        { "value": "furquiet-kit-flatlay-ai.jpg", "label": "Kit flatlay" },
+        { "value": "furquiet-product-hero-ai.jpg", "label": "Product hero" },
+        { "value": "furquiet-grooming-lifestyle-ai.jpg", "label": "Lifestyle grooming" },
+        { "value": "furquiet-clean-home-ai.jpg", "label": "Clean home" }
+      ],
+      "default": "furquiet-kit-flatlay-ai.jpg"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "FurQuiet sample QA kit checklist"
+    },
+    {
+      "type": "text",
+      "id": "status_label",
+      "label": "Status label",
+      "default": "Current stage"
+    },
+    {
+      "type": "text",
+      "id": "status_text",
+      "label": "Status text",
+      "default": "Supplier screening and sample request"
+    },
+    {
+      "type": "textarea",
+      "id": "status_note",
+      "label": "Status note",
+      "default": "Exact noise, suction, packaging, and filter claims stay pending until a physical sample is measured and photographed."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary label",
+      "default": "Join first batch"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary label",
+      "default": "Read FAQ"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "test",
+      "name": "QA test",
+      "settings": [
+        {
+          "type": "text",
+          "id": "stage",
+          "label": "Stage",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "status",
+          "label": "Status",
+          "default": "Pending"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Unboxing and kit contents"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Confirm base, hose, brush heads, clipper body, guards, nozzle, filters, cleaning brush, manual, plug, and storage dock."
+        },
+        {
+          "type": "text",
+          "id": "evidence",
+          "label": "Evidence line",
+          "default": "Evidence needed: sample photos and item count."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sample QA log",
+      "blocks": [
+        {
+          "type": "test",
+          "settings": {
+            "stage": "01",
+            "status": "Pending sample",
+            "heading": "Unboxing and kit contents",
+            "text": "Confirm base, hose, brush heads, clipper body, guards, nozzle, filters, cleaning brush, manual, plug, and storage dock.",
+            "evidence": "Evidence needed: sample photos and item count."
+          }
+        },
+        {
+          "type": "test",
+          "settings": {
+            "stage": "02",
+            "status": "Pending sample",
+            "heading": "Noise and pet introduction",
+            "text": "Measure background room noise, low/high settings at 1 ft and 3 ft, then film a quiet-start introduction without forcing a pet.",
+            "evidence": "Evidence needed: repeated decibel readings and video."
+          }
+        },
+        {
+          "type": "test",
+          "settings": {
+            "stage": "03",
+            "status": "Pending sample",
+            "heading": "Fur cup and filter care",
+            "text": "Test loose fur capture, dust cup fit, brush head cleanup, filter washability, drying time, and replacement filter availability.",
+            "evidence": "Evidence needed: fur cup photos and filter notes."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -8,6 +8,7 @@ This map turns the FurQuiet product into long-tail pages that can answer AI-sear
 |---|---|---|---|
 | Product page | `/products/furquiet-grooming-vacuum-kit` | Buy or compare a grooming vacuum kit | Add to cart / join first batch |
 | First-batch page | `/pages/first-batch` | Join launch list and sample QA updates | Save email / view kit |
+| Sample QA log | `/pages/sample-qa-log` | Check what has been verified before buying | Join first batch / read FAQ |
 | Guide hub | `/pages/grooming-guides` | Browse all FurQuiet grooming answers | Read a guide / view kit |
 | Routine finder | `/pages/routine-finder` | Match pet type, temperament, and home problem to a first routine | Save routine / view kit |
 
@@ -17,6 +18,7 @@ This map turns the FurQuiet product into long-tail pages that can answer AI-sear
 |---|---|---|---|
 | Quiet-start guide | `/pages/quiet-start-guide` | How do I introduce a nervous pet to a grooming vacuum? | Template added |
 | First-batch launch page | `/pages/first-batch` | How do I join the FurQuiet first batch? | Template added |
+| Sample QA log | `/pages/sample-qa-log` | What has FurQuiet tested before launch? | Template added |
 | Shedding dogs guide | `/pages/pet-grooming-vacuum-for-shedding-dogs` | What is the best pet grooming vacuum setup for shedding dogs? | Template added |
 | Husky grooming vacuum guide | `/pages/husky-grooming-vacuum` | Can a grooming vacuum help with husky shedding? | Template added |
 | Long-hair cat guide | `/pages/long-hair-cat-grooming-vacuum` | Is a grooming vacuum good for long-hair cats? | Template added |
@@ -51,6 +53,8 @@ For each page above:
 - pet grooming vacuum guide
 - FurQuiet grooming guide
 - FurQuiet first batch
+- FurQuiet sample QA
+- pet grooming vacuum sample test
 - pet grooming vacuum first batch
 - which pet grooming vacuum routine is right for my pet
 - pet grooming vacuum routine finder

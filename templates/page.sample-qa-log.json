@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "sample_qa": {
+      "type": "sample-qa-log",
+      "blocks": {
+        "t1": {
+          "type": "test",
+          "settings": {
+            "stage": "01",
+            "status": "Pending sample",
+            "heading": "Unboxing and kit contents",
+            "text": "Confirm base, hose, de-shedding brush, slicker brush, clipper body, clipper guards, nozzle, filters, cleaning brush, manual, plug, and storage dock.",
+            "evidence": "Evidence needed: sample photos, accessory count, carton weight, and box dimensions."
+          }
+        },
+        "t2": {
+          "type": "test",
+          "settings": {
+            "stage": "02",
+            "status": "Pending sample",
+            "heading": "Noise and quiet-start intro",
+            "text": "Measure background room noise, low/high settings from 1 ft and 3 ft, then film the sound-introduction routine before brushing near a pet.",
+            "evidence": "Evidence needed: repeated readings and a short introduction video."
+          }
+        },
+        "t3": {
+          "type": "test",
+          "settings": {
+            "stage": "03",
+            "status": "Pending sample",
+            "heading": "Fur cup capture",
+            "text": "Run a short brush pass on a safe loose-fur source, photograph what enters the cup, and compare room cleanup before and after the pass.",
+            "evidence": "Evidence needed: fur cup close-up and before/after room frame."
+          }
+        },
+        "t4": {
+          "type": "test",
+          "settings": {
+            "stage": "04",
+            "status": "Pending sample",
+            "heading": "Filter care and replacement parts",
+            "text": "Confirm whether the filter is washable or replacement-only, how long it takes to dry, and whether the supplier can ship filter packs separately.",
+            "evidence": "Evidence needed: filter photos, care note, and replacement SKU confirmation."
+          }
+        },
+        "t5": {
+          "type": "test",
+          "settings": {
+            "stage": "05",
+            "status": "Pending supplier docs",
+            "heading": "Plug, voltage, labels, and manual",
+            "text": "Verify launch-market plug options, voltage label, English manual, warning text, and supplier documentation before publishing exact claims.",
+            "evidence": "Evidence needed: label photos and supplier documents."
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5"],
+      "settings": {
+        "eyebrow": "Sample QA log",
+        "heading": "What FurQuiet must prove before checkout scales.",
+        "text": "A public testing log for the FurQuiet grooming vacuum kit. It gives first-batch visitors a clear reason to trust the launch process without inventing reviews, ratings, or exact performance claims.",
+        "builtin_image": "furquiet-kit-flatlay-ai.jpg",
+        "image_alt": "FurQuiet sample QA kit checklist",
+        "status_label": "Current stage",
+        "status_text": "Supplier screening and sample request",
+        "status_note": "Exact noise, suction, packaging, filter, and pet-tolerance claims stay pending until a physical sample is measured and photographed.",
+        "primary_label": "Join first batch",
+        "primary_link": "/pages/first-batch",
+        "secondary_label": "Read FAQ",
+        "secondary_link": "/pages/faq"
+      }
+    },
+    "supplier_note": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Supplier gate" } },
+        "h1": { "type": "heading", "settings": { "text": "No sample proof, no hard scale." } },
+        "p1": { "type": "paragraph", "settings": { "text": "The first-batch list can collect demand now, but product-page claims and serious checkout volume should wait for supplier documents, sample photos, actual measurements, and shipping math." } },
+        "b1": { "type": "button", "settings": { "text": "View first batch", "link": "/pages/first-batch", "style": "primary" } }
+      },
+      "block_order": ["e1", "h1", "p1", "b1"],
+      "settings": {
+        "alignment": "center",
+        "bg_color": "#F4F1EA"
+      }
+    }
+  },
+  "order": ["sample_qa", "supplier_note"]
+}

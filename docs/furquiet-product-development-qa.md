@@ -15,6 +15,8 @@ The product must prove four things:
 
 ## 1688 Supplier Screening
 
+Use `docs/furquiet-1688-supplier-message-cn.md` for the first supplier message and record replies in `data/furquiet-supplier-scorecard.csv`.
+
 Score each supplier from 1 to 5:
 
 | Dimension | What To Check | Reject If |

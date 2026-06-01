@@ -61,7 +61,7 @@
           "type": "question",
           "settings": {
             "question": "What will be tested before the launch window?",
-            "answer": "The launch gate includes noise at low and high settings, dust cup fit, filter care, plug and voltage labeling, packaging, replacement filters, and a short grooming flow."
+            "answer": "The launch gate includes noise at low and high settings, dust cup fit, filter care, plug and voltage labeling, packaging, replacement filters, and a short grooming flow. The sample QA log tracks these checks."
           }
         },
         "q3": {
@@ -77,8 +77,8 @@
         "eyebrow": "Launch boundaries",
         "heading": "No fake urgency, no untested claims",
         "subtitle": "The list is built to capture qualified demand while the product proof catches up.",
-        "cta_label": "Read product QA plan",
-        "cta_link": "/pages/faq"
+        "cta_label": "View sample QA log",
+        "cta_link": "/pages/sample-qa-log"
       }
     },
     "routine_finder": {

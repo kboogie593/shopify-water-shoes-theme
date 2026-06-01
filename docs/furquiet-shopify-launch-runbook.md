@@ -33,6 +33,7 @@ Create these Shopify pages and assign the matching theme template:
 | Title | Handle | Template |
 |---|---|---|
 | First Batch | `first-batch` | `page.first-batch` |
+| Sample QA Log | `sample-qa-log` | `page.sample-qa-log` |
 | Grooming Guides | `grooming-guides` | `page.grooming-guides` |
 | Routine Finder | `routine-finder` | `page.routine-finder` |
 | Quiet Start Guide | `quiet-start-guide` | `page.quiet-start-guide` |
@@ -62,7 +63,7 @@ Before publishing the theme:
 After publishing:
 
 1. Add sitemap in Google Search Console.
-2. Inspect `/pages/llms`, product page, `/pages/first-batch`, `/pages/routine-finder`, and the six guide pages.
+2. Inspect `/pages/llms`, product page, `/pages/first-batch`, `/pages/sample-qa-log`, `/pages/routine-finder`, and the six guide pages.
 3. Submit page URLs for indexing.
 4. Track query impressions weekly.
 5. Add content only where impressions or social comments show demand.
