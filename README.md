@@ -124,6 +124,7 @@ discovery link, and the URL is referenced in the JSON-LD).
 - `data/furquiet-comment-to-content-log.csv` — comment/query-to-content tracking log
 - `data/furquiet-social-captions.csv` — first captions mapped to platform, page, and asset
 - `data/furquiet-utm-naming.csv` — UTM naming convention for organic and GEO traffic
+- `data/furquiet-routine-finder-content-map.csv` — routine finder routing, tags, and follow-up angles
 - `docs/furquiet-short-video-scripts.md` — first reusable short-video scripts
 - `docs/furquiet-social-asset-guide.md` — generated social image asset usage
 - `docs/furquiet-seo-blog-drafts.md` — first Shopify blog outlines for GEO support

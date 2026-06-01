@@ -167,14 +167,14 @@
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "t1": { "type": "testimonial", "settings": { "text": "The fur cup reveal is exactly what I needed to see. I want grooming to feel less like a fight and less like a cleanup day.", "name": "Maya R.", "role": "Husky owner" } },
-        "t2": { "type": "testimonial", "settings": { "text": "I care most about the sound and whether my dog will tolerate the first minute. The quiet-start routine makes the product easier to trust.", "name": "Daniel P.", "role": "Apartment dog owner" } },
-        "t3": { "type": "testimonial", "settings": { "text": "If it cuts down the fur tumbleweeds after brushing, this is the type of tool I would keep by the mudroom.", "name": "Avery L.", "role": "Retriever household" } }
+        "t1": { "type": "testimonial", "settings": { "text": "I need to see the fur cup before I trust a grooming vacuum for a double-coat dog.", "name": "Double-coat proof", "role": "Husky guide route" } },
+        "t2": { "type": "testimonial", "settings": { "text": "The sound and the first minute matter more than a long feature list for a nervous pet.", "name": "Sound tolerance", "role": "Quiet-start route" } },
+        "t3": { "type": "testimonial", "settings": { "text": "If brushing happens before room cleanup, the product story is easier to understand in a small home.", "name": "Apartment cleanup", "role": "Room-reset route" } }
       },
       "block_order": ["t1", "t2", "t3"],
       "settings": {
-        "eyebrow": "Early customer language",
-        "heading": "The angle is simple: calmer grooming, cleaner rooms"
+        "eyebrow": "Buyer question patterns",
+        "heading": "The angle is simple: prove the routine before the promise"
       }
     },
     "faq": {

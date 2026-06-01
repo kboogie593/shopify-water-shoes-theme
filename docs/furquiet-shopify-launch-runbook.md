@@ -33,6 +33,7 @@ Create these Shopify pages and assign the matching theme template:
 | Title | Handle | Template |
 |---|---|---|
 | Grooming Guides | `grooming-guides` | `page.grooming-guides` |
+| Routine Finder | `routine-finder` | `page.routine-finder` |
 | Quiet Start Guide | `quiet-start-guide` | `page.quiet-start-guide` |
 | Pet Grooming Vacuum for Shedding Dogs | `pet-grooming-vacuum-for-shedding-dogs` | `page.pet-grooming-vacuum-for-shedding-dogs` |
 | Husky Grooming Vacuum Guide | `husky-grooming-vacuum` | `page.husky-grooming-vacuum` |
@@ -60,7 +61,7 @@ Before publishing the theme:
 After publishing:
 
 1. Add sitemap in Google Search Console.
-2. Inspect `/pages/llms`, product page, and the six guide pages.
+2. Inspect `/pages/llms`, product page, `/pages/routine-finder`, and the six guide pages.
 3. Submit page URLs for indexing.
 4. Track query impressions weekly.
 5. Add content only where impressions or social comments show demand.

@@ -6,7 +6,7 @@
         "eyebrow": { "type": "eyebrow", "settings": { "text": "FurQuiet guide hub" } },
         "heading": { "type": "heading", "settings": { "text": "Practical grooming answers for heavy-shedding homes." } },
         "copy": { "type": "paragraph", "settings": { "text": "Use this hub to choose the right routine before buying a pet grooming vacuum kit. Each guide answers one specific search question with conservative claims until sample testing and real customer evidence are available." } },
-        "cta": { "type": "button", "settings": { "text": "View FurQuiet kit", "link": "/products/furquiet-grooming-vacuum-kit", "style": "primary" } }
+        "cta": { "type": "button", "settings": { "text": "Find your routine", "link": "/pages/routine-finder", "style": "primary" } }
       },
       "block_order": ["eyebrow", "heading", "copy", "cta"],
       "settings": { "alignment": "center", "bg_color": "#F4F1EA" }
@@ -73,9 +73,19 @@
             "link_label": "Compare",
             "link": "/pages/pet-grooming-vacuum-vs-deshedding-brush"
           }
+        },
+        "g7": {
+          "type": "column",
+          "settings": {
+            "icon": "07",
+            "heading": "Routine finder",
+            "text": "Pick pet type, temperament, and home problem to route visitors to the right guide or first-batch kit.",
+            "link_label": "Find routine",
+            "link": "/pages/routine-finder"
+          }
         }
       },
-      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6", "g7"],
       "settings": {
         "eyebrow": "Start here",
         "heading": "Choose the guide that matches the problem",

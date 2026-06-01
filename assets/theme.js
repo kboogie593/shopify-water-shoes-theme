@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletterPopup();
   initArticleTOC();
   initScrollSpy();
+  initRoutineFinder();
 });
 
 /* ---------- Traffic attribution ---------- */
@@ -199,6 +200,129 @@ function initTrafficAttribution() {
 
   function clip(value, max = 160) {
     return String(value || '').slice(0, max);
+  }
+}
+
+/* ---------- Routine finder ---------- */
+function initRoutineFinder() {
+  const finders = document.querySelectorAll('[data-routine-finder]');
+  if (!finders.length) return;
+
+  const routines = {
+    quiet_start: {
+      title: 'Quiet-start routine',
+      copy: 'Start several feet away, keep the tool on the lowest setting, reward calm behavior, and only move closer after the pet stays relaxed.',
+      guide: '/pages/quiet-start-guide',
+      label: 'Read quiet-start guide',
+      points: ['Sound first, brush contact later', 'Short sessions before full grooming', 'Best for nervous or untested pets'],
+    },
+    long_hair_cat: {
+      title: 'Long-hair cat routine',
+      copy: 'Keep the first session short, let the cat inspect the tool while it is off, and treat tolerance as the real buying signal.',
+      guide: '/pages/long-hair-cat-grooming-vacuum',
+      label: 'Read cat guide',
+      points: ['Tool off before suction', 'Gentle brush contact only', 'Stop if stress signals show'],
+    },
+    double_coat: {
+      title: 'Double-coat shedding routine',
+      copy: 'Use slow repeated brush passes for loose undercoat, then show the fur cup and room reset as the main proof.',
+      guide: '/pages/husky-grooming-vacuum',
+      label: 'Read double-coat guide',
+      points: ['Undercoat brushing angle', 'Fur cup reveal content', 'Best for husky-style shedding'],
+    },
+    apartment: {
+      title: 'Apartment hair-control routine',
+      copy: 'Groom before the room reset: brush loose fur toward the cup, then show sofa, rug, and bedding cleanup in the same content loop.',
+      guide: '/pages/apartment-pet-hair-control',
+      label: 'Read apartment guide',
+      points: ['Small-space cleanup hook', 'Sofa and rug before-after', 'Strong fit for Reels and Pinterest'],
+    },
+    shedding_dog: {
+      title: 'Shedding dog routine',
+      copy: 'Focus on routine brushing support for heavy-shedding dogs and make the loose-fur capture visible before sending visitors to the kit.',
+      guide: '/pages/pet-grooming-vacuum-for-shedding-dogs',
+      label: 'Read shedding dog guide',
+      points: ['Brush pass first', 'Loose fur proof', 'Good default product-page path'],
+    },
+  };
+
+  finders.forEach((finder) => {
+    const inputs = finder.querySelectorAll('[data-routine-input]');
+    const update = () => {
+      const answers = {
+        pet: selectedValue(finder, 'pet') || 'double_coat',
+        temperament: selectedValue(finder, 'temperament') || 'nervous',
+        home: selectedValue(finder, 'home') || 'apartment',
+      };
+      const key = chooseRoutine(answers);
+      const routine = routines[key] || routines.quiet_start;
+
+      setText(finder, '[data-routine-title]', routine.title);
+      setText(finder, '[data-routine-copy]', routine.copy);
+      const guideLink = finder.querySelector('[data-routine-guide]');
+      if (guideLink) {
+        guideLink.href = routine.guide;
+        guideLink.textContent = routine.label;
+      }
+      const points = finder.querySelector('[data-routine-points]');
+      if (points) {
+        points.replaceChildren(...routine.points.map((point) => {
+          const li = document.createElement('li');
+          li.textContent = point;
+          return li;
+        }));
+      }
+
+      updateCaptureFields(finder, key, routine, answers);
+    };
+
+    inputs.forEach((input) => input.addEventListener('change', update));
+    update();
+  });
+
+  function selectedValue(root, question) {
+    const selected = root.querySelector(`[data-routine-question="${question}"]:checked`);
+    return selected ? selected.value : '';
+  }
+
+  function chooseRoutine(answers) {
+    if (answers.temperament === 'nervous' || answers.temperament === 'unknown') return 'quiet_start';
+    if (answers.pet === 'long_hair_cat') return 'long_hair_cat';
+    if (answers.pet === 'double_coat') return 'double_coat';
+    if (answers.home === 'apartment') return 'apartment';
+    return 'shedding_dog';
+  }
+
+  function updateCaptureFields(root, key, routine, answers) {
+    const profile = `pet:${answers.pet}|temperament:${answers.temperament}|home:${answers.home}`;
+    setInputValue(root, '[data-routine-profile-input]', profile);
+    setInputValue(root, '[data-routine-recommendation-input]', key);
+    setInputValue(root, '[data-routine-guide-input]', routine.guide);
+
+    const tagInput = root.querySelector('[data-routine-tags]');
+    if (!tagInput) return;
+    const existing = tagInput.value
+      .split(',')
+      .map((tag) => tag.trim())
+      .filter((tag) => tag && !/^(routine_|pet_|temperament_|home_)/.test(tag));
+    const additions = [
+      'routine_finder',
+      `routine_${key}`,
+      `pet_${answers.pet}`,
+      `temperament_${answers.temperament}`,
+      `home_${answers.home}`,
+    ];
+    tagInput.value = Array.from(new Set([...existing, ...additions])).join(',');
+  }
+
+  function setText(root, selector, value) {
+    const element = root.querySelector(selector);
+    if (element) element.textContent = value;
+  }
+
+  function setInputValue(root, selector, value) {
+    const input = root.querySelector(selector);
+    if (input) input.value = value;
   }
 }
 

@@ -58,12 +58,12 @@
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "t1": { "type": "testimonial", "settings": { "text": "The fur cup reveal is exactly the kind of proof I need before trying a grooming vacuum at home.", "name": "Maya R.", "role": "Husky owner" } },
-        "t2": { "type": "testimonial", "settings": { "text": "The quiet-start routine makes the first minute feel more realistic for a nervous pet.", "name": "Daniel P.", "role": "Apartment dog owner" } },
-        "t3": { "type": "testimonial", "settings": { "text": "If it cuts down the fur on the sofa after brushing, this is the type of tool I would keep out all season.", "name": "Avery L.", "role": "Retriever household" } }
+        "t1": { "type": "testimonial", "settings": { "text": "The fur cup reveal has to be visible before this product earns a serious buying claim.", "name": "Proof gap", "role": "Sample QA route" } },
+        "t2": { "type": "testimonial", "settings": { "text": "The quiet-start routine has to explain the first minute before a nervous-pet owner trusts the kit.", "name": "Sound tolerance", "role": "Quiet-start route" } },
+        "t3": { "type": "testimonial", "settings": { "text": "The strongest home story is brushing before loose fur spreads across the sofa and bedding.", "name": "Room reset", "role": "Apartment guide route" } }
       },
       "block_order": ["t1","t2","t3"],
-      "settings": { "eyebrow": "Customer language", "heading": "The angle is simple: calmer grooming, cleaner rooms" }
+      "settings": { "eyebrow": "Buyer question patterns", "heading": "The angle is simple: prove the routine before the promise" }
     },
     "newsletter": {
       "type": "newsletter",

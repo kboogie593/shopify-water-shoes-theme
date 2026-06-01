@@ -1,0 +1,93 @@
+{
+  "sections": {
+    "routine_finder": {
+      "type": "routine-finder",
+      "settings": {
+        "eyebrow": "Routine finder",
+        "heading": "Match FurQuiet to the pet hair problem in the room.",
+        "text": "A quick route for visitors from TikTok, Reels, Shorts, Pinterest, Google, and AI answers. Choose the pet, response, and home problem, then send the shopper to the right guide or first-batch kit.",
+        "builtin_image": "furquiet-grooming-lifestyle-ai.jpg",
+        "image_alt": "FurQuiet pet grooming vacuum routine for shedding pets",
+        "note_label": "First batch focus",
+        "note_text": "Calmer starts, visible fur capture, cleaner small homes",
+        "quiz_eyebrow": "Choose three signals",
+        "quiz_heading": "Find the first routine to publish, save, or shop.",
+        "product_link": "/products/furquiet-grooming-vacuum-kit",
+        "email_label": "Save this routine and first-batch notes",
+        "email_placeholder": "you@example.com",
+        "email_button": "Save routine"
+      }
+    },
+    "why_it_works": {
+      "type": "features",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "01",
+            "heading": "Social traffic has context",
+            "text": "A fur-cup clip, apartment reset, cat tolerance clip, or husky undercoat clip should land on a matching answer instead of a generic page."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "02",
+            "heading": "AI-search traffic needs a path",
+            "text": "When ChatGPT, Perplexity, Google, or Bing sends a problem-aware visitor, the finder turns that question into a guide and product route."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "03",
+            "heading": "Email tags stay useful",
+            "text": "Each saved routine tags the lead by pet type, home problem, and recommended page, so follow-up can match the shopper's real use case."
+          }
+        }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "eyebrow": "Traffic to intent",
+        "heading": "Built for the $10K/month organic funnel",
+        "subtitle": "The finder connects short-video hooks, GEO pages, first-touch attribution, and Shopify customer tags.",
+        "bg_color": "#ffffff"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "What should a nervous-pet visitor see first?",
+            "answer": "Send them to the quiet-start guide before pushing the kit. The first job is tolerance: distance, low setting, reward calm behavior, and short sessions."
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Why collect the routine before checkout?",
+            "answer": "The current launch still needs sample QA and real product proof. Routine capture builds a qualified first-batch list without overclaiming the product before testing is complete."
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "How should this page be used in social posts?",
+            "answer": "Use it when a clip raises a broad question, such as cat tolerance, apartment hair, double-coat shedding, or whether a grooming vacuum is better than a brush."
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Routing logic",
+        "heading": "Where this page fits",
+        "subtitle": "Use it as the broad entry point when the visitor is not ready for the product page yet.",
+        "cta_label": "View grooming guides",
+        "cta_link": "/pages/grooming-guides"
+      }
+    }
+  },
+  "order": ["routine_finder", "why_it_works", "faq"]
+}

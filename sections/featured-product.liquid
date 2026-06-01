@@ -42,8 +42,8 @@
         <h2>{{ section.settings.heading | default: product.title }}</h2>
 
         {%- if product -%}
-          <div class="featured-product__rating">
-            <span class="stars" aria-hidden="true">✓✓✓</span>
+          <div class="featured-product__proof">
+            <span aria-hidden="true">✓</span>
             <span>{{ section.settings.proof_text | default: 'Quiet-start kit · first batch testing' }}</span>
           </div>
           <div class="featured-product__price">
@@ -133,7 +133,7 @@
     color: var(--color-primary-dark);
     letter-spacing: -0.02em;
   }
-  .featured-product__rating {
+  .featured-product__proof {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -141,7 +141,17 @@
     color: #64748b;
     margin-bottom: 14px;
   }
-  .featured-product__rating .stars { color: #f59e0b; letter-spacing: 1px; }
+  .featured-product__proof > span:first-child {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff7ed;
+    color: #ea580c;
+    font-weight: 900;
+  }
 
   .featured-product__price {
     display: flex;

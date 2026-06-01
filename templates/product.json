@@ -33,7 +33,7 @@
       "type": "features",
       "blocks": {
         "f1": { "type": "feature", "settings": { "icon": "✓", "heading": "Low-noise grooming path", "text": "Position the product around calmer at-home grooming instead of salon replacement claims." } },
-        "f2": { "type": "feature", "settings": { "icon": "✓", "heading": "Fur cup proof", "text": "Collected loose fur is a natural visual hook for product images, short videos, and review content." } },
+        "f2": { "type": "feature", "settings": { "icon": "✓", "heading": "Fur cup proof", "text": "Collected loose fur is a natural visual hook for product images, short videos, and trust content." } },
         "f3": { "type": "feature", "settings": { "icon": "✓", "heading": "Apartment-friendly storage", "text": "Compact dock and washable filter care support small-home buyers who want less cleanup." } }
       },
       "block_order": ["f1", "f2", "f3"],

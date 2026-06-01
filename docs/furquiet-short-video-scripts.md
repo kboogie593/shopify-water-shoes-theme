@@ -110,3 +110,20 @@ Length: X thread or 30-second talking-head clip
 | 5 | The promise is simpler: calmer routine, visible fur capture, cleaner reset. |
 
 Caption: Trust compounds faster when the claim boundary is public.
+
+## Script 7: Routine Finder Poll
+
+Status: ready with existing guide-hub image; replace with real story screenshots after the page is live.
+
+Destination: `/pages/routine-finder`
+
+Length: 4-frame Instagram Story, TikTok slideshow, or Pinterest idea pin
+
+| Frame | Visual | On-screen Text |
+|---:|---|---|
+| 1 | Four-choice poll graphic | Which pet hair problem is yours? |
+| 2 | Nervous pet / long-hair cat / double-coat dog / apartment hair labels | Pick the closest match. |
+| 3 | Routine finder result screen | Get the first routine before buying. |
+| 4 | FurQuiet guide hub or kit image | Save your routine and first-batch notes. |
+
+Caption: Not every pet home needs the same first step. Match the routine to the pet, sound tolerance, and room problem.

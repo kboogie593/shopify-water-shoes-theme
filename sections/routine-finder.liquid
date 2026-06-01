@@ -1,0 +1,221 @@
+<section class="section-padding routine-finder-section" data-routine-finder>
+  <div class="page-width">
+    <div class="routine-finder-layout">
+      <div class="routine-finder-copy">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h1>{{ section.settings.heading }}</h1>
+        <p>{{ section.settings.text }}</p>
+
+        <div class="routine-finder-media">
+          <img
+            src="{{ section.settings.builtin_image | default: 'furquiet-grooming-lifestyle-ai.jpg' | asset_url }}"
+            alt="{{ section.settings.image_alt | default: 'FurQuiet pet grooming vacuum routine for shedding pets' | escape }}"
+            width="1448"
+            height="1086"
+            loading="lazy">
+          <div class="routine-finder-note">
+            <span>{{ section.settings.note_label }}</span>
+            <strong>{{ section.settings.note_text }}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="routine-finder-panel" aria-labelledby="routine-finder-heading-{{ section.id }}">
+        <div class="routine-finder-panel__head">
+          <span>{{ section.settings.quiz_eyebrow }}</span>
+          <h2 id="routine-finder-heading-{{ section.id }}">{{ section.settings.quiz_heading }}</h2>
+        </div>
+
+        <div class="routine-finder-quiz">
+          <fieldset>
+            <legend>Pet coat</legend>
+            <div class="routine-choice-group">
+              <label>
+                <input type="radio" name="routine_pet_{{ section.id }}" value="double_coat" data-routine-question="pet" data-routine-input checked>
+                <span>Double-coat dog</span>
+              </label>
+              <label>
+                <input type="radio" name="routine_pet_{{ section.id }}" value="shedding_dog" data-routine-question="pet" data-routine-input>
+                <span>Shedding dog</span>
+              </label>
+              <label>
+                <input type="radio" name="routine_pet_{{ section.id }}" value="long_hair_cat" data-routine-question="pet" data-routine-input>
+                <span>Long-hair cat</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Pet response</legend>
+            <div class="routine-choice-group">
+              <label>
+                <input type="radio" name="routine_temperament_{{ section.id }}" value="nervous" data-routine-question="temperament" data-routine-input checked>
+                <span>Nervous around sound</span>
+              </label>
+              <label>
+                <input type="radio" name="routine_temperament_{{ section.id }}" value="steady" data-routine-question="temperament" data-routine-input>
+                <span>Already brush-tolerant</span>
+              </label>
+              <label>
+                <input type="radio" name="routine_temperament_{{ section.id }}" value="unknown" data-routine-question="temperament" data-routine-input>
+                <span>Not tested yet</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Home problem</legend>
+            <div class="routine-choice-group">
+              <label>
+                <input type="radio" name="routine_home_{{ section.id }}" value="apartment" data-routine-question="home" data-routine-input checked>
+                <span>Apartment hair</span>
+              </label>
+              <label>
+                <input type="radio" name="routine_home_{{ section.id }}" value="sofa_rugs" data-routine-question="home" data-routine-input>
+                <span>Sofa and rugs</span>
+              </label>
+              <label>
+                <input type="radio" name="routine_home_{{ section.id }}" value="clothes_bedding" data-routine-question="home" data-routine-input>
+                <span>Clothes and bedding</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="routine-finder-result" aria-live="polite">
+          <span data-routine-kicker>Best starting point</span>
+          <h3 data-routine-title>Quiet-start routine</h3>
+          <p data-routine-copy>Start several feet away, keep the tool on the lowest setting, reward calm behavior, and only move closer after the pet stays relaxed.</p>
+          <ul data-routine-points>
+            <li>Sound first, brush contact later</li>
+            <li>Short sessions before full grooming</li>
+            <li>Save the routine before shopping</li>
+          </ul>
+          <div class="routine-finder-actions">
+            <a href="/pages/quiet-start-guide" class="btn btn--secondary" data-routine-guide>Read guide</a>
+            <a href="{{ section.settings.product_link | default: '/products/furquiet-grooming-vacuum-kit' }}" class="btn" data-routine-product>View FurQuiet kit</a>
+          </div>
+        </div>
+
+        {% form 'customer', class: 'routine-finder-capture' %}
+          <input type="hidden" name="contact[tags]" value="newsletter,routine_finder,routine_quiet_start" data-routine-tags>
+          <input type="hidden" name="contact[routine_profile]" value="pet:double_coat|temperament:nervous|home:apartment" data-routine-profile-input>
+          <input type="hidden" name="contact[routine_recommendation]" value="quiet_start" data-routine-recommendation-input>
+          <input type="hidden" name="contact[recommended_guide]" value="/pages/quiet-start-guide" data-routine-guide-input>
+          <label for="RoutineFinderEmail--{{ section.id }}">{{ section.settings.email_label }}</label>
+          <div class="routine-finder-email-row">
+            <input
+              type="email"
+              name="contact[email]"
+              id="RoutineFinderEmail--{{ section.id }}"
+              placeholder="{{ section.settings.email_placeholder }}"
+              autocomplete="email"
+              required>
+            <button type="submit" name="commit">{{ section.settings.email_button }}</button>
+          </div>
+          {%- if form.posted_successfully? -%}
+            <p class="routine-finder-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+          {%- endif -%}
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Routine finder",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Routine finder"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Match FurQuiet to the pet hair problem in the room."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Turn a social click or AI-search visit into a clear next step: quiet-start routine, breed guide, apartment cleanup, or the FurQuiet kit."
+    },
+    {
+      "type": "select",
+      "id": "builtin_image",
+      "label": "Built-in image",
+      "options": [
+        { "value": "furquiet-grooming-lifestyle-ai.jpg", "label": "Lifestyle grooming" },
+        { "value": "furquiet-kit-flatlay-ai.jpg", "label": "Kit flatlay" },
+        { "value": "furquiet-clean-home-ai.jpg", "label": "Clean home" },
+        { "value": "furquiet-product-hero-ai.jpg", "label": "Product hero" }
+      ],
+      "default": "furquiet-grooming-lifestyle-ai.jpg"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "FurQuiet pet grooming vacuum routine for shedding pets"
+    },
+    {
+      "type": "text",
+      "id": "note_label",
+      "label": "Image note label",
+      "default": "First batch focus"
+    },
+    {
+      "type": "text",
+      "id": "note_text",
+      "label": "Image note text",
+      "default": "Calmer starts, visible fur capture, cleaner small homes"
+    },
+    {
+      "type": "text",
+      "id": "quiz_eyebrow",
+      "label": "Quiz eyebrow",
+      "default": "Choose three signals"
+    },
+    {
+      "type": "text",
+      "id": "quiz_heading",
+      "label": "Quiz heading",
+      "default": "Find the first routine to publish, save, or shop."
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product link"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Email label",
+      "default": "Save this routine and first-batch notes"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email placeholder",
+      "default": "you@example.com"
+    },
+    {
+      "type": "text",
+      "id": "email_button",
+      "label": "Email button",
+      "default": "Save routine"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Routine finder"
+    }
+  ]
+}
+{% endschema %}
