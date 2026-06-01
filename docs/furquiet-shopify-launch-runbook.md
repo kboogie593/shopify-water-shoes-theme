@@ -40,6 +40,19 @@ The import file `data/furquiet-shopify-product-import.csv` contains the target v
 
 ## Create Required Pages
 
+Preferred path: use the Admin API helper once an Admin API token with
+`read_online_store_pages` and `write_online_store_pages` is available.
+
+```bash
+SHOPIFY_ADMIN_ACCESS_TOKEN=... python3 scripts/create_furquiet_shopify_pages.py
+```
+
+Dry-run the exact page list without a token:
+
+```bash
+python3 scripts/create_furquiet_shopify_pages.py --dry-run
+```
+
 Create these Shopify pages and assign the matching theme template:
 
 | Title | Handle | Template |
@@ -51,16 +64,23 @@ Create these Shopify pages and assign the matching theme template:
 | Quiet Start Guide | `quiet-start-guide` | `page.quiet-start-guide` |
 | Pet Grooming Vacuum for Shedding Dogs | `pet-grooming-vacuum-for-shedding-dogs` | `page.pet-grooming-vacuum-for-shedding-dogs` |
 | Husky Grooming Vacuum Guide | `husky-grooming-vacuum` | `page.husky-grooming-vacuum` |
+| Golden Retriever Shedding Vacuum | `golden-retriever-shedding-vacuum` | `page.golden-retriever-shedding-vacuum` |
+| German Shepherd Grooming Vacuum | `german-shepherd-grooming-vacuum` | `page.german-shepherd-grooming-vacuum` |
+| Corgi Shedding Vacuum | `corgi-shedding-vacuum` | `page.corgi-shedding-vacuum` |
 | Long-Hair Cat Grooming Vacuum Guide | `long-hair-cat-grooming-vacuum` | `page.long-hair-cat-grooming-vacuum` |
 | Apartment Pet Hair Control | `apartment-pet-hair-control` | `page.apartment-pet-hair-control` |
 | Pet Grooming Vacuum vs De-shedding Brush | `pet-grooming-vacuum-vs-deshedding-brush` | `page.pet-grooming-vacuum-vs-deshedding-brush` |
+| Clean Pet Grooming Vacuum Filter | `clean-pet-grooming-vacuum-filter` | `page.clean-pet-grooming-vacuum-filter` |
+| Pet Grooming Vacuum Kit Contents | `pet-grooming-vacuum-kit-contents` | `page.pet-grooming-vacuum-kit-contents` |
+| Pet Grooming Vacuum Noise | `pet-grooming-vacuum-noise` | `page.pet-grooming-vacuum-noise` |
+| Pet Grooming Vacuum Buying Checklist | `pet-grooming-vacuum-buying-checklist` | `page.pet-grooming-vacuum-buying-checklist` |
 | llms | `llms` | `page.llms` |
 
 Page body can stay short because the templates carry the content.
 
 Current workaround: the homepage includes the first-batch capture section at `/#first-batch`, so the primary launch CTA can collect emails before the standalone Shopify pages are created.
 
-Automation note: Chrome verified the custom templates appear in the page template dropdown, but the Shopify Admin page-title web component did not persist the automated value during save. If this repeats, create pages manually in Shopify Admin or use an Admin API token for page creation.
+Automation note: Chrome verified the custom templates appear in the page template dropdown, but the Shopify Admin page-title web component did not persist the automated value during save. Shopify CLI authorization also generated a new Shopify Accounts login challenge on 2026-06-02. Use the Admin API helper above after adding an Admin API token with page-write access.
 
 ## Theme Publish Gate
 
