@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "German shepherd grooming" } },
+        "h1": { "type": "heading", "settings": { "text": "German shepherd grooming vacuum routine for undercoat cleanup" } },
+        "p1": { "type": "paragraph", "settings": { "text": "German shepherd owners search for practical shedding help because undercoat cleanup can become a weekly room problem. A grooming vacuum can support routine brushing by collecting loosened fur, but it should not be framed as a shortcut for coat care or professional grooming." } },
+        "cta": { "type": "button", "settings": { "text": "View FurQuiet kit", "link": "/products/furquiet-grooming-vacuum-kit", "style": "primary" } }
+      },
+      "block_order": ["e1", "h1", "p1", "cta"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "1", "heading": "Undercoat angle", "text": "The search pain is loose undercoat, repeated brushing, and visible fur on high-use rooms." } },
+        "f2": { "type": "feature", "settings": { "icon": "2", "heading": "Sound introduction", "text": "German shepherd content should show distance, calm rewards, and short first passes before suction is near the dog." } },
+        "f3": { "type": "feature", "settings": { "icon": "3", "heading": "Owner control", "text": "The product story should focus on a controlled routine, not aggressive coat removal." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "eyebrow": "Buyer fit",
+        "heading": "Why this page belongs in the GEO cluster",
+        "subtitle": "German shepherd queries connect breed-specific pain, short-video proof, and a clear product route.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "image": {
+      "type": "image-with-text",
+      "settings": {
+        "layout": "reverse",
+        "builtin_image": "furquiet-clean-home-ai.jpg",
+        "eyebrow": "Content sequence",
+        "heading": "Show undercoat, airflow, dust cup, then the cleaner room.",
+        "text": "The first German shepherd page should anchor videos that compare a brush-only cleanup with a grooming vacuum routine. The safest proof is visible fur capture and room reset, not exact suction or decibel claims.",
+        "button_label": "Compare vacuum vs brush",
+        "button_link": "/pages/pet-grooming-vacuum-vs-deshedding-brush"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Can a grooming vacuum help with German shepherd undercoat?", "answer": "It can help collect loose fur during routine brushing, but it should be introduced gradually and used as maintenance support, not as a replacement for proper coat care." } },
+        "q2": { "type": "question", "settings": { "question": "Should a German shepherd be shaved with this kit?", "answer": "No. FurQuiet should not be positioned as a shaving solution for German shepherds or other double-coat dogs." } },
+        "q3": { "type": "question", "settings": { "question": "What should the first video show?", "answer": "Show a calm sound introduction, one slow brush pass, the collected fur cup, and the surface that is easier to reset afterward." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "German shepherd FAQ",
+        "heading": "Conservative answers for double-coat homes",
+        "subtitle": "This page keeps the promise limited to routine brushing support and visible fur capture.",
+        "cta_label": "Read sample QA gate",
+        "cta_link": "/pages/sample-qa-log"
+      }
+    }
+  },
+  "order": ["intro", "features", "image", "faq"]
+}

@@ -124,6 +124,7 @@ Current theme already includes:
 - FAQ schema.
 - Product schema without fake reviews.
 - GEO page templates for dog shedding, husky, long-hair cat, apartment hair control, vacuum vs brush, and quiet-start guide.
+- Breed-specific GEO page templates for golden retriever, German shepherd, and corgi shedding queries.
 - A filter and dust cup care template for the maintenance query "how to clean a pet grooming vacuum filter."
 - `/pages/routine-finder` template to route social, search, and AI-answer traffic by pet type, temperament, and home problem.
 - `/pages/first-batch` template to capture qualified first-batch demand while sample QA and real media are still incomplete.

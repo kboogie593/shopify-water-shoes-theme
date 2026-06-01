@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Golden retriever shedding" } },
+        "h1": { "type": "heading", "settings": { "text": "Golden retriever shedding vacuum routine for heavy fur homes" } },
+        "p1": { "type": "paragraph", "settings": { "text": "Golden retrievers are a strong FurQuiet search fit because the owner problem is visible: soft undercoat on sofas, rugs, clothing, bedding, and car seats. A grooming vacuum should be positioned as routine brushing and loose-fur collection, not as a way to stop shedding." } },
+        "cta": { "type": "button", "settings": { "text": "View FurQuiet kit", "link": "/products/furquiet-grooming-vacuum-kit", "style": "primary" } }
+      },
+      "block_order": ["e1", "h1", "p1", "cta"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "proof": {
+      "type": "image-with-text",
+      "settings": {
+        "layout": "image_left",
+        "builtin_image": "furquiet-grooming-lifestyle-ai.jpg",
+        "eyebrow": "Retriever content angle",
+        "heading": "The winning hook is one calm brush pass plus the fur cup.",
+        "text": "Golden retriever videos should show the loose coat before brushing, one slow pass, the dust cup, then the sofa or rug reset. This gives TikTok, Reels, Shorts, and AI search a concrete visual claim without inventing performance numbers.",
+        "button_label": "Read quiet-start guide",
+        "button_link": "/pages/quiet-start-guide"
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "1", "heading": "Seasonal coat release", "text": "Best fit when the owner already brushes often and wants loose hair collected before it spreads." } },
+        "f2": { "type": "feature", "settings": { "icon": "2", "heading": "Short calm sessions", "text": "Keep sessions short at first, especially if the dog is unsure about suction or new sounds." } },
+        "f3": { "type": "feature", "settings": { "icon": "3", "heading": "Room reset proof", "text": "Use before-after surfaces such as rugs, sofa corners, bedding, and car blankets to show the cleanup job." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "eyebrow": "Routine fit",
+        "heading": "Where FurQuiet makes sense for retriever homes",
+        "subtitle": "This page targets owners who already know the shedding problem and need a cleaner routine.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Does a grooming vacuum stop golden retriever shedding?", "answer": "No. It does not stop shedding. The goal is to collect loose fur during routine brushing so less hair spreads through the room." } },
+        "q2": { "type": "question", "settings": { "question": "What is the first routine to try?", "answer": "Start with the sound several feet away, reward calm behavior, brush with the tool off, then try one short low-airflow pass." } },
+        "q3": { "type": "question", "settings": { "question": "What should FurQuiet prove before checkout scales?", "answer": "FurQuiet should show real sample footage of a brush pass, dust cup, filter care, and a calm introduction before making stronger performance claims." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Golden retriever FAQ",
+        "heading": "Answers for retriever owners comparing grooming tools",
+        "subtitle": "Conservative search answers build trust before the sample QA proof is complete.",
+        "cta_label": "Join first batch",
+        "cta_link": "/pages/first-batch"
+      }
+    }
+  },
+  "order": ["intro", "proof", "features", "faq"]
+}

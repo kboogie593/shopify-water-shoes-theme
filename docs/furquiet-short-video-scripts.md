@@ -145,3 +145,55 @@ Length: 18 seconds
 | 14-18s | Care guide card | Save the filter-care guide before buying. |
 
 Caption: Maintenance is a buyer objection. The safest claim is simple: empty the cup, clear hair, check the manual, and dry washable parts completely.
+
+## Script 9: Golden Retriever Fur Cup
+
+Status: blocked by sample and retriever footage; ready as a shot plan.
+
+Destination: `/pages/golden-retriever-shedding-vacuum`
+
+Length: 14 seconds
+
+| Time | Visual | Voiceover / On-screen Text |
+|---:|---|---|
+| 0-2s | Golden retriever fur on sofa or rug | Retriever homes know this layer. |
+| 2-7s | One calm brush pass | One slow pass, no rushing. |
+| 7-11s | Fur cup close-up | The proof is what did not hit the sofa. |
+| 11-14s | Guide page card | Save the retriever shedding routine. |
+
+Caption: Golden retriever shedding content should show the surface, the brush pass, the fur cup, and the room reset.
+
+## Script 10: German Shepherd Undercoat Routine
+
+Status: blocked by sample and shepherd footage; ready as a founder/X checklist thread.
+
+Destination: `/pages/german-shepherd-grooming-vacuum`
+
+Length: 18 seconds
+
+| Time | Visual | Voiceover / On-screen Text |
+|---:|---|---|
+| 0-3s | Undercoat or room fur problem | Shepherd undercoat is a routine problem. |
+| 3-7s | Vacuum several feet away | Start with sound at a distance. |
+| 7-12s | Slow brush pass | Use one controlled pass, not aggressive removal. |
+| 12-15s | Dust cup reveal | Show collected loose fur. |
+| 15-18s | Comparison guide card | Compare brush only vs vacuum kit. |
+
+Caption: The strongest shepherd angle is controlled maintenance, visible fur capture, and no shaving claims.
+
+## Script 11: Corgi Small Dog, Big Shed
+
+Status: blocked by sample and corgi footage; ready as a storyboard.
+
+Destination: `/pages/corgi-shedding-vacuum`
+
+Length: 12 seconds
+
+| Time | Visual | Voiceover / On-screen Text |
+|---:|---|---|
+| 0-2s | Small dog beside fur on clothing or couch | Small dog, big shed. |
+| 2-6s | Low brush angle near the floor | Keep the pass short and steady. |
+| 6-10s | Fur cup or cleanup proof | Show what was collected. |
+| 10-12s | Routine finder card | Find the first routine. |
+
+Caption: Corgi content works because the contrast is easy to understand: small dog, visible fur, cleaner shared surfaces.

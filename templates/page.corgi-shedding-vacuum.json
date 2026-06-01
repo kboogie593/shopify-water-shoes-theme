@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Corgi shedding" } },
+        "h1": { "type": "heading", "settings": { "text": "Corgi shedding vacuum routine for small dogs with big fur piles" } },
+        "p1": { "type": "paragraph", "settings": { "text": "Corgis are useful for FurQuiet content because the contrast is easy to understand: a small dog can still create heavy fur on sofas, rugs, clothes, and car seats. The product angle is a calmer routine that collects loose fur while brushing." } },
+        "cta": { "type": "button", "settings": { "text": "Find your routine", "link": "/pages/routine-finder", "style": "primary" } }
+      },
+      "block_order": ["e1", "h1", "p1", "cta"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "image": {
+      "type": "image-with-text",
+      "settings": {
+        "layout": "image_left",
+        "builtin_image": "furquiet-grooming-lifestyle-ai.jpg",
+        "eyebrow": "Short-dog setup",
+        "heading": "Make the routine slower and lower to the floor.",
+        "text": "Corgi content should show the owner controlling the brush angle, keeping the session short, and rewarding calm behavior. The hook is simple: small dog, visible shedding, cleaner shared surfaces.",
+        "button_label": "Read quiet-start guide",
+        "button_link": "/pages/quiet-start-guide"
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "1", "heading": "Visible everyday fur", "text": "Corgi owners often notice loose fur on clothing, couch edges, bedding, car fabric, and low rugs." } },
+        "f2": { "type": "feature", "settings": { "icon": "2", "heading": "Gentle brush control", "text": "A low, steady pass is easier to film and easier for cautious pets to tolerate than a rushed session." } },
+        "f3": { "type": "feature", "settings": { "icon": "3", "heading": "Creator-friendly hook", "text": "The content premise is memorable: small dog, surprising fur cup, quick room reset." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "eyebrow": "Corgi content angle",
+        "heading": "Why corgi shedding deserves its own landing page",
+        "subtitle": "Breed pages give short videos, Pinterest pins, and AI answers a precise destination.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Does a grooming vacuum make sense for corgis?", "answer": "It can make sense when the owner already brushes often and wants loose fur collected before it spreads through the room." } },
+        "q2": { "type": "question", "settings": { "question": "What is the safest first routine?", "answer": "Start with the tool off, let the dog inspect it, introduce sound at a distance, then try one short low-airflow pass." } },
+        "q3": { "type": "question", "settings": { "question": "What should FurQuiet avoid claiming?", "answer": "Do not claim the kit stops shedding, works for every dog, or replaces professional grooming. Keep the promise to routine brushing support and visible fur capture." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Corgi FAQ",
+        "heading": "Answers for small-dog heavy-shedding homes",
+        "subtitle": "The goal is to turn breed-specific interest into an honest product route.",
+        "cta_label": "Join first batch",
+        "cta_link": "/pages/first-batch"
+      }
+    }
+  },
+  "order": ["intro", "image", "features", "faq"]
+}

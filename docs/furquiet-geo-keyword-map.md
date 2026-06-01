@@ -21,6 +21,9 @@ This map turns the FurQuiet product into long-tail pages that can answer AI-sear
 | Sample QA log | `/pages/sample-qa-log` | What has FurQuiet tested before launch? | Template added |
 | Shedding dogs guide | `/pages/pet-grooming-vacuum-for-shedding-dogs` | What is the best pet grooming vacuum setup for shedding dogs? | Template added |
 | Husky grooming vacuum guide | `/pages/husky-grooming-vacuum` | Can a grooming vacuum help with husky shedding? | Template added |
+| Golden retriever shedding guide | `/pages/golden-retriever-shedding-vacuum` | What grooming vacuum routine helps with golden retriever shedding? | Template added |
+| German shepherd grooming vacuum guide | `/pages/german-shepherd-grooming-vacuum` | Can a grooming vacuum help with German shepherd undercoat? | Template added |
+| Corgi shedding guide | `/pages/corgi-shedding-vacuum` | Is a grooming vacuum useful for corgi shedding? | Template added |
 | Long-hair cat guide | `/pages/long-hair-cat-grooming-vacuum` | Is a grooming vacuum good for long-hair cats? | Template added |
 | Apartment pet hair control | `/pages/apartment-pet-hair-control` | How do I reduce pet hair in an apartment? | Template added |
 | Vacuum vs brush comparison | `/pages/pet-grooming-vacuum-vs-deshedding-brush` | Is a pet grooming vacuum better than a de-shedding brush? | Template added |
@@ -43,6 +46,9 @@ For each page above:
 
 - best pet grooming vacuum for shedding dogs
 - dog grooming vacuum for husky shedding
+- golden retriever shedding vacuum
+- german shepherd grooming vacuum
+- corgi shedding vacuum
 - how to introduce a nervous dog to a grooming vacuum
 - pet grooming vacuum for long hair cats
 - apartment pet hair control for dogs and cats

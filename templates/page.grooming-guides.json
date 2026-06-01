@@ -93,9 +93,39 @@
             "link_label": "Read care guide",
             "link": "/pages/clean-pet-grooming-vacuum-filter"
           }
+        },
+        "g9": {
+          "type": "column",
+          "settings": {
+            "icon": "09",
+            "heading": "Golden retriever shedding",
+            "text": "A search page for retriever homes dealing with soft undercoat on sofas, rugs, bedding, and clothes.",
+            "link_label": "Read retriever guide",
+            "link": "/pages/golden-retriever-shedding-vacuum"
+          }
+        },
+        "g10": {
+          "type": "column",
+          "settings": {
+            "icon": "10",
+            "heading": "German shepherd grooming",
+            "text": "Undercoat cleanup, sound introduction, and controlled routine positioning for shepherd owners.",
+            "link_label": "Read shepherd guide",
+            "link": "/pages/german-shepherd-grooming-vacuum"
+          }
+        },
+        "g11": {
+          "type": "column",
+          "settings": {
+            "icon": "11",
+            "heading": "Corgi shedding",
+            "text": "A small-dog heavy-shedding angle built around short sessions, visible fur cups, and room reset proof.",
+            "link_label": "Read corgi guide",
+            "link": "/pages/corgi-shedding-vacuum"
+          }
         }
       },
-      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8"],
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9", "g10", "g11"],
       "settings": {
         "eyebrow": "Start here",
         "heading": "Choose the guide that matches the problem",
