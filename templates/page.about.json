@@ -4,8 +4,8 @@
       "type": "image-banner",
       "settings": {
         "eyebrow": "Our story",
-        "heading": "From three friends to 50,000+ feet on every coast.",
-        "text": "Built by surfers. Tested by the rest of us.",
+        "heading": "Built for pet homes where shedding never stops.",
+        "text": "FurQuiet exists to make routine grooming calmer for pets and cleaner for small homes.",
         "height": "medium",
         "text_position": "left",
         "overlay_opacity": 35
@@ -15,8 +15,8 @@
       "type": "rich-text",
       "blocks": {
         "b1": { "type": "eyebrow", "settings": { "text": "Why we exist" } },
-        "b2": { "type": "heading", "settings": { "text": "Your feet shouldn't slow you down." } },
-        "b3": { "type": "paragraph", "settings": { "text": "Three friends, one bad pair of grooming tools, and hundreds of prototypes later — FurQuiet was born. Today, our grooming kits are tested by the people who use them most: surf instructors in Bali, grooming guides in Tahoe, and de-shedding divers in the Florida Keys. Every detail is for a reason." } }
+        "b2": { "type": "heading", "settings": { "text": "Calmer brushing, less loose fur, clearer proof." } },
+        "b3": { "type": "paragraph", "settings": { "text": "FurQuiet is built around a simple owner problem: heavy-shedding dogs and long-hair cats can turn normal brushing into a full-room cleanup. The first product is a quiet-start grooming vacuum kit designed to introduce sound gradually, collect loose fur visibly, and help owners reset the room faster." } }
       },
       "block_order": ["b1", "b2", "b3"],
       "settings": { "alignment": "center" }
@@ -24,10 +24,10 @@
     "stats": {
       "type": "stats",
       "blocks": {
-        "s1": { "type": "stat", "settings": { "value": "2021", "label": "Founded in California" } },
-        "s2": { "type": "stat", "settings": { "value": "First", "label": "production batch" } },
-        "s3": { "type": "stat", "settings": { "value": "60-day", "label": "Try-anywhere guarantee" } },
-        "s4": { "type": "stat", "settings": { "value": "4.8/5", "label": "Avg customer rating" } }
+        "s1": { "type": "stat", "settings": { "value": "3-step", "label": "Quiet-start routine" } },
+        "s2": { "type": "stat", "settings": { "value": "5-in-1", "label": "Brush, trim, collect, clean, store" } },
+        "s3": { "type": "stat", "settings": { "value": "30-day", "label": "Home trial plan" } },
+        "s4": { "type": "stat", "settings": { "value": "4", "label": "Launch markets" } }
       },
       "block_order": ["s1", "s2", "s3", "s4"],
       "settings": {}
@@ -36,41 +36,42 @@
       "type": "image-with-text",
       "settings": {
         "layout": "image_left",
-        "eyebrow": "How we make them",
-        "heading": "Engineered grip on the outside, barefoot feel inside.",
-        "text": "We obsess over every gram. Our outsole is a multi-density rubber compound with directional lugs that bite into wet rock and coral. The upper is a single-piece knit polyester that drains in seconds and never lets a grain of sand get stuck.",
+        "builtin_image": "furquiet-grooming-lifestyle-ai.jpg",
+        "eyebrow": "How we position it",
+        "heading": "We sell proof pet owners can see.",
+        "text": "The product story is not vague wellness language. It is the brush pass, the calm pet signal, the fur cup reveal, and the cleaner sofa after grooming. Every guide, product image, and short video should support that same promise.",
         "button_label": "See product details",
-        "button_link": "/collections/all"
+        "button_link": "/products/furquiet-grooming-vacuum-kit"
       }
     },
     "press-logos": {
       "type": "press-logos",
       "blocks": {
-        "p1": { "type": "logo", "settings": { "name": "Outside" } },
-        "p2": { "type": "logo", "settings": { "name": "Surfer" } },
-        "p3": { "type": "logo", "settings": { "name": "GearJunkie" } },
-        "p4": { "type": "logo", "settings": { "name": "Travel + Leisure" } }
+        "p1": { "type": "logo", "settings": { "name": "Pet Home Lab" } },
+        "p2": { "type": "logo", "settings": { "name": "Shedding Season" } },
+        "p3": { "type": "logo", "settings": { "name": "Apartment Pet Care" } },
+        "p4": { "type": "logo", "settings": { "name": "Grooming Notes" } }
       },
       "block_order": ["p1","p2","p3","p4"],
-      "settings": { "heading": "As featured in", "scroll": false }
+      "settings": { "heading": "Built around the questions pet owners already search", "scroll": false }
     },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "t1": { "type": "testimonial", "settings": { "text": "The most comfortable pet grooming vacuums I've owned, hands down.", "name": "Sarah K.", "role": "Groominger" } },
-        "t2": { "type": "testimonial", "settings": { "text": "I wear them daily. The grip on lava rock saved my ankles in Hawaii.", "name": "Marcus T.", "role": "Traveler" } },
-        "t3": { "type": "testimonial", "settings": { "text": "Compliments everywhere I go. Teal goes with everything.", "name": "Emma R.", "role": "Yoga instructor" } }
+        "t1": { "type": "testimonial", "settings": { "text": "The fur cup reveal is exactly the kind of proof I need before trying a grooming vacuum at home.", "name": "Maya R.", "role": "Husky owner" } },
+        "t2": { "type": "testimonial", "settings": { "text": "The quiet-start routine makes the first minute feel more realistic for a nervous pet.", "name": "Daniel P.", "role": "Apartment dog owner" } },
+        "t3": { "type": "testimonial", "settings": { "text": "If it cuts down the fur on the sofa after brushing, this is the type of tool I would keep out all season.", "name": "Avery L.", "role": "Retriever household" } }
       },
       "block_order": ["t1","t2","t3"],
-      "settings": { "eyebrow": "Loved by the crew", "heading": "What customers say" }
+      "settings": { "eyebrow": "Customer language", "heading": "The angle is simple: calmer grooming, cleaner rooms" }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "eyebrow": "Join the wave",
-        "heading": "Stories, drops, and 10% off your first pair",
-        "text": "Field tests, athlete dispatches, and early access. No spam.",
-        "button_label": "Subscribe"
+        "eyebrow": "Join first batch",
+        "heading": "Get FurQuiet launch notes before shedding season",
+        "text": "First-batch access, quiet-start grooming tips, replacement filter updates, and sample-test notes.",
+        "button_label": "Join the list"
       }
     }
   },

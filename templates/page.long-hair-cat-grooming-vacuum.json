@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Long-hair cats" } },
+        "h1": { "type": "heading", "settings": { "text": "Pet grooming vacuum guide for long-hair cat homes" } },
+        "p1": { "type": "paragraph", "settings": { "text": "Long-hair cat owners search for fewer fur clumps, less sofa hair, and easier brushing between professional grooming. A grooming vacuum can be useful only when the cat tolerates gradual sound introduction and gentle brush contact." } }
+      },
+      "block_order": ["e1", "h1", "p1"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "image": {
+      "type": "image-with-text",
+      "settings": {
+        "layout": "reverse",
+        "builtin_image": "furquiet-clean-home-ai.jpg",
+        "eyebrow": "Cat-owner angle",
+        "heading": "For cats, tolerance matters more than speed.",
+        "text": "Start with the tool off, allow sniffing, reward calm behavior, and keep sessions very short. The sales angle should be gentle routine support, not a promise that every cat will accept a vacuum immediately.",
+        "button_label": "Quiet-start guide",
+        "button_link": "/pages/quiet-start-guide"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Will every cat tolerate a grooming vacuum?", "answer": "No. Some cats will not accept the sound or sensation. Owners should introduce the tool slowly and stop if the cat is stressed." } },
+        "q2": { "type": "question", "settings": { "question": "What is the safest positioning?", "answer": "Position FurQuiet as gentle brushing support for tolerant long-hair cats, not as a forced solution for mats, medical skin issues, or fearful cats." } },
+        "q3": { "type": "question", "settings": { "question": "What should creators film?", "answer": "Film quiet sound introduction, brush contact with the unit off, one short low-airflow pass, and the dust cup result." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Cat grooming FAQ",
+        "heading": "Answer cat-owner hesitation clearly",
+        "subtitle": "This page should build trust by being honest about tolerance and gradual training.",
+        "cta_label": "View FurQuiet",
+        "cta_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    }
+  },
+  "order": ["intro", "image", "faq"]
+}

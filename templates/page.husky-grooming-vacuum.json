@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Husky grooming" } },
+        "h1": { "type": "heading", "settings": { "text": "Can a grooming vacuum help with husky shedding?" } },
+        "p1": { "type": "paragraph", "settings": { "text": "Huskies and other double-coat dogs are a strong content and search fit because the pain is visual: loose undercoat, fur piles, and repeated cleanup. A grooming vacuum can help collect loosened hair while brushing, but it should be used patiently and never forced." } }
+      },
+      "block_order": ["e1", "h1", "p1"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "image": {
+      "type": "image-with-text",
+      "settings": {
+        "layout": "image_left",
+        "builtin_image": "furquiet-clean-home-ai.jpg",
+        "eyebrow": "Double-coat angle",
+        "heading": "The video hook is the undercoat reveal.",
+        "text": "For husky content, film the brush pass, the dust cup, the loose fur that did not land on the rug, and the calm reward at the end. This creates repeatable TikTok, Reels, Shorts, and blog content.",
+        "button_label": "Shop FurQuiet",
+        "button_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Can I shave a husky with a grooming vacuum kit?", "answer": "Do not position FurQuiet as a shaving solution for huskies. Double-coat grooming should be handled carefully, and owners should follow professional grooming guidance." } },
+        "q2": { "type": "question", "settings": { "question": "What should the product do for a husky owner?", "answer": "The practical value is routine brushing support and loose-fur collection, especially during seasonal shedding." } },
+        "q3": { "type": "question", "settings": { "question": "What content should be filmed first?", "answer": "Film one calm brush pass, the collected fur cup, a sofa or rug before/after, and the quiet-start routine." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Husky FAQ",
+        "heading": "Conservative answers for double-coat owners",
+        "subtitle": "This page is designed for long-tail search and AI answers.",
+        "cta_label": "View FurQuiet",
+        "cta_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    }
+  },
+  "order": ["intro", "image", "faq"]
+}

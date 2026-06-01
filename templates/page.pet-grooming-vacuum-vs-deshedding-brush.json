@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Comparison guide" } },
+        "h1": { "type": "heading", "settings": { "text": "Pet grooming vacuum vs de-shedding brush" } },
+        "p1": { "type": "paragraph", "settings": { "text": "A de-shedding brush loosens and removes fur. A grooming vacuum kit combines brushing with suction so loose hair can move into a dust cup during the session. The difference is not whether brushing works; the difference is how much loose fur spreads around the room after brushing." } }
+      },
+      "block_order": ["e1", "h1", "p1"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "B", "heading": "Brush only", "text": "Lower cost and simple to use, but loose fur often falls onto the floor, sofa, or clothes." } },
+        "f2": { "type": "feature", "settings": { "icon": "V", "heading": "Vacuum kit", "text": "Higher perceived value because brushing, trimming support, fur capture, and storage can be shown together." } },
+        "f3": { "type": "feature", "settings": { "icon": "C", "heading": "Content angle", "text": "The grooming vacuum wins on visual proof: brush pass, dust cup reveal, and room reset." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "eyebrow": "Buyer comparison",
+        "heading": "When the vacuum kit makes more sense",
+        "subtitle": "Use this page to catch shoppers comparing cheaper brushes with full grooming vacuum kits.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Is a grooming vacuum better than a brush?", "answer": "It depends on the problem. A brush is enough for some owners. A grooming vacuum is more compelling when loose fur cleanup is the main pain." } },
+        "q2": { "type": "question", "settings": { "question": "Why is the vacuum kit easier to sell with video?", "answer": "It creates visible proof: fur entering the cup, less fur on the sofa, and a complete kit layout." } },
+        "q3": { "type": "question", "settings": { "question": "What claim should be avoided?", "answer": "Avoid claiming it stops shedding or replaces professional grooming. Position it as routine brushing and cleanup support." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Comparison FAQ",
+        "heading": "Help buyers choose the right tool",
+        "subtitle": "Good comparison pages reduce hesitation and help AI engines cite precise answers.",
+        "cta_label": "View FurQuiet kit",
+        "cta_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    }
+  },
+  "order": ["intro", "features", "faq"]
+}

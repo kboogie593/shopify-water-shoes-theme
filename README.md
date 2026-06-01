@@ -4,7 +4,7 @@ A modern, performance-focused Shopify theme for **FurQuiet**, a quiet-start
 pet grooming vacuum brand. Built to the Online Store 2.0 spec (JSON templates + section groups)
 so it is fully editable from the Shopify Theme Editor.
 
-![Theme color: teal #2DD4BF](https://img.shields.io/badge/brand-FurQuiet-2DD4BF)
+![Theme color: sage #4F8F83](https://img.shields.io/badge/brand-FurQuiet-4F8F83)
 ![Online Store 2.0](https://img.shields.io/badge/Shopify-Online%20Store%202.0-95BF47)
 
 ## Highlights
@@ -16,9 +16,9 @@ so it is fully editable from the Shopify Theme Editor.
 - Customer accounts, cart, search, blog, contact, 404, password, gift card
 
 ### Design
-- Brand palette pre-tuned to FurQuiet teal (`#2DD4BF` / `#0F766E`) with
-  coral accent (`#F97316`)
-- Glass-morphism sticky header, gradient hero with floating blobs
+- Brand palette pre-tuned to FurQuiet sage (`#4F8F83` / `#234E48`) with
+  warm clay accent (`#D97745`)
+- Clean sticky header, visual product proof sections, and pet-care landing templates
 - Refined product cards with quick-add hover state and lift animation
 - Polished FAQ accordion, trust-badge bar on product pages, fade-in
   scroll reveal
@@ -84,9 +84,9 @@ Recommended starting palette (already set as defaults):
 
 | Token              | Hex       |
 |--------------------|-----------|
-| Primary            | `#2DD4BF` |
-| Primary dark       | `#0F766E` |
-| Accent             | `#F97316` |
+| Primary            | `#4F8F83` |
+| Primary dark       | `#234E48` |
+| Accent             | `#D97745` |
 | Background         | `#FFFFFF` |
 | Foreground         | `#0F172A` |
 

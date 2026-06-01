@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Quiet-start guide" } },
+        "h1": { "type": "heading", "settings": { "text": "How to introduce a nervous pet to a grooming vacuum" } },
+        "p1": { "type": "paragraph", "settings": { "text": "A grooming vacuum should be introduced slowly. The goal is not to finish a full grooming session on day one. The goal is to help the pet understand the sound, accept the brush, and stay relaxed before suction is used near the body." } },
+        "p2": { "type": "paragraph", "settings": { "text": "Use short sessions, treats, distance, and the lowest airflow. Stop if the pet freezes, hides, growls, pants heavily, or tries to escape." } }
+      },
+      "block_order": ["e1", "h1", "p1", "p2"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "routine": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "1", "heading": "Sound only", "text": "Turn the unit on several feet away. Reward calm behavior. Keep the first exposure under one minute." } },
+        "f2": { "type": "feature", "settings": { "icon": "2", "heading": "Brush without suction", "text": "Let the pet smell the brush, then touch the coat while the vacuum is off." } },
+        "f3": { "type": "feature", "settings": { "icon": "3", "heading": "Low airflow pass", "text": "Use the lowest setting for a short pass on a low-sensitivity area such as the shoulder." } },
+        "f4": { "type": "feature", "settings": { "icon": "4", "heading": "Build the routine", "text": "Add time gradually only when the pet stays loose, curious, and willing to remain near the brush." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"],
+      "settings": {
+        "eyebrow": "Four-step routine",
+        "heading": "Do less at first so the pet accepts more later.",
+        "subtitle": "This is the content angle for nervous-pet owners and a useful FAQ page for AI search.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "image": {
+      "type": "image-with-text",
+      "settings": {
+        "layout": "reverse",
+        "builtin_image": "furquiet-grooming-lifestyle-ai.jpg",
+        "eyebrow": "Owner education",
+        "heading": "The first win is calm contact.",
+        "text": "FurQuiet should be framed as a routine, not a magic button. The pet sees the tool, hears the sound at a distance, accepts the brush, then experiences short low-airflow passes. This reduces friction before checkout and gives creators multiple easy videos to film.",
+        "button_label": "View FurQuiet kit",
+        "button_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "How long should the first session be?", "answer": "Keep the first exposure short. For nervous pets, one minute of calm sound exposure can be more valuable than forcing a full brushing session." } },
+        "q2": { "type": "question", "settings": { "question": "What if the pet is scared?", "answer": "Stop and increase distance. Do not chase the pet with the vacuum or brush. Restart later with the unit off or farther away." } },
+        "q3": { "type": "question", "settings": { "question": "Where should I brush first?", "answer": "Start with an area the pet already tolerates, usually shoulder or back. Avoid face, paws, tail, belly, and sanitary areas until the pet is comfortable." } },
+        "q4": { "type": "question", "settings": { "question": "Can treats help?", "answer": "Yes. Pair the sound and brush contact with calm rewards so the tool predicts something positive." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "eyebrow": "Training FAQ",
+        "heading": "Questions owners ask before trying a grooming vacuum",
+        "subtitle": "Use practical, conservative answers. Avoid forcing the tool on frightened pets.",
+        "cta_label": "Shop FurQuiet",
+        "cta_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    }
+  },
+  "order": ["intro", "routine", "image", "faq"]
+}

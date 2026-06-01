@@ -123,7 +123,7 @@
     pointer-events: none;
     overflow: hidden;
     display: flex;
-    color: {{ section.settings.wave_color | default: '#0F766E' }};
+    color: {{ section.settings.wave_color | default: '#234E48' }};
     animation: ocean-color 12s ease-in-out infinite alternate;
   }
   .ocean__tile {
@@ -143,11 +143,11 @@
     to   { transform: translateX(-100%); }
   }
 
-  /* Color cycle — current footer color ↔ light sky-blue */
+  /* Color cycle: footer sage to soft clay. */
   @keyframes ocean-color {
-    0%   { color: {{ section.settings.wave_color | default: '#0F766E' }}; }
-    50%  { color: #38bdf8; }   /* sky-400 */
-    100% { color: #7dd3fc; }   /* sky-300 */
+    0%   { color: {{ section.settings.wave_color | default: '#234E48' }}; }
+    50%  { color: #4F8F83; }
+    100% { color: #D97745; }
   }
 
   /* ====== Bubbles drifting through the wave ====== */
@@ -188,7 +188,7 @@
   "name": "Pre-footer trust",
   "settings": [
     { "type": "color", "id": "bg_color", "label": "Background", "default": "#FFFFFF" },
-    { "type": "color", "id": "wave_color", "label": "Wave color (should match footer)", "default": "#0F766E" }
+    { "type": "color", "id": "wave_color", "label": "Footer accent color", "default": "#234E48" }
   ],
   "max_blocks": 4,
   "blocks": [

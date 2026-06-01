@@ -11,18 +11,18 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <style>
       :root {
-        --color-primary: #2DD4BF;
-        --color-primary-dark: #0F766E;
-        --color-background: #f0fdfa;
+        --color-primary: #4F8F83;
+        --color-primary-dark: #234E48;
+        --color-background: #F4F1EA;
         --color-foreground: #0f172a;
-        --color-button: #0F766E;
+        --color-button: #234E48;
         --color-button-text: #fff;
       }
-      body { background: linear-gradient(135deg, #ccfbf1, #5eead4); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
-      .gift-card { background: #fff; border-radius: 24px; padding: 48px; max-width: 480px; width: 100%; text-align: center; box-shadow: 0 40px 80px -20px rgba(15, 118, 110, 0.3); }
+      body { background: #F4F1EA; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+      .gift-card { background: #fff; border-radius: 24px; padding: 48px; max-width: 480px; width: 100%; text-align: center; box-shadow: 0 40px 80px -20px rgba(35, 78, 72, 0.18); }
       .gift-card h2 { margin-bottom: 8px; }
       .gift-card__value { font-size: 56px; font-weight: 900; color: var(--color-primary-dark); margin: 24px 0; }
-      .gift-card__code { background: #f0fdfa; padding: 16px; border-radius: 12px; font-family: ui-monospace, SF Mono, monospace; font-size: 16px; letter-spacing: 2px; margin: 20px 0; word-break: break-all; }
+      .gift-card__code { background: #F4F1EA; padding: 16px; border-radius: 12px; font-family: ui-monospace, SF Mono, monospace; font-size: 16px; letter-spacing: 2px; margin: 20px 0; word-break: break-all; }
       .gift-card__qr { margin: 24px auto; max-width: 160px; }
     </style>
   </head>
@@ -38,8 +38,8 @@
         <div class="gift-card__code">{{ gift_card.code | format_code }}</div>
         <div class="gift-card__qr" aria-hidden="true">
           <svg viewBox="0 0 120 120" role="img" focusable="false">
-            <rect width="120" height="120" rx="16" fill="#f0fdfa"/>
-            <path d="M18 18h28v28H18zM26 26v12h12V26zm48-8h28v28H74zM82 26v12h12V26zM18 74h28v28H18zM26 82v12h12V82zm48-18h10v10H74zm18 0h10v10H92zM56 74h10v10H56zm18 18h10v10H74zm18-10h10v20H92zM56 92h10v10H56z" fill="#0f766e"/>
+            <rect width="120" height="120" rx="16" fill="#F4F1EA"/>
+            <path d="M18 18h28v28H18zM26 26v12h12V26zm48-8h28v28H74zM82 26v12h12V26zM18 74h28v28H18zM26 82v12h12V82zm48-18h10v10H74zm18 0h10v10H92zM56 74h10v10H56zm18 18h10v10H74zm18-10h10v20H92zM56 92h10v10H56z" fill="#234E48"/>
           </svg>
         </div>
         <p style="font-size:13px;color:#64748b;">Current balance: {{ gift_card.balance | money }}</p>

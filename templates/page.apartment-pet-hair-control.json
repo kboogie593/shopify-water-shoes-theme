@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Small-home cleanup" } },
+        "h1": { "type": "heading", "settings": { "text": "Apartment pet hair control with a grooming vacuum" } },
+        "p1": { "type": "paragraph", "settings": { "text": "Apartment pet owners feel shedding faster because loose fur lands on the same sofa, rug, bedding, and clothing every day. A grooming vacuum fits this pain because it combines brushing and fur capture before the hair spreads." } }
+      },
+      "block_order": ["e1", "h1", "p1"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "proof": {
+      "type": "furquiet-proof",
+      "settings": {
+        "eyebrow": "Small-space proof",
+        "heading": "Show the room reset, not just the product.",
+        "subtitle": "Before/after sofa and rug visuals are strong for organic social and AI-search answers."
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Does a grooming vacuum replace a floor vacuum?", "answer": "No. It helps capture loose fur during brushing, but owners still need normal cleaning for floors, furniture, and bedding." } },
+        "q2": { "type": "question", "settings": { "question": "Why is it useful in apartments?", "answer": "Small spaces make loose fur more visible. Capturing fur during brushing can reduce the amount that floats onto shared surfaces." } },
+        "q3": { "type": "question", "settings": { "question": "What is the best first video for this angle?", "answer": "Film the sofa before brushing, one brush pass, the dust cup reveal, and the same sofa after cleanup." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Apartment FAQ",
+        "heading": "Questions small-home pet owners ask",
+        "subtitle": "Answer practical cleanup objections before checkout.",
+        "cta_label": "View FurQuiet",
+        "cta_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    }
+  },
+  "order": ["intro", "proof", "faq"]
+}

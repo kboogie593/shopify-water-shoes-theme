@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Shedding dogs" } },
+        "h1": { "type": "heading", "settings": { "text": "Best pet grooming vacuum setup for heavy-shedding dogs" } },
+        "p1": { "type": "paragraph", "settings": { "text": "Heavy-shedding dogs create a visible cleanup problem: undercoat on sofas, rugs, bedding, clothes, and corners. A grooming vacuum is most useful when the owner already brushes the dog but wants less loose fur floating through the room." } },
+        "p2": { "type": "paragraph", "settings": { "text": "The strongest buyer fit is a household with seasonal shedding, repeated brushing needs, and enough patience to introduce sound gradually." } }
+      },
+      "block_order": ["e1", "h1", "p1", "p2"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "proof": {
+      "type": "furquiet-proof",
+      "settings": {
+        "eyebrow": "Visual buying trigger",
+        "heading": "The proof point is the fur cup reveal.",
+        "subtitle": "For social and AI search, show the problem, brush pass, collected fur, and cleaner room outcome."
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "✓", "heading": "Double-coat homes", "text": "Good fit for husky, shepherd, retriever, corgi, Samoyed, and mixed double-coat homes." } },
+        "f2": { "type": "feature", "settings": { "icon": "✓", "heading": "Routine brushing", "text": "Best used between professional grooming appointments, not as a replacement for breed-specific care." } },
+        "f3": { "type": "feature", "settings": { "icon": "✓", "heading": "Cleaner reset", "text": "The value is less post-brushing cleanup and a visible dust cup of collected fur." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "eyebrow": "Buyer fit",
+        "heading": "Who should consider a grooming vacuum?",
+        "subtitle": "Position the product around repeat shedding pain, not vague grooming claims.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Does a grooming vacuum stop shedding?", "answer": "No. It does not stop shedding. It helps capture loose fur during routine brushing so less hair spreads through the room." } },
+        "q2": { "type": "question", "settings": { "question": "Is it useful for short-hair dogs?", "answer": "It can help some short-hair dogs, but FurQuiet is primarily positioned for visible loose fur, seasonal undercoat, and owners who brush often." } },
+        "q3": { "type": "question", "settings": { "question": "How often should I use it?", "answer": "Frequency depends on coat type and pet tolerance. During shedding season, short routine sessions are usually better than rare long sessions." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Search answers",
+        "heading": "Clear answers for shedding-dog owners",
+        "subtitle": "These answers support organic search snippets and AI search citations.",
+        "cta_label": "View the kit",
+        "cta_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    }
+  },
+  "order": ["intro", "proof", "features", "faq"]
+}
