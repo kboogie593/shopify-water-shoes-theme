@@ -170,6 +170,9 @@ Tracking files:
 - `data/furquiet-comment-to-content-log.csv` turns repeated comments and search queries into guide updates and new short-video scripts.
 - `data/furquiet-video-shot-list.csv` separates ready founder/X content from sample-blocked product demo content.
 - `data/furquiet-geo-content-backlog.csv` keeps the long-tail page queue tied to intent and CTA.
+- `data/furquiet-social-captions.csv` maps first social posts to platform, destination URL, and image asset.
+- `docs/furquiet-short-video-scripts.md` gives the first six reusable scripts for TikTok, Reels, Shorts, Facebook Reels, and X.
+- `docs/furquiet-seo-blog-drafts.md` gives the first blog outlines that support the guide hub.
 
 ## Current Gaps
 

@@ -122,6 +122,10 @@ discovery link, and the URL is referenced in the JSON-LD).
 - `data/furquiet-video-shot-list.csv` — short-video production shot list
 - `data/furquiet-organic-channel-scoreboard.csv` — weekly organic traffic and revenue scoreboard
 - `data/furquiet-comment-to-content-log.csv` — comment/query-to-content tracking log
+- `data/furquiet-social-captions.csv` — first captions mapped to platform, page, and asset
+- `docs/furquiet-short-video-scripts.md` — first reusable short-video scripts
+- `docs/furquiet-social-asset-guide.md` — generated social image asset usage
+- `docs/furquiet-seo-blog-drafts.md` — first Shopify blog outlines for GEO support
 
 Create `/pages/grooming-guides` first; it acts as the internal guide hub for
 all FurQuiet long-tail pages and should be linked from navigation once the
