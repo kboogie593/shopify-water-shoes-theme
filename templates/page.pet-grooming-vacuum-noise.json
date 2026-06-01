@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Noise and pet tolerance" } },
+        "h1": { "type": "heading", "settings": { "text": "How loud is a pet grooming vacuum?" } },
+        "p1": { "type": "paragraph", "settings": { "text": "Noise is one of the highest-friction objections for pet grooming vacuums. FurQuiet should answer it carefully: explain the introduction routine now, then publish measured decibel readings only after the supplier sample is tested." } },
+        "cta": { "type": "button", "settings": { "text": "Read quiet-start guide", "link": "/pages/quiet-start-guide", "style": "primary" } }
+      },
+      "block_order": ["e1", "h1", "p1", "cta"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "routine": {
+      "type": "features",
+      "blocks": {
+        "r1": { "type": "feature", "settings": { "icon": "1", "heading": "Start with distance", "text": "Let the pet hear the unit several feet away before the brush touches the coat." } },
+        "r2": { "type": "feature", "settings": { "icon": "2", "heading": "Reward calm behavior", "text": "Treats and pauses matter more than rushing to a full grooming pass." } },
+        "r3": { "type": "feature", "settings": { "icon": "3", "heading": "Brush with the tool off", "text": "Let the pet feel the brush before combining sound, airflow, and contact." } },
+        "r4": { "type": "feature", "settings": { "icon": "4", "heading": "Try one short low-airflow pass", "text": "The first suction pass should be short enough that the owner can stop before the pet escalates." } },
+        "r5": { "type": "feature", "settings": { "icon": "5", "heading": "Measure before claiming", "text": "Exact decibel claims should wait for repeated low/high readings at 1 ft and 3 ft." } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5"],
+      "settings": {
+        "eyebrow": "Quiet-start framework",
+        "heading": "Answer noise with a routine, not unsupported numbers",
+        "subtitle": "This page gives social videos and AI search a safe answer while sample QA is pending.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "image": {
+      "type": "image-with-text",
+      "settings": {
+        "builtin_image": "furquiet-grooming-lifestyle-ai.jpg",
+        "layout": "image_left",
+        "eyebrow": "Claim boundary",
+        "heading": "Do not promise every pet will tolerate suction.",
+        "text": "The safe promise is a better introduction process: distance, low airflow, rewards, and short sessions. Some pets may still reject the sound, and that should stay visible in the FAQ.",
+        "button_label": "Read FAQ",
+        "button_link": "/pages/faq"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Can FurQuiet publish exact decibel claims now?", "answer": "No. Exact noise claims should wait until a real sample is measured at low and high settings from 1 ft and 3 ft." } },
+        "q2": { "type": "question", "settings": { "question": "What if my pet is scared of vacuums?", "answer": "Start with sound at a distance and stop early if the pet escalates. FurQuiet should never be forced on a frightened pet." } },
+        "q3": { "type": "question", "settings": { "question": "What should the first noise video show?", "answer": "Show the unit away from the pet, calm rewards, tool-off brushing, one short low-airflow pass, and the owner stopping while the pet is still comfortable." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Noise FAQ",
+        "heading": "Conservative answers for nervous-pet owners",
+        "subtitle": "This page protects trust while still giving buyers a practical next step.",
+        "cta_label": "Join first batch",
+        "cta_link": "/pages/first-batch"
+      }
+    }
+  },
+  "order": ["intro", "routine", "image", "faq"]
+}

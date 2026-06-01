@@ -123,9 +123,39 @@
             "link_label": "Read corgi guide",
             "link": "/pages/corgi-shedding-vacuum"
           }
+        },
+        "g12": {
+          "type": "column",
+          "settings": {
+            "icon": "12",
+            "heading": "Kit contents",
+            "text": "What comes in a grooming vacuum kit and why each attachment matters before checkout.",
+            "link_label": "See kit guide",
+            "link": "/pages/pet-grooming-vacuum-kit-contents"
+          }
+        },
+        "g13": {
+          "type": "column",
+          "settings": {
+            "icon": "13",
+            "heading": "Noise and tolerance",
+            "text": "How to answer pet vacuum noise questions without unsupported decibel claims.",
+            "link_label": "Read noise guide",
+            "link": "/pages/pet-grooming-vacuum-noise"
+          }
+        },
+        "g14": {
+          "type": "column",
+          "settings": {
+            "icon": "14",
+            "heading": "Buying checklist",
+            "text": "The buyer and supplier QA checklist for filters, labels, media, return policy, and replacement parts.",
+            "link_label": "Use checklist",
+            "link": "/pages/pet-grooming-vacuum-buying-checklist"
+          }
         }
       },
-      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9", "g10", "g11"],
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9", "g10", "g11", "g12", "g13", "g14"],
       "settings": {
         "eyebrow": "Start here",
         "heading": "Choose the guide that matches the problem",

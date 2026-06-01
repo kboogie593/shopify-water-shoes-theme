@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Buying checklist" } },
+        "h1": { "type": "heading", "settings": { "text": "What to check before buying a pet grooming vacuum" } },
+        "p1": { "type": "paragraph", "settings": { "text": "A pet grooming vacuum is a higher-trust purchase than a normal brush because it involves sound, airflow, filters, plug labels, and replacement parts. This checklist turns those concerns into a clear buyer guide and a supplier QA standard for FurQuiet." } },
+        "cta": { "type": "button", "settings": { "text": "View sample QA gate", "link": "/pages/sample-qa-log", "style": "primary" } }
+      },
+      "block_order": ["e1", "h1", "p1", "cta"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "checks": {
+      "type": "features",
+      "blocks": {
+        "b1": { "type": "feature", "settings": { "icon": "1", "heading": "Noise and tolerance", "text": "Look for a gradual introduction routine and measured noise evidence, not vague quiet claims." } },
+        "b2": { "type": "feature", "settings": { "icon": "2", "heading": "Kit contents", "text": "Confirm the base, hose, brush heads, dust cup, filter parts, nozzle, clipper support, plug, and manual." } },
+        "b3": { "type": "feature", "settings": { "icon": "3", "heading": "Replacement filters", "text": "A good product path needs spare filters and attachments, not just a one-time kit." } },
+        "b4": { "type": "feature", "settings": { "icon": "4", "heading": "Voltage and labels", "text": "US, Canada, UK, and Australia launches need the correct plug, voltage, labeling, and documentation." } },
+        "b5": { "type": "feature", "settings": { "icon": "5", "heading": "Return and cleanup policy", "text": "Used pet grooming products need clear return wording, filter hygiene, and packaging expectations." } },
+        "b6": { "type": "feature", "settings": { "icon": "6", "heading": "Real media", "text": "Prefer brands that show real sample photos, fur cup proof, and care steps instead of only supplier renders." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "settings": {
+        "eyebrow": "Buyer decision",
+        "heading": "Six checks before the product page earns the sale",
+        "subtitle": "This page works as both an SEO landing page and a product-development checklist.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "image": {
+      "type": "image-with-text",
+      "settings": {
+        "builtin_image": "furquiet-product-hero-ai.jpg",
+        "layout": "reverse",
+        "eyebrow": "Product development",
+        "heading": "The same checklist should guide 1688 supplier selection.",
+        "text": "Supplier replies should be scored on sample access, plug options, labels, manuals, spare filters, packaging, media rights, and lead time. If a supplier cannot support those basics, the offer should not scale.",
+        "button_label": "Read supplier message",
+        "button_link": "/pages/sample-qa-log"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "What is the biggest risk before buying a grooming vacuum?", "answer": "The biggest risk is trusting broad claims without sample proof. Buyers should look for clear kit contents, noise expectations, filter care, plug labels, and replacement part access." } },
+        "q2": { "type": "question", "settings": { "question": "Why does FurQuiet keep checkout gated?", "answer": "The first-batch gate lets FurQuiet verify sample QA, shipping cost, real media, return handling, and supplier documentation before pushing broad checkout volume." } },
+        "q3": { "type": "question", "settings": { "question": "What should a first-batch buyer receive?", "answer": "They should receive sample-test notes, launch timing, kit content confirmation, care guidance, and honest claim boundaries before the checkout push." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Buying FAQ",
+        "heading": "Turn purchase hesitation into a checklist",
+        "subtitle": "The goal is fewer vague claims and more verifiable product proof.",
+        "cta_label": "Join first batch",
+        "cta_link": "/pages/first-batch"
+      }
+    }
+  },
+  "order": ["intro", "checks", "image", "faq"]
+}

@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Kit contents" } },
+        "h1": { "type": "heading", "settings": { "text": "What comes in a pet grooming vacuum kit?" } },
+        "p1": { "type": "paragraph", "settings": { "text": "Before a shopper trusts a new grooming vacuum brand, they need to know exactly what is in the box and what each piece does. FurQuiet should use this page to explain the kit without adding unsupported performance claims before sample QA is complete." } },
+        "cta": { "type": "button", "settings": { "text": "View FurQuiet kit", "link": "/products/furquiet-grooming-vacuum-kit", "style": "primary" } }
+      },
+      "block_order": ["e1", "h1", "p1", "cta"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "contents": {
+      "type": "features",
+      "blocks": {
+        "c1": { "type": "feature", "settings": { "icon": "1", "heading": "Vacuum base and dust cup", "text": "The base creates airflow and the transparent cup gives the visual fur-capture proof shoppers want to see." } },
+        "c2": { "type": "feature", "settings": { "icon": "2", "heading": "Flexible hose", "text": "The hose helps owners keep the base away from a nervous pet while brushing from a more comfortable angle." } },
+        "c3": { "type": "feature", "settings": { "icon": "3", "heading": "Brush attachments", "text": "De-shedding and slicker-style brush heads support routine loose-fur removal before hair spreads through the room." } },
+        "c4": { "type": "feature", "settings": { "icon": "4", "heading": "Clipper support", "text": "Clipper guards and trim support should be positioned for light maintenance areas, not as a replacement for professional grooming." } },
+        "c5": { "type": "feature", "settings": { "icon": "5", "heading": "Filter and storage parts", "text": "Filters, nozzles, and storage pieces affect repeat use. FurQuiet should verify spare filter access before checkout scales." } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4", "c5"],
+      "settings": {
+        "eyebrow": "Box checklist",
+        "heading": "Explain the kit in buyer language",
+        "subtitle": "Each item should connect to one practical grooming job: brush, collect, trim, clean, or store.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "image": {
+      "type": "image-with-text",
+      "settings": {
+        "builtin_image": "furquiet-kit-flatlay-ai.jpg",
+        "layout": "reverse",
+        "eyebrow": "Social proof angle",
+        "heading": "The flatlay is a conversion asset, not just a product image.",
+        "text": "A clear kit flatlay can become a YouTube Shorts answer, Pinterest pin, Instagram carousel, and product-page trust section. Replace AI mockups with real sample photos as soon as the sample arrives.",
+        "button_label": "Read sample QA gate",
+        "button_link": "/pages/sample-qa-log"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Does every grooming vacuum kit include the same attachments?", "answer": "No. Shoppers should check the exact brush heads, hose, filter parts, clipper guards, nozzle, plug type, and replacement part availability before buying." } },
+        "q2": { "type": "question", "settings": { "question": "Why does the dust cup matter?", "answer": "The dust cup is the clearest visual proof that loose fur is being collected during brushing instead of falling onto the sofa, rug, or clothing." } },
+        "q3": { "type": "question", "settings": { "question": "What should FurQuiet verify with the real sample?", "answer": "The final sample should confirm exact kit contents, attachment fit, filter type, spare filter access, plug label, manual wording, and packed box dimensions." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Kit FAQ",
+        "heading": "Questions buyers ask about the box",
+        "subtitle": "Use this page to reduce uncertainty before the shopper reaches the product page.",
+        "cta_label": "Join first batch",
+        "cta_link": "/pages/first-batch"
+      }
+    }
+  },
+  "order": ["intro", "contents", "image", "faq"]
+}

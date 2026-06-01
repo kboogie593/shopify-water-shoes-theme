@@ -197,3 +197,59 @@ Length: 12 seconds
 | 10-12s | Routine finder card | Find the first routine. |
 
 Caption: Corgi content works because the contrast is easy to understand: small dog, visible fur, cleaner shared surfaces.
+
+## Script 12: Kit Contents Flatlay
+
+Status: partially ready with AI flatlay; replace with real sample kit.
+
+Destination: `/pages/pet-grooming-vacuum-kit-contents`
+
+Length: 22 seconds
+
+| Time | Visual | Voiceover / On-screen Text |
+|---:|---|---|
+| 0-3s | Full kit flatlay | What should be in a grooming vacuum kit? |
+| 3-6s | Base and dust cup | Base plus transparent fur cup. |
+| 6-9s | Hose | Hose for distance and angles. |
+| 9-13s | Brush heads | Brush heads for loose fur. |
+| 13-17s | Clipper support and filter | Trim support, nozzle, and filter care. |
+| 17-22s | Storage layout | Check the box before buying. |
+
+Caption: A kit contents video reduces uncertainty before the product page. Replace mockups with real sample footage after QA.
+
+## Script 13: How Loud Is It?
+
+Status: ready as an education clip; exact decibel claims blocked by sample testing.
+
+Destination: `/pages/pet-grooming-vacuum-noise`
+
+Length: 20 seconds
+
+| Time | Visual | Voiceover / On-screen Text |
+|---:|---|---|
+| 0-3s | Owner standing away from pet | Do not start beside the pet. |
+| 3-7s | Unit several feet away | Start with sound at a distance. |
+| 7-11s | Treat or calm pause | Reward calm behavior. |
+| 11-15s | Brush with tool off | Let the pet feel the brush first. |
+| 15-20s | One short low-airflow pass | Then try one short pass on low. |
+
+Caption: Until sample decibel readings are verified, answer noise questions with a safer introduction routine.
+
+## Script 14: Buying Checklist
+
+Status: ready as founder/X thread or checklist carousel.
+
+Destination: `/pages/pet-grooming-vacuum-buying-checklist`
+
+Length: Carousel or 30-second talking-head clip
+
+| Beat | Message |
+|---|---|
+| 1 | Check the exact kit contents. |
+| 2 | Ask how noise was measured. |
+| 3 | Confirm spare filters and attachments. |
+| 4 | Check plug, voltage, labels, and manual. |
+| 5 | Read the return and cleaning policy. |
+| 6 | Prefer real sample media over supplier renders. |
+
+Caption: This is the same checklist FurQuiet should use with 1688 suppliers before checkout scales.
