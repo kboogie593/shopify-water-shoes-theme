@@ -5,10 +5,13 @@ Updated: 2026-06-01
 ## Current Shopify State
 
 - Store: `wxat5u-e3` / Shopify Admin test store.
+- Published theme: `shopify-water-shoes-theme/main` is the live main theme.
 - Product created: `FurQuiet Grooming Vacuum Kit`.
 - Product admin URL: `https://admin.shopify.com/store/wxat5u-e3/products/8964334616745`
+- Product storefront URL: `https://wxat5u-e3.myshopify.com/products/furquiet-grooming-vacuum-kit`
 - GitHub repo pushed: `https://github.com/kboogie593/shopify-water-shoes-theme`
-- Product image upload is blocked until the Codex Chrome Extension has file URL access enabled.
+- Product native media is still missing; the published theme renders fallback product gallery assets until native media is uploaded.
+- Live verification log: `data/furquiet-live-store-audit.csv`.
 
 ## Fix Product Media Upload
 
@@ -25,6 +28,15 @@ Enable Chrome extension file URL permission:
    - `assets/furquiet-clean-home-ai.jpg`
 
 Until this is fixed, the theme product template still has fallback gallery assets, but the Shopify product itself has no native product media.
+
+The product page fallback gallery currently covers:
+
+- `assets/furquiet-product-hero-ai.jpg`
+- `assets/furquiet-kit-flatlay-ai.jpg`
+- `assets/furquiet-grooming-lifestyle-ai.jpg`
+- `assets/furquiet-clean-home-ai.jpg`
+
+The import file `data/furquiet-shopify-product-import.csv` contains the target vendor, SKU, price, compare-at price, SEO fields, and media alt text for a Shopify product CSV import/update.
 
 ## Create Required Pages
 
@@ -46,7 +58,13 @@ Create these Shopify pages and assign the matching theme template:
 
 Page body can stay short because the templates carry the content.
 
+Current workaround: the homepage includes the first-batch capture section at `/#first-batch`, so the primary launch CTA can collect emails before the standalone Shopify pages are created.
+
+Automation note: Chrome verified the custom templates appear in the page template dropdown, but the Shopify Admin page-title web component did not persist the automated value during save. If this repeats, create pages manually in Shopify Admin or use an Admin API token for page creation.
+
 ## Theme Publish Gate
+
+Current status: passed and published on 2026-06-01.
 
 Before publishing the theme:
 

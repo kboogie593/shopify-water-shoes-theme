@@ -19,7 +19,7 @@
       "type": "announcement-bar",
       "settings": {
         "text": "First-batch FurQuiet grooming vacuum kit · Sample QA before scale",
-        "link": "/pages/sample-qa-log"
+        "link": "/#first-batch"
       }
     },
     "header": {
@@ -30,7 +30,7 @@
         "menu": "main-menu",
         "mega_promo_heading": "First-batch grooming kit",
         "mega_promo_cta": "Join the list ->",
-        "mega_promo_link": "/pages/first-batch"
+        "mega_promo_link": "/#first-batch"
       }
     }
   },

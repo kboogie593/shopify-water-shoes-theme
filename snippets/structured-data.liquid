@@ -63,15 +63,20 @@
 {%- if template contains 'product' and product -%}
   {%- assign product_price = product.selected_or_first_available_variant.price | divided_by: 100.0 -%}
   {%- assign product_currency = cart.currency.iso_code -%}
+  {%- assign product_schema_fallback_image = 'furquiet-product-hero-ai.jpg' | asset_url | prepend: 'https:' -%}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org/",
     "@type": "Product",
     "name": {{ product.title | json }},
     "image": [
-      {%- for media in product.media limit: 6 -%}
-        "https:{{ media | image_url: width: 1200 }}"{%- unless forloop.last -%},{%- endunless -%}
-      {%- endfor -%}
+      {%- if product.media.size > 0 -%}
+        {%- for media in product.media limit: 6 -%}
+          "https:{{ media | image_url: width: 1200 }}"{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      {%- else -%}
+        {{ product_schema_fallback_image | json }}
+      {%- endif -%}
     ],
     "description": {{ product.description | strip_html | truncate: 5000 | json }},
     "sku": {{ product.selected_or_first_available_variant.sku | default: product.id | json }},
