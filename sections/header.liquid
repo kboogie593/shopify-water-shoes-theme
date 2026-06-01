@@ -10,10 +10,10 @@
           style="max-width: {{ section.settings.logo_width }}px"
           loading="eager">
       {%- else -%}
-        {%- assign default_logo = section.settings.builtin_logo | default: 'firstt-logo.png' -%}
+        {%- assign default_logo = section.settings.builtin_logo | default: 'furquiet-logo.svg' -%}
         <img
           src="{{ default_logo | asset_url }}"
-          alt="{{ shop.name | default: 'FirstT' }}"
+          alt="{{ shop.name | default: 'FurQuiet' }}"
           width="{{ section.settings.logo_width }}"
           style="max-width: {{ section.settings.logo_width }}px"
           loading="eager">
@@ -68,7 +68,7 @@
       {%- endif -%}
 
       {%- if use_builtin -%}
-        {%- comment -%} ───── Built-in English navigation ───── {%- endcomment -%}
+        {%- comment -%} Built-in FurQuiet navigation {%- endcomment -%}
         <a href="/" class="header-nav__link{% if request.path == '/' %} is-active{% endif %}">Home</a>
 
         <div class="header-nav__item has-submenu" data-mega-trigger>
@@ -80,29 +80,29 @@
             <div class="page-width">
               <div class="mega-menu__grid">
                 <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'women' %}" class="mega-menu__heading">Women</a>
+                  <a href="{% render 'collection-url', handle: 'pet-grooming-vacuums' %}" class="mega-menu__heading">Grooming kits</a>
                   <ul>
-                    <li><a href="{% render 'collection-url', handle: 'womens-water-shoes' %}">Women's Water Shoes</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'womens-beach-shoes' %}">Women's Beach Shoes</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'womens-sport' %}">Women's Sport</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'womens-fashion' %}">Women's Fashion</a></li>
+                    <li><a href="/products/furquiet-grooming-vacuum-kit">FurQuiet Vacuum Kit</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'replacement-filters' %}">Replacement Filters</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'grooming-attachments' %}">Grooming Attachments</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'first-batch' %}">First Batch</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'men' %}" class="mega-menu__heading">Men</a>
+                  <a href="{% render 'collection-url', handle: 'shedding-dogs' %}" class="mega-menu__heading">By pet type</a>
                   <ul>
-                    <li><a href="{% render 'collection-url', handle: 'mens-water-shoes' %}">Men's Water Shoes</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'mens-beach-shoes' %}">Men's Beach Shoes</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'mens-sport' %}">Men's Sport</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'mens-fashion' %}">Men's Fashion</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'husky-grooming' %}">Husky & Double Coat</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'german-shepherd-grooming' %}">German Shepherd</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'golden-retriever-grooming' %}">Golden Retriever</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'long-hair-cat-grooming' %}">Long-Hair Cats</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'kids' %}" class="mega-menu__heading">Kids</a>
+                  <a href="{% render 'collection-url', handle: 'home-grooming' %}" class="mega-menu__heading">By home</a>
                   <ul>
-                    <li><a href="{% render 'collection-url', handle: 'kids-beach-shoes' %}">Kids Beach Shoes</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'kids-water-shoes' %}">Kids Water Shoes</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'kids-clogs' %}">Kids Clogs</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'apartment-pets' %}">Apartment Pets</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'nervous-pets' %}">Nervous Pets</a></li>
+                    <li><a href="{% render 'collection-url', handle: 'multi-pet-homes' %}">Multi-Pet Homes</a></li>
                   </ul>
                 </div>
                 <div class="mega-menu__col">
@@ -129,118 +129,15 @@
           </div>
         </div>
 
-        <div class="header-nav__item has-submenu" data-mega-trigger>
-          <a href="{% render 'collection-url', handle: 'beach' %}" class="header-nav__link{% if request.path contains 'beach' %} is-active{% endif %}">
-            Beach
-            <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="mega-menu" data-mega-menu>
-            <div class="page-width">
-              <div class="mega-menu__grid">
-                <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'womens-beach-shoes' %}" class="mega-menu__heading">Women's Beach</a>
-                  <ul>
-                    <li><a href="{% render 'collection-url', handle: 'aquasoft' %}">Aquasoft</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'aquabeach' %}">Aquabeach</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'mayabay' %}">MayaBay</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'mens-beach-shoes' %}" class="mega-menu__heading">Men's Beach</a>
-                  <ul>
-                    <li><a href="{% render 'collection-url', handle: 'aquasoft' %}">Aquasoft</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'aquabeach' %}">Aquabeach</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'mayabay' %}">MayaBay</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'kids-beach-shoes' %}" class="mega-menu__heading">Kids Beach</a>
-                  <ul>
-                    <li><a href="{% render 'collection-url', handle: 'kids-aquasoft' %}">Kids Aquasoft</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'kids-clogs' %}">Beach Clogs</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="header-nav__item has-submenu" data-mega-trigger>
-          <a href="{% render 'collection-url', handle: 'sport' %}" class="header-nav__link{% if request.path contains 'sport' %} is-active{% endif %}">
-            Sport
-            <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="mega-menu" data-mega-menu>
-            <div class="page-width">
-              <div class="mega-menu__grid">
-                <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'womens-sport' %}" class="mega-menu__heading">Women's Sport</a>
-                  <ul>
-                    <li><a href="{% render 'collection-url', handle: 'motion' %}">Motion</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'arcachon' %}">Arcachon</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'aquastyl' %}">AquaStyl</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'mens-sport' %}" class="mega-menu__heading">Men's Sport</a>
-                  <ul>
-                    <li><a href="{% render 'collection-url', handle: 'motion' %}">Motion</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'arcachon' %}">Arcachon</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'aquastyl' %}">AquaStyl</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'kids-sport' %}" class="mega-menu__heading">Kids Sport</a>
-                  <ul>
-                    <li><a href="{% render 'collection-url', handle: 'kids-water-shoes' %}">Kids Water Shoes</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="header-nav__item has-submenu" data-mega-trigger>
-          <a href="{% render 'collection-url', handle: 'fashion' %}" class="header-nav__link{% if request.path contains 'fashion' %} is-active{% endif %}">
-            Fashion
-            <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="mega-menu" data-mega-menu>
-            <div class="page-width">
-              <div class="mega-menu__grid">
-                <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'graphik' %}" class="mega-menu__heading">Graphik</a>
-                  <ul>
-                    <li><a href="{% render 'collection-url', handle: 'graphik-women' %}">Women's Graphik</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'graphik-men' %}">Men's Graphik</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'bright-colors' %}" class="mega-menu__heading">Bright Colors</a>
-                  <ul>
-                    <li><a href="{% render 'collection-url', handle: 'teal' %}">Teal</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'pink' %}">Pink</a></li>
-                    <li><a href="{% render 'collection-url', handle: 'orange' %}">Orange</a></li>
-                  </ul>
-                </div>
-                <div class="mega-menu__col">
-                  <a href="{% render 'collection-url', handle: 'limited' %}" class="mega-menu__heading">Limited Edition</a>
-                  <ul>
-                    <li><a href="{% render 'collection-url', handle: 'summer-2025' %}">Summer 2025</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <a href="/pages/quiet-start-guide" class="header-nav__link{% if request.path == '/pages/quiet-start-guide' %} is-active{% endif %}">Quiet-start guide</a>
+        <a href="/pages/faq" class="header-nav__link{% if request.path == '/pages/faq' %} is-active{% endif %}">FAQ</a>
         <a href="/blogs/news" class="header-nav__link{% if request.path contains '/blogs' %} is-active{% endif %}">Journal</a>
         <a href="/pages/about" class="header-nav__link{% if request.path == '/pages/about' %} is-active{% endif %}">About</a>
         <a href="/pages/contact" class="header-nav__link{% if request.path == '/pages/contact' %} is-active{% endif %}">Contact</a>
-        <a href="/pages/shipping" class="header-nav__link is-promo">🚀 Express Delivery</a>
+        <a href="/products/furquiet-grooming-vacuum-kit" class="header-nav__link is-promo">First Batch</a>
 
       {%- else -%}
-        {%- comment -%} ───── Custom Shopify menu ───── {%- endcomment -%}
+        {%- comment -%} Custom Shopify menu {%- endcomment -%}
         {%- for link in section.settings.menu.links -%}
           {%- assign is_promo = false -%}
           {%- if link.title contains '🚀' or link.title contains '✨' or link.title contains '🔥' or link.title contains '⚡' -%}
@@ -303,10 +200,11 @@
       "id": "builtin_logo",
       "label": "Built-in logo variant",
       "options": [
-        { "value": "firstt-logo.png",          "label": "FirstT — text only" },
-        { "value": "firstt-logo-with-palm.png", "label": "FirstT — with palm + wave" }
+        { "value": "furquiet-logo.svg", "label": "FurQuiet — teal badge" },
+        { "value": "furquiet-logo.png", "label": "Legacy text logo" },
+        { "value": "furquiet-logo-with-palm.png", "label": "Legacy palm logo" }
       ],
-      "default": "firstt-logo.png"
+      "default": "furquiet-logo.svg"
     },
     { "type": "range", "id": "logo_width", "min": 80, "max": 320, "step": 10, "unit": "px", "label": "Logo width", "default": 220 },
     {
@@ -319,7 +217,7 @@
     { "type": "link_list", "id": "menu", "label": "Custom Shopify menu (only used when checkbox above is unchecked)", "default": "main-menu" },
     { "type": "header", "content": "Mega menu promo card" },
     { "type": "image_picker", "id": "mega_promo_image", "label": "Promo image" },
-    { "type": "text", "id": "mega_promo_heading", "label": "Promo heading", "default": "New: Summer 2025" },
+    { "type": "text", "id": "mega_promo_heading", "label": "Promo heading", "default": "First-batch grooming kit" },
     { "type": "text", "id": "mega_promo_cta", "label": "Promo CTA", "default": "Shop now →" },
     { "type": "url", "id": "mega_promo_link", "label": "Promo link" }
   ],

@@ -21,7 +21,7 @@
     assign og_title = collection.title | escape
     assign og_url = shop.url | append: collection.url
     assign og_type = 'website'
-    assign og_description = collection.description | strip_html | truncate: 300 | escape | default: 'Shop premium water shoes for every surface.'
+    assign og_description = collection.description | strip_html | truncate: 300 | escape | default: 'Shop quiet-start pet grooming vacuum kits for heavy-shedding homes.'
     if collection.image
       assign og_image = collection.image | image_url: width: 1200
     endif

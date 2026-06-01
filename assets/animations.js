@@ -1,5 +1,5 @@
 /**
- * FirstT — Animation Library
+ * FurQuiet — Animation Library
  * --------------------------------
  * Drop-in vanilla JS animations: scroll reveal, number count-up,
  * parallax, magnetic buttons, letter reveal, marquee, splash effect

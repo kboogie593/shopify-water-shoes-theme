@@ -12,11 +12,11 @@
     "body_font": "assistant_n4",
     "heading_font": "assistant_n7",
     "page_width": 1280,
-    "social_instagram_link": "https://instagram.com/firstt",
-    "social_facebook_link": "https://facebook.com/firstt",
-    "social_tiktok_link": "https://tiktok.com/@firstt",
-    "social_youtube_link": "https://youtube.com/@firstt",
-    "social_twitter_link": "https://x.com/firstt",
+    "social_instagram_link": "https://instagram.com/furquiet",
+    "social_facebook_link": "https://facebook.com/furquiet",
+    "social_tiktok_link": "https://tiktok.com/@furquiet",
+    "social_youtube_link": "https://youtube.com/@furquiet",
+    "social_twitter_link": "https://x.com/furquiet",
     "cart_type": "drawer",
     "show_vendor": false,
     "show_free_shipping_bar": true,
@@ -28,7 +28,7 @@
     "newsletter_popup_delay": 5
   },
   "presets": {
-    "FirstT Default": {
+    "FurQuiet Default": {
       "color_primary": "#2DD4BF",
       "color_primary_dark": "#0F766E",
       "color_accent": "#F97316"

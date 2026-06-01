@@ -1,4 +1,4 @@
-// FirstT Theme JS
+// FurQuiet Theme JS
 
 document.addEventListener('DOMContentLoaded', () => {
   initMenuToggle();
@@ -212,7 +212,7 @@ function initCartDrawer() {
   });
 
   // Expose openCart globally
-  window.firsttCart = { open, close, refresh: refreshCart };
+  window.furquietCart = { open, close, refresh: refreshCart };
 }
 
 async function updateCartLine(line, quantity) {
@@ -262,7 +262,7 @@ function initProductFormAjax() {
   const form = document.querySelector('[data-product-form]');
   if (!form) return;
   form.addEventListener('submit', async (e) => {
-    if (!window.firsttCart) return; // fall back to default
+    if (!window.furquietCart) return; // fall back to default
     e.preventDefault();
     const submitBtn = form.querySelector('[data-add-to-cart]');
     const originalText = submitBtn?.textContent;
@@ -276,7 +276,7 @@ function initProductFormAjax() {
       });
       if (!res.ok) throw new Error('add failed');
       await refreshCart();
-      window.firsttCart.open();
+      window.furquietCart.open();
     } catch (err) {
       console.error(err);
       form.submit();
@@ -579,7 +579,7 @@ function renderProductCard(p) {
 
 /* ---------- Recently Viewed (localStorage) ---------- */
 function initRecentlyViewed() {
-  const KEY = 'firstt_recently_viewed';
+  const KEY = 'furquiet_recently_viewed';
   const meta = document.querySelector('[data-product-meta]');
 
   // Save current product on product page
@@ -622,7 +622,7 @@ function initRecentlyViewed() {
 
 /* ---------- Wishlist (localStorage) ---------- */
 function initWishlist() {
-  const KEY = 'firstt_wishlist';
+  const KEY = 'furquiet_wishlist';
   const get = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } };
   const set = (list) => localStorage.setItem(KEY, JSON.stringify(list));
 
@@ -721,7 +721,7 @@ function initHeaderShrink() {
 function initNewsletterPopup() {
   const popup = document.querySelector('[data-newsletter-popup]');
   if (!popup) return;
-  const KEY = 'firstt_newsletter_popup';
+  const KEY = 'furquiet_newsletter_popup';
   if (localStorage.getItem(KEY)) return;
 
   const delaySec = parseInt(document.body.dataset.newsletterDelay || '0', 10);
@@ -800,13 +800,13 @@ function initScrollSpy() {
 function initCookieBanner() {
   const banner = document.querySelector('[data-cookie-banner]');
   if (!banner) return;
-  const stored = localStorage.getItem('firstt_cookie_consent');
+  const stored = localStorage.getItem('furquiet_cookie_consent');
   if (stored) return;
   banner.hidden = false;
   banner.addEventListener('click', (e) => {
     const action = e.target.closest('[data-cookie-action]');
     if (!action) return;
-    localStorage.setItem('firstt_cookie_consent', action.dataset.cookieAction);
+    localStorage.setItem('furquiet_cookie_consent', action.dataset.cookieAction);
     banner.hidden = true;
   });
 }

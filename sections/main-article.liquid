@@ -75,9 +75,9 @@
       <div class="article-author-card">
         <div class="article-author-card__avatar">{{ article.author | slice: 0, 1 }}</div>
         <div class="article-author-card__body">
-          <p class="article-author-card__role">{{ section.settings.author_role | default: 'FirstT crew' }}</p>
-          <h3>{{ article.author | default: 'FirstT team' }}</h3>
-          <p>{{ section.settings.author_bio | default: 'Tests every pair, in every kind of water. Surf checks at sunrise, river hikes at noon, board decks at dusk.' }}</p>
+          <p class="article-author-card__role">{{ section.settings.author_role | default: 'FurQuiet crew' }}</p>
+          <h3>{{ article.author | default: 'FurQuiet team' }}</h3>
+          <p>{{ section.settings.author_bio | default: 'Tests pet grooming routines, sample evidence, fur cleanup workflows, and quiet-start owner education.' }}</p>
         </div>
       </div>
     {%- endif -%}
@@ -163,13 +163,13 @@
       "type": "text",
       "id": "author_role",
       "label": "Author role / tagline",
-      "default": "FirstT crew"
+      "default": "FurQuiet crew"
     },
     {
       "type": "textarea",
       "id": "author_bio",
       "label": "Default author bio (shown if Shopify article has none)",
-      "default": "Tests every pair, in every kind of water. Surf checks at sunrise, river hikes at noon, board decks at dusk."
+      "default": "Tests pet grooming routines, sample evidence, fur cleanup workflows, and quiet-start owner education."
     }
   ]
 }

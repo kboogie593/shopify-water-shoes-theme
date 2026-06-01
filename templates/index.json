@@ -3,60 +3,60 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "eyebrow": "Summer 2025 · The hero shoe is here",
-        "heading": "Meet the ZVB Water Shoe.",
-        "subtitle": "Featherlight 5 oz mesh, barefoot toe-shaped sole, anti-slip rubber grip. The shoe that disappears on your feet — until the moment you actually need it.",
-        "button_label": "Shop ZVB — $29.99",
-        "button_link": "/products/zvb-womens-lightweight-mesh-water-shoes",
-        "button_label_2": "See full collection",
-        "button_link_2": "/collections/all",
-        "trust_text": "Rated 4.9/5 by 1,247 ZVB owners"
+        "eyebrow": "First batch · Quiet-start pet grooming",
+        "heading": "Meet the FurQuiet Grooming Vacuum.",
+        "subtitle": "Brush out loose fur and capture it at the source with a calmer grooming routine for heavy-shedding dogs and cats.",
+        "button_label": "Join first batch — $89",
+        "button_link": "/products/furquiet-grooming-vacuum-kit",
+        "button_label_2": "See grooming guide",
+        "button_link_2": "/pages/quiet-start-guide",
+        "trust_text": "Built for husky, shepherd, retriever, corgi, and long-hair cat homes"
       }
     },
     "featured-product": {
       "type": "featured-product",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "icon": "💧", "text": "Quick-dry mesh upper — water drains in seconds" } },
-        "b2": { "type": "benefit", "settings": { "icon": "🦶", "text": "Barefoot toe-shaped sole for natural grip" } },
-        "b3": { "type": "benefit", "settings": { "icon": "⚡", "text": "Featherlight 5 oz — packs flat for travel" } },
-        "b4": { "type": "benefit", "settings": { "icon": "🪨", "text": "Anti-slip rubber outsole grips wet rock & deck" } },
-        "b5": { "type": "benefit", "settings": { "icon": "🧦", "text": "Sock-fit cuff — wear with or without socks" } }
+        "b1": { "type": "benefit", "settings": { "icon": "✓", "text": "Low-noise start routine for pets that dislike loud dryers" } },
+        "b2": { "type": "benefit", "settings": { "icon": "✓", "text": "De-shedding brush pulls loose undercoat into the vacuum flow" } },
+        "b3": { "type": "benefit", "settings": { "icon": "✓", "text": "Clipper support helps clean paws, belly, and sanitary areas" } },
+        "b4": { "type": "benefit", "settings": { "icon": "✓", "text": "Washable filter, easy-empty dust cup, compact storage dock" } },
+        "b5": { "type": "benefit", "settings": { "icon": "✓", "text": "Designed for apartment grooming before fur spreads through the room" } }
       },
       "block_order": ["b1","b2","b3","b4","b5"],
       "settings": {
-        "eyebrow": "Hero product · #1 best seller",
-        "heading": "ZVB Women's Mesh Water Shoes",
-        "subtitle": "Engineered for beach, pool, paddleboard, and everywhere your feet hit the water. The pair our customers won't take off.",
-        "badge": "🔥 Trending",
-        "review_count": "1,247",
-        "price": "$29.99",
-        "compare_at_price": "$49.99",
-        "cta_label": "Shop ZVB now",
-        "cta_link": "/products/zvb-womens-lightweight-mesh-water-shoes"
+        "eyebrow": "Hero product · first production batch",
+        "heading": "FurQuiet Grooming Vacuum Kit",
+        "subtitle": "A complete at-home grooming vacuum kit for households where shedding never stops. Start quiet, brush slowly, and collect fur before it reaches the couch.",
+        "badge": "First batch",
+        "review_count": "early testers",
+        "price": "$89",
+        "compare_at_price": "$129",
+        "cta_label": "Join first batch",
+        "cta_link": "/products/furquiet-grooming-vacuum-kit"
       }
     },
     "collection-list": {
       "type": "collection-list",
       "blocks": {
-        "c1": { "type": "collection", "settings": { "fallback_title": "Women's Water Shoes", "subtitle": "Display everything", "builtin_image": "featured-shoe-teal.jpg" } },
-        "c2": { "type": "collection", "settings": { "fallback_title": "Men's Water Shoes",   "subtitle": "Display everything", "builtin_image": "featured-shoe-teal.jpg" } },
-        "c3": { "type": "collection", "settings": { "fallback_title": "Kids Water Shoes",    "subtitle": "Display everything", "builtin_image": "featured-shoe-teal.jpg" } }
+        "c1": { "type": "collection", "settings": { "fallback_title": "Heavy-shedding dogs", "subtitle": "Husky, shepherd, retriever homes", "builtin_image": "furquiet-deshed-demo.png" } },
+        "c2": { "type": "collection", "settings": { "fallback_title": "Nervous pets", "subtitle": "Quiet-start grooming routines", "builtin_image": "furquiet-hero.png" } },
+        "c3": { "type": "collection", "settings": { "fallback_title": "Small homes", "subtitle": "Less loose fur in apartments", "builtin_image": "furquiet-package-card.png" } }
       },
       "block_order": ["c1", "c2", "c3"],
       "settings": {
-        "eyebrow": "Shop by category",
-        "heading": "Find your fit",
-        "subtitle": "From kids' shore explorers to women's sport shoes — every foot, every wave.",
+        "eyebrow": "Shop by problem",
+        "heading": "Built around real shedding pain",
+        "subtitle": "FurQuiet is positioned around the jobs pet owners search for: less loose fur, calmer grooming, and cleaner small spaces.",
         "columns": 3
       }
     },
     "stats": {
       "type": "stats",
       "blocks": {
-        "s1": { "type": "stat", "settings": { "value": "50K+", "label": "Pairs sold worldwide" } },
-        "s2": { "type": "stat", "settings": { "value": "4.8/5", "label": "Average customer rating" } },
-        "s3": { "type": "stat", "settings": { "value": "60-day", "label": "Try-them-anywhere guarantee" } },
-        "s4": { "type": "stat", "settings": { "value": "FREE", "label": "Shipping over $79" } }
+        "s1": { "type": "stat", "settings": { "value": "3-step", "label": "Quiet-start routine" } },
+        "s2": { "type": "stat", "settings": { "value": "5-in-1", "label": "Brush, trim, collect, clean, store" } },
+        "s3": { "type": "stat", "settings": { "value": "30-day", "label": "Home trial plan" } },
+        "s4": { "type": "stat", "settings": { "value": "US/CA/UK/AU", "label": "Launch markets" } }
       },
       "block_order": ["s1", "s2", "s3", "s4"],
       "settings": {}
@@ -64,82 +64,82 @@
     "features": {
       "type": "features",
       "blocks": {
-        "f1": { "type": "feature", "settings": { "icon": "💧", "heading": "Quick-Dry Knit", "text": "Drains in seconds, dries in minutes. No more soggy steps." } },
-        "f2": { "type": "feature", "settings": { "icon": "🦶", "heading": "Barefoot Feel", "text": "180g per shoe. Like a sock, but with grip and protection." } },
-        "f3": { "type": "feature", "settings": { "icon": "⚡", "heading": "Reef-Grade Sole", "text": "Multidirectional rubber lugs grip wet rock, coral, and boat decks." } },
-        "f4": { "type": "feature", "settings": { "icon": "🌊", "heading": "Saltwater Tough", "text": "Marine-grade thread and reinforced toe — built to outlast the season." } }
+        "f1": { "type": "feature", "settings": { "icon": "✓", "heading": "Quiet-start first", "text": "Begin with distance, treats, and the lowest airflow before brushing near sensitive pets." } },
+        "f2": { "type": "feature", "settings": { "icon": "✓", "heading": "Fur captured while brushing", "text": "Loose undercoat moves into the dust cup instead of floating around the room." } },
+        "f3": { "type": "feature", "settings": { "icon": "✓", "heading": "Apartment-friendly kit", "text": "Compact dock, washable filter, and cleaner post-grooming reset for small spaces." } },
+        "f4": { "type": "feature", "settings": { "icon": "✓", "heading": "Content-ready proof points", "text": "Clear before/after fur cup, sofa cleanup, and noise-introduction angles for organic video." } }
       },
       "block_order": ["f1", "f2", "f3", "f4"],
       "settings": {
-        "eyebrow": "Engineered for the elements",
-        "heading": "Why athletes choose FirstT",
-        "subtitle": "Field-tested by paddleboarders in San Diego, surf instructors in Bali, and reef divers in the Florida Keys."
+        "eyebrow": "Engineered for everyday pet homes",
+        "heading": "Why FurQuiet fits organic traffic",
+        "subtitle": "The product solves visible, repeatable problems that work on TikTok, Reels, Shorts, Facebook, X, SEO, and AI search."
       }
     },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "eyebrow": "Best sellers",
-        "heading": "Most-loved this season",
-        "subtitle": "Our top four colorways — already on 50,000+ feet from beach to trail.",
+        "eyebrow": "Launch products",
+        "heading": "First-batch grooming essentials",
+        "subtitle": "Use this section for the live Shopify product once variants and sample evidence are ready.",
         "products_to_show": 4,
         "view_all": true,
-        "view_all_text": "Shop all 50 styles"
+        "view_all_text": "Shop all grooming kits"
       }
     },
     "image-with-text": {
       "type": "image-with-text",
       "settings": {
         "layout": "image_left",
-        "eyebrow": "Built by the water, for the water",
-        "heading": "Three friends. One bad pair of beach shoes.",
-        "text": "Founders Casey, Mira, and Theo got tired of bruised feet on lava rock in Hawaii, and tired of soggy sneakers after a paddle session in San Diego. So they spent two years building the shoe they wished existed. Today it's worn by surf guides, reef divers, and kids on family vacations across 30+ countries.",
-        "button_label": "Read our story",
-        "button_link": "/pages/about"
+        "eyebrow": "From shedding problem to product loop",
+        "heading": "Designed around visible proof, not vague promises.",
+        "text": "FurQuiet is built for repeatable proof: the sound introduction, the first brush pass, the dust cup reveal, the sofa reset, and the pet's comfort signal. Those scenes become ads, organic posts, guide pages, and customer education.",
+        "button_label": "Read the quiet-start guide",
+        "button_link": "/pages/quiet-start-guide"
       }
     },
     "press-logos": {
       "type": "press-logos",
       "blocks": {
-        "p1": { "type": "logo", "settings": { "name": "Outside" } },
-        "p2": { "type": "logo", "settings": { "name": "Surfer" } },
-        "p3": { "type": "logo", "settings": { "name": "GearJunkie" } },
-        "p4": { "type": "logo", "settings": { "name": "Travel + Leisure" } },
-        "p5": { "type": "logo", "settings": { "name": "Runner's World" } },
-        "p6": { "type": "logo", "settings": { "name": "Men's Journal" } }
+        "p1": { "type": "logo", "settings": { "name": "Pet Home Lab" } },
+        "p2": { "type": "logo", "settings": { "name": "Apartment Pet Care" } },
+        "p3": { "type": "logo", "settings": { "name": "Shedding Season" } },
+        "p4": { "type": "logo", "settings": { "name": "Grooming Notes" } },
+        "p5": { "type": "logo", "settings": { "name": "Quiet Kit Review" } },
+        "p6": { "type": "logo", "settings": { "name": "Pet Cleanup Weekly" } }
       },
       "block_order": ["p1","p2","p3","p4","p5","p6"],
-      "settings": { "heading": "As featured in", "scroll": true }
+      "settings": { "heading": "Built for search questions pet owners already ask", "scroll": true }
     },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "t1": { "type": "testimonial", "settings": { "text": "Best water shoes I've ever owned. They're light, they drain instantly, and the grip on wet rocks is unreal. I wear them paddleboarding every weekend.", "name": "Sarah Kalani", "role": "Paddleboarder, San Diego" } },
-        "t2": { "type": "testimonial", "settings": { "text": "Bought four pairs for a family trip to Maui. Zero blisters, zero slipping — even on lava rock. My kids refuse to take them off.", "name": "Marcus Trent", "role": "Verified Buyer" } },
-        "t3": { "type": "testimonial", "settings": { "text": "I'm a yoga instructor on a sailboat. FirstTs are the only shoe I trust on a wet deck. The teal pair gets compliments every single day.", "name": "Emma Rivera", "role": "Yoga Instructor, Miami" } }
+        "t1": { "type": "testimonial", "settings": { "text": "The fur cup reveal is exactly what I needed to see. I want grooming to feel less like a fight and less like a cleanup day.", "name": "Maya R.", "role": "Husky owner" } },
+        "t2": { "type": "testimonial", "settings": { "text": "I care most about the sound and whether my dog will tolerate the first minute. The quiet-start routine makes the product easier to trust.", "name": "Daniel P.", "role": "Apartment dog owner" } },
+        "t3": { "type": "testimonial", "settings": { "text": "If it cuts down the fur tumbleweeds after brushing, this is the type of tool I would keep by the mudroom.", "name": "Avery L.", "role": "Retriever household" } }
       },
       "block_order": ["t1", "t2", "t3"],
       "settings": {
-        "eyebrow": "Loved by 50,000+ customers",
-        "heading": "Real reviews from real adventurers"
+        "eyebrow": "Early customer language",
+        "heading": "The angle is simple: calmer grooming, cleaner rooms"
       }
     },
     "faq": {
       "type": "faq",
       "blocks": {
-        "q1": { "type": "question", "settings": { "question": "What are water shoes used for?", "answer": "Water shoes protect your feet on wet, slippery, or sharp surfaces while letting water drain out quickly. They are ideal for paddleboarding, kayaking, beach walking, rocky rivers, snorkeling, and pool decks. FirstT shoes are also light enough to wear all day as casual footwear." } },
-        "q2": { "type": "question", "settings": { "question": "How should I size FirstT water shoes?", "answer": "FirstT shoes fit true to size for most adults. If you are between sizes, size down for a snugger sock-like fit (recommended for swimming) or size up for more toe room (recommended for hiking). A full US/EU/UK size chart is on every product page." } },
-        "q3": { "type": "question", "settings": { "question": "How quickly do they dry?", "answer": "The breathable knit upper and drainage ports in the sole let most of the water exit within seconds. Fully air-dry time is typically 30–60 minutes depending on humidity. They will not retain odor like neoprene booties." } },
-        "q4": { "type": "question", "settings": { "question": "Are they good for rocky beaches and reefs?", "answer": "Yes. The outsole uses a reinforced rubber compound with multidirectional lugs that grip wet rocks, coral, and slippery boat decks. The upper is made from tightly-knit polyester that resists punctures from shells and small stones." } },
-        "q5": { "type": "question", "settings": { "question": "Are they machine washable?", "answer": "Yes. Rinse off sand or salt first, then machine wash on a cold gentle cycle inside a mesh bag. Air dry only — never put them in the dryer or in direct sunlight for extended periods." } },
-        "q6": { "type": "question", "settings": { "question": "What is your return policy?", "answer": "We offer a 60-day try-them-anywhere guarantee. If you are not happy for any reason, return them for a full refund or exchange — even if they have been worn outside. Free return labels on US orders." } },
-        "q7": { "type": "question", "settings": { "question": "Where does FirstT ship?", "answer": "FirstT ships worldwide. Free standard shipping is included on orders over $79 USD. Most orders to the US, Canada, UK, EU, and Australia arrive within 5–10 business days." } }
+        "q1": { "type": "question", "settings": { "question": "What is a pet grooming vacuum used for?", "answer": "A pet grooming vacuum helps brush loose fur from a dog or cat while suction collects hair into a dust cup. It is useful for heavy-shedding homes that want less loose fur on floors, sofas, clothing, and bedding." } },
+        "q2": { "type": "question", "settings": { "question": "Will a nervous pet tolerate FurQuiet?", "answer": "Some pets need a gradual introduction. Start with the unit several feet away, use the lowest setting, reward calm behavior, and only move closer when the pet is comfortable. FurQuiet should never be forced on a frightened pet." } },
+        "q3": { "type": "question", "settings": { "question": "Which pets is this best for?", "answer": "The first positioning is for long-hair cats and shedding dogs such as huskies, German shepherds, golden retrievers, corgis, Samoyeds, and mixed breeds with heavy seasonal undercoat." } },
+        "q4": { "type": "question", "settings": { "question": "Does this replace a professional groomer?", "answer": "No. FurQuiet is for routine at-home brushing, trimming support, and fur cleanup between professional grooming visits. It is not a replacement for medical skin care, difficult mat removal, or breed-specific grooming." } },
+        "q5": { "type": "question", "settings": { "question": "How do I clean the filter and dust cup?", "answer": "Empty the dust cup after each grooming session. Wash reusable filter parts only when the product instructions say they are washable, and let every part dry completely before reinstalling." } },
+        "q6": { "type": "question", "settings": { "question": "When should checkout open?", "answer": "Checkout should open only after supplier documentation, sample QA, electrical label review, packaging checks, and first-batch delivery assumptions are verified." } },
+        "q7": { "type": "question", "settings": { "question": "Where will FurQuiet launch first?", "answer": "The launch plan is focused on the United States, Canada, the United Kingdom, and Australia, with English-language organic traffic and AI-search guide pages." } }
       },
       "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
       "settings": {
         "eyebrow": "Questions, answered",
-        "heading": "Everything you wanted to know",
-        "subtitle": "Real answers from real customers. Still curious? Our team replies to every email within one business day.",
+        "heading": "Everything pet owners ask before trying a grooming vacuum",
+        "subtitle": "Use clear answers and avoid unsupported claims until sample tests and real customer feedback are available.",
         "cta_label": "Contact support",
         "cta_link": "/pages/contact"
       }
@@ -147,10 +147,10 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "eyebrow": "Join the tide",
-        "heading": "Get 10% off your first pair",
-        "text": "Subscribe for early access to new colors, exclusive drops, and field stories from our athletes. No spam — just the good stuff.",
-        "button_label": "Subscribe"
+        "eyebrow": "Join first batch",
+        "heading": "Get launch updates before the next shedding season",
+        "text": "Subscribe for first-batch access, quiet-start grooming tips, replacement filter updates, and sample-test notes.",
+        "button_label": "Join the list"
       }
     }
   },

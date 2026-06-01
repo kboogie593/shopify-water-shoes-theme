@@ -1,10 +1,10 @@
-# FirstT — Shopify Theme
+# FurQuiet — Shopify Theme
 
-A modern, performance-focused Shopify theme for **FirstT**, a water-shoes
-brand. Built to the Online Store 2.0 spec (JSON templates + section groups)
+A modern, performance-focused Shopify theme for **FurQuiet**, a quiet-start
+pet grooming vacuum brand. Built to the Online Store 2.0 spec (JSON templates + section groups)
 so it is fully editable from the Shopify Theme Editor.
 
-![Theme color: teal #2DD4BF](https://img.shields.io/badge/brand-FirstT-2DD4BF)
+![Theme color: teal #2DD4BF](https://img.shields.io/badge/brand-FurQuiet-2DD4BF)
 ![Online Store 2.0](https://img.shields.io/badge/Shopify-Online%20Store%202.0-95BF47)
 
 ## Highlights
@@ -16,7 +16,7 @@ so it is fully editable from the Shopify Theme Editor.
 - Customer accounts, cart, search, blog, contact, 404, password, gift card
 
 ### Design
-- Brand palette pre-tuned to FirstT teal (`#2DD4BF` / `#0F766E`) with
+- Brand palette pre-tuned to FurQuiet teal (`#2DD4BF` / `#0F766E`) with
   coral accent (`#F97316`)
 - Glass-morphism sticky header, gradient hero with floating blobs
 - Refined product cards with quick-add hover state and lift animation
@@ -49,11 +49,11 @@ Overviews, Bing Copilot, and Claude**:
 
    ```bash
    cd shopify-water-shoes-theme
-   zip -r ../firstt-theme.zip . -x "*.git*" "README.md" "LICENSE"
+   zip -r ../furquiet-theme.zip . -x "*.git*" "README.md" "LICENSE"
    ```
 
 2. In your Shopify admin, go to **Online Store → Themes → Add theme →
-   Upload zip file**, then choose `firstt-theme.zip`.
+   Upload zip file**, then choose `furquiet-theme.zip`.
 
 3. Once uploaded, click **Customize** to open the Theme Editor and tune
    sections, colors, logo, and menus.
@@ -130,5 +130,5 @@ MIT — see `LICENSE`.
 
 ## Credits
 
-Built with care for the FirstT launch. Theme architecture follows
+Built with care for the FurQuiet launch. Theme architecture follows
 [Shopify Dawn](https://github.com/Shopify/dawn) conventions.

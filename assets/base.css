@@ -1,4 +1,4 @@
-/* FirstT Theme - Base Styles */
+/* FurQuiet Theme - Base Styles */
 
 *,
 *::before,
@@ -3637,7 +3637,7 @@ input[type="tel"], input[type="text"], input[type="email"], input[type="number"]
 }
 .lightbox__close:hover { background: rgba(255,255,255,0.25); }
 
-/* ---- Product benefits strip (aqua.shoes-inspired emoji 3-up) ---- */
+/* ---- Product benefits strip (FurQuiet-inspired emoji 3-up) ---- */
 .product-benefits {
   list-style: none;
   padding: 18px 0;
@@ -3673,7 +3673,7 @@ input[type="tel"], input[type="text"], input[type="email"], input[type="number"]
   .product-benefits li > span:first-child { font-size: 22px; }
 }
 
-/* ---- Trust strip (aqua.shoes-inspired 4-up below tabs) ---- */
+/* ---- Trust strip (FurQuiet-inspired 4-up below tabs) ---- */
 .trust-strip {
   margin: 72px 0 32px;
   padding: 36px 24px;
@@ -3732,13 +3732,13 @@ input[type="tel"], input[type="text"], input[type="email"], input[type="number"]
   .trust-strip__item::after { display: none !important; }
 }
 
-/* ---- Price bumped up (closer to aqua.shoes weight) ---- */
+/* ---- Price bumped up (closer to FurQuiet weight) ---- */
 .product-info__price {
   font-size: 34px;
   letter-spacing: -0.025em;
 }
 
-/* ---- Make h1 hug 1.1 like aqua.shoes (single line on desktop) ---- */
+/* ---- Make h1 hug 1.1 like FurQuiet (single line on desktop) ---- */
 .product-info__title {
   line-height: 1.1;
 }
@@ -3749,7 +3749,7 @@ input[type="tel"], input[type="text"], input[type="email"], input[type="number"]
   padding: 11px 14px;
 }
 
-/* ---- aqua.shoes-style stacked promise rows on product page ---- */
+/* ---- FurQuiet-style stacked promise rows on product page ---- */
 .product-promises {
   list-style: none;
   padding: 18px 0 4px;
@@ -3777,7 +3777,7 @@ input[type="tel"], input[type="text"], input[type="email"], input[type="number"]
   font-weight: 700;
 }
 
-/* ---- Bigger softer CTA (aqua.shoes vibe) ---- */
+/* ---- Bigger softer CTA (FurQuiet vibe) ---- */
 .product-form__buttons .btn--large {
   min-height: 62px;
   font-size: 16px;

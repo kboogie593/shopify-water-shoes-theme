@@ -25,7 +25,7 @@
       "name": {{ org_name | json }},
       "url": "{{ org_url }}",
       {% if org_logo != blank %}"logo": "https:{{ org_logo }}",{% endif %}
-      "description": {{ shop.description | default: 'Premium water shoes engineered for performance — lightweight, quick-drying, and built to grip on every wet surface.' | json }},
+      "description": {{ shop.description | default: 'FurQuiet designs quiet-start pet grooming vacuum kits for heavy-shedding dogs, long-hair cats, and small homes that need calmer brushing and cleaner rooms.' | json }},
       "sameAs": [
         {%- assign social_list = '' -%}
         {%- if settings.social_instagram_link != blank -%}{%- assign social_list = social_list | append: settings.social_instagram_link | append: '|' -%}{%- endif -%}
@@ -39,7 +39,7 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
-        "email": "support@firstt.com",
+        "email": "support@furquiet.com",
         "availableLanguage": ["English"]
       }
     },
@@ -80,7 +80,7 @@
       "@type": "Brand",
       "name": {{ product.vendor | default: shop.name | json }}
     },
-    "category": {{ product.type | default: 'Water Shoes' | json }},
+    "category": {{ product.type | default: 'Pet Grooming Vacuums' | json }},
     "offers": {
       "@type": "Offer",
       "url": "{{ shop.url }}{{ product.url }}",
@@ -187,42 +187,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What are water shoes used for?",
+        "name": "What is a pet grooming vacuum used for?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Water shoes protect your feet on wet, slippery, or sharp surfaces while letting water drain out quickly. They are ideal for paddleboarding, kayaking, beach walking, rocky rivers, snorkeling, and pool decks. FirstT shoes are also light enough to wear all day as casual footwear."
+          "text": "A pet grooming vacuum helps brush loose fur while suction collects hair into a dust cup. It is useful for heavy-shedding homes that want less loose fur on sofas, floors, bedding, and clothes."
         }
       },
       {
         "@type": "Question",
-        "name": "Are FirstT water shoes machine washable?",
+        "name": "Will a nervous pet tolerate FurQuiet?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Rinse off sand or salt first, then machine wash on a cold gentle cycle inside a mesh bag. Air dry only — never put them in the dryer or direct sunlight for extended periods, which can shorten the life of the sole."
+          "text": "Some pets need a gradual introduction. Start several feet away, use the lowest setting, reward calm behavior, and only move closer when the pet is comfortable."
         }
       },
       {
         "@type": "Question",
-        "name": "How should I size FirstT water shoes?",
+        "name": "Which pets is FurQuiet best for?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "FirstT shoes fit true to size for most adults. If you are between sizes, size down for a snugger sock-like fit (recommended for swimming) or size up for more toe room (recommended for hiking). A full size chart is on every product page."
+          "text": "FurQuiet is positioned for long-hair cats and shedding dogs such as huskies, German shepherds, golden retrievers, corgis, Samoyeds, and mixed breeds with heavy seasonal undercoat."
         }
       },
       {
         "@type": "Question",
-        "name": "Are FirstT shoes good for rocky beaches and reefs?",
+        "name": "Does FurQuiet replace a professional groomer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The outsole uses a reinforced rubber compound with multidirectional lugs that grip wet rocks, coral, and slippery boat decks. The upper is made from tightly-knit polyester that resists punctures from shells and small stones."
+          "text": "No. FurQuiet is for routine at-home brushing, trimming support, and fur cleanup between professional grooming visits. It is not a replacement for medical skin care, difficult mat removal, or breed-specific grooming."
         }
       },
       {
         "@type": "Question",
-        "name": "How quickly do FirstT water shoes dry?",
+        "name": "How do I clean the filter and dust cup?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The breathable knit upper and drainage ports in the sole let most of the water out within seconds. Fully air-dry time is typically 30–60 minutes depending on humidity. They will not retain odor like neoprene booties."
+          "text": "Empty the dust cup after each grooming session. Wash reusable filter parts only when the product instructions say they are washable, and let every part dry completely before reinstalling."
         }
       },
       {
@@ -230,15 +230,15 @@
         "name": "What is your return policy?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We offer a 60-day try-them-on-anywhere guarantee. If you are not happy for any reason, return them for a full refund or exchange — even if they have been worn outside."
+          "text": "The launch plan uses a 30-day home trial, subject to final supplier, packaging, compliance, and fulfillment confirmation before checkout opens."
         }
       },
       {
         "@type": "Question",
-        "name": "Where does FirstT ship?",
+        "name": "Where does FurQuiet ship?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "FirstT ships worldwide. Free standard shipping is included on orders over $79 USD. Most orders to the US, Canada, UK, EU, and Australia arrive within 5–10 business days."
+          "text": "FurQuiet is planned first for the United States, Canada, the United Kingdom, and Australia."
         }
       }
     ]

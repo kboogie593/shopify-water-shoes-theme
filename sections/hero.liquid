@@ -37,7 +37,12 @@
           height="{{ section.settings.image.height }}"
           loading="eager">
       {%- else -%}
-        <div class="hero-placeholder">👟💦</div>
+        <img
+          src="{{ 'furquiet-hero.png' | asset_url }}"
+          alt="{{ section.settings.heading | default: 'FurQuiet pet grooming vacuum' | escape }}"
+          width="1800"
+          height="1100"
+          loading="eager">
       {%- endif -%}
     </div>
   </div>
@@ -51,19 +56,19 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "New season • 2025 collection"
+      "default": "Quiet grooming kit"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Move freely, on every surface."
+      "default": "Vacuum loose fur while you brush."
     },
     {
       "type": "textarea",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "FirstT water shoes are engineered with lightweight knit, quick-drain soles, and grip-anywhere rubber — built for the beach, the boat, and the trail."
+      "default": "FurQuiet pairs a low-noise grooming vacuum with de-shedding tools, clipper support, washable filters, and a compact dock for heavy-shedding dogs and cats."
     },
     {
       "type": "image_picker",

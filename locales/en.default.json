@@ -20,7 +20,7 @@
     },
     "search": {
       "search": "Search",
-      "placeholder": "Search water shoes...",
+      "placeholder": "Search pet grooming tools...",
       "results_with_count": {
         "one": "{{ count }} result",
         "other": "{{ count }} results"
