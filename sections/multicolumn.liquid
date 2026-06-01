@@ -13,7 +13,12 @@
         <div class="multicolumn-item" {{ block.shopify_attributes }}>
           {%- if block.settings.image != blank -%}
             <div class="multicolumn-item__media">
-              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.heading | escape }}" loading="lazy">
+              <img
+                src="{{ block.settings.image | image_url: width: 600 }}"
+                alt="{{ block.settings.heading | escape }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+                loading="lazy">
             </div>
           {%- elsif block.settings.icon != blank -%}
             <div class="multicolumn-item__icon">{{ block.settings.icon }}</div>

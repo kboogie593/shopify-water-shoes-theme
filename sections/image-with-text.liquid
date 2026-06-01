@@ -2,8 +2,34 @@
   <div class="page-width">
     <div class="image-with-text {% if section.settings.layout == 'reverse' %}reverse{% endif %}">
       <div class="image-with-text__image">
+        {%- assign builtin_image = section.settings.builtin_image | default: 'furquiet-grooming-lifestyle-ai.jpg' -%}
+        {%- assign builtin_width = 1448 -%}
+        {%- assign builtin_height = 1086 -%}
+        {%- case builtin_image -%}
+          {%- when 'furquiet-product-hero-ai.jpg' -%}
+            {%- assign builtin_width = 1586 -%}
+            {%- assign builtin_height = 992 -%}
+          {%- when 'furquiet-kit-flatlay-ai.jpg' -%}
+            {%- assign builtin_width = 1254 -%}
+            {%- assign builtin_height = 1254 -%}
+          {%- when 'furquiet-clean-home-ai.jpg' -%}
+            {%- assign builtin_width = 1672 -%}
+            {%- assign builtin_height = 941 -%}
+        {%- endcase -%}
         {%- if section.settings.image != blank -%}
-          <img src="{{ section.settings.image | image_url: width: 900 }}" alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" loading="lazy">
+          <img
+            src="{{ section.settings.image | image_url: width: 900 }}"
+            alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}"
+            loading="lazy">
+        {%- elsif builtin_image != 'none' -%}
+          <img
+            src="{{ builtin_image | asset_url }}"
+            alt="{{ section.settings.heading | escape }}"
+            width="{{ builtin_width }}"
+            height="{{ builtin_height }}"
+            loading="lazy">
         {%- else -%}
           {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
         {%- endif -%}
@@ -29,7 +55,20 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Custom image"
+    },
+    {
+      "type": "select",
+      "id": "builtin_image",
+      "label": "Built-in fallback image",
+      "options": [
+        { "value": "furquiet-grooming-lifestyle-ai.jpg", "label": "Lifestyle grooming" },
+        { "value": "furquiet-clean-home-ai.jpg", "label": "Clean home comparison" },
+        { "value": "furquiet-kit-flatlay-ai.jpg", "label": "Full kit flatlay" },
+        { "value": "furquiet-product-hero-ai.jpg", "label": "Product hero" },
+        { "value": "none", "label": "Placeholder" }
+      ],
+      "default": "furquiet-grooming-lifestyle-ai.jpg"
     },
     {
       "type": "select",

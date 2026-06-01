@@ -29,7 +29,7 @@
         <a href="{{ card_url }}" class="collection-card" {{ block.shopify_attributes }}>
           <div class="collection-card__media">
             {%- if img_src != '' -%}
-              <img src="{{ img_src }}" alt="{{ img_alt | escape }}" loading="lazy">
+              <img src="{{ img_src }}" alt="{{ img_alt | escape }}" width="1200" height="1380" loading="lazy">
             {%- else -%}
               <div class="collection-card__placeholder"></div>
             {%- endif -%}
@@ -131,10 +131,14 @@
           "label": "Built-in fallback image",
           "info": "Shown when no custom image and no collection image is set",
           "options": [
-            { "value": "furquiet-hero.png", "label": "FurQuiet hero kit" },
-            { "value": "furquiet-deshed-demo.png", "label": "De-shedding demo" },
-            { "value": "furquiet-package-card.png", "label": "Package card" },
-            { "value": "furquiet-social-strip.png", "label": "Social strip" },
+            { "value": "furquiet-product-hero-ai.jpg", "label": "FurQuiet product hero" },
+            { "value": "furquiet-grooming-lifestyle-ai.jpg", "label": "Grooming lifestyle" },
+            { "value": "furquiet-clean-home-ai.jpg", "label": "Clean home comparison" },
+            { "value": "furquiet-kit-flatlay-ai.jpg", "label": "Full kit flatlay" },
+            { "value": "furquiet-hero.png", "label": "FurQuiet legacy hero kit" },
+            { "value": "furquiet-deshed-demo.png", "label": "Legacy de-shedding demo" },
+            { "value": "furquiet-package-card.png", "label": "Legacy package card" },
+            { "value": "furquiet-social-strip.png", "label": "Legacy social strip" },
             { "value": "featured-shoe-teal.jpg", "label": "Legacy teal product" },
             { "value": "none", "label": "Use color gradient" }
           ],

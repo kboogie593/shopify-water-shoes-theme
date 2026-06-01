@@ -12,7 +12,12 @@
         {%- assign idx = forloop.index -%}
         {%- capture tile_inner -%}
           {%- if block.settings.image != blank -%}
-            <img src="{{ block.settings.image | image_url: width: 1200 }}" alt="{{ block.settings.heading | escape }}" loading="lazy">
+            <img
+              src="{{ block.settings.image | image_url: width: 1200 }}"
+              alt="{{ block.settings.heading | escape }}"
+              width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+              loading="lazy">
           {%- else -%}
             <div style="height:100%;background:linear-gradient(135deg,#ccfbf1,#5eead4);"></div>
           {%- endif -%}

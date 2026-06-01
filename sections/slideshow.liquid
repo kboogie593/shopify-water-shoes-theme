@@ -9,6 +9,8 @@
                        {{ block.settings.image | image_url: width: 2000 }} 2000w"
                sizes="100vw"
                alt="{{ block.settings.heading | escape }}"
+               width="{{ block.settings.image.width }}"
+               height="{{ block.settings.image.height }}"
                loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
         {%- else -%}
           <div class="slide__image slide__placeholder"></div>

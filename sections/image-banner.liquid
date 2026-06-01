@@ -7,6 +7,8 @@
               {{ section.settings.image | image_url: width: 2400 }} 2400w"
       sizes="100vw"
       alt="{{ section.settings.heading | escape }}"
+      width="{{ section.settings.image.width }}"
+      height="{{ section.settings.image.height }}"
       loading="lazy"
       class="image-banner__image">
   {%- else -%}

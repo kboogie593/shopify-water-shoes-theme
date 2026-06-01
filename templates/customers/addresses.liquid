@@ -22,7 +22,7 @@
               <p>{{ address | format_address }}</p>
               <div class="address-card__actions">
                 <button type="button" class="address-card__edit" data-address-edit="{{ address.id }}">Edit</button>
-                <form method="post" action="/account/addresses/{{ address.id }}" data-address-delete onsubmit="return confirm('Delete this address?');">
+                <form method="post" action="{{ routes.account_addresses_url }}/{{ address.id }}" data-address-delete onsubmit="return confirm('Delete this address?');">
                   <input type="hidden" name="_method" value="delete">
                   <button type="submit" class="address-card__delete">Delete</button>
                 </form>

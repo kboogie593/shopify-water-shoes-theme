@@ -7,7 +7,6 @@
     <div class="press-logos {% if section.settings.scroll %}press-logos--scroll{% endif %}">
       <div class="press-logos__track">
         {%- for block in section.blocks -%}
-          {%- assign logo = block -%}
           {%- if block.settings.link != blank -%}
             <a href="{{ block.settings.link }}" class="press-logo" {{ block.shopify_attributes }} target="_blank" rel="noopener">
               {%- if block.settings.image != blank -%}

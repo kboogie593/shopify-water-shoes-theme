@@ -4,13 +4,14 @@
       "type": "hero",
       "settings": {
         "eyebrow": "First batch · Quiet-start pet grooming",
-        "heading": "Meet the FurQuiet Grooming Vacuum.",
-        "subtitle": "Brush out loose fur and capture it at the source with a calmer grooming routine for heavy-shedding dogs and cats.",
+        "heading": "The calmer way to groom heavy-shedding pets at home.",
+        "subtitle": "FurQuiet combines a low-noise grooming vacuum, de-shedding brushes, clipper support, washable filter care, and a compact dock so loose fur goes into the cup before it reaches the sofa.",
+        "builtin_image": "furquiet-product-hero-ai.jpg",
         "button_label": "Join first batch — $89",
         "button_link": "/products/furquiet-grooming-vacuum-kit",
-        "button_label_2": "See grooming guide",
-        "button_link_2": "/pages/quiet-start-guide",
-        "trust_text": "Built for husky, shepherd, retriever, corgi, and long-hair cat homes"
+        "button_label_2": "See what is included",
+        "button_link_2": "#furquiet-proof",
+        "trust_text": "For husky, shepherd, retriever, corgi, multi-pet, and long-hair cat homes"
       }
     },
     "featured-product": {
@@ -35,12 +36,20 @@
         "cta_link": "/products/furquiet-grooming-vacuum-kit"
       }
     },
+    "furquiet-proof": {
+      "type": "furquiet-proof",
+      "settings": {
+        "eyebrow": "Product images ready for Shopify",
+        "heading": "Show the kit, the routine, and the cleanup result.",
+        "subtitle": "Pet vacuum buyers need to see what is included, whether a pet looks calm, and whether the fur problem visibly improves."
+      }
+    },
     "collection-list": {
       "type": "collection-list",
       "blocks": {
-        "c1": { "type": "collection", "settings": { "fallback_title": "Heavy-shedding dogs", "subtitle": "Husky, shepherd, retriever homes", "builtin_image": "furquiet-deshed-demo.png" } },
-        "c2": { "type": "collection", "settings": { "fallback_title": "Nervous pets", "subtitle": "Quiet-start grooming routines", "builtin_image": "furquiet-hero.png" } },
-        "c3": { "type": "collection", "settings": { "fallback_title": "Small homes", "subtitle": "Less loose fur in apartments", "builtin_image": "furquiet-package-card.png" } }
+        "c1": { "type": "collection", "settings": { "fallback_title": "Heavy-shedding dogs", "subtitle": "Husky, shepherd, retriever homes", "builtin_image": "furquiet-grooming-lifestyle-ai.jpg" } },
+        "c2": { "type": "collection", "settings": { "fallback_title": "Nervous pets", "subtitle": "Quiet-start grooming routines", "builtin_image": "furquiet-product-hero-ai.jpg" } },
+        "c3": { "type": "collection", "settings": { "fallback_title": "Small homes", "subtitle": "Less loose fur in apartments", "builtin_image": "furquiet-clean-home-ai.jpg" } }
       },
       "block_order": ["c1", "c2", "c3"],
       "settings": {
@@ -91,10 +100,11 @@
       "type": "image-with-text",
       "settings": {
         "layout": "image_left",
+        "builtin_image": "furquiet-clean-home-ai.jpg",
         "eyebrow": "From shedding problem to product loop",
-        "heading": "Designed around visible proof, not vague promises.",
-        "text": "FurQuiet is built for repeatable proof: the sound introduction, the first brush pass, the dust cup reveal, the sofa reset, and the pet's comfort signal. Those scenes become ads, organic posts, guide pages, and customer education.",
-        "button_label": "Read the quiet-start guide",
+        "heading": "Designed around proof people can see in a 10-second video.",
+        "text": "The content loop is simple: start the machine away from the pet, brush one section, reveal the fur cup, then show a cleaner sofa or rug. That gives TikTok, Reels, Shorts, Facebook, X, SEO, and AI-search pages the same visual story.",
+        "button_label": "Read quiet-start guide",
         "button_link": "/pages/quiet-start-guide"
       }
     },
@@ -157,11 +167,12 @@
   "order": [
     "hero",
     "featured-product",
+    "furquiet-proof",
     "stats",
-    "collection-list",
     "features",
-    "featured-collection",
     "image-with-text",
+    "collection-list",
+    "featured-collection",
     "press-logos",
     "testimonials",
     "faq",

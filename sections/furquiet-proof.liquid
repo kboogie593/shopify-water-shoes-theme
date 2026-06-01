@@ -1,0 +1,96 @@
+<section id="furquiet-proof" class="furquiet-proof section-padding"{% if section.settings.bg_color != blank %} style="background: {{ section.settings.bg_color }}"{% endif %}>
+  <div class="page-width">
+    <div class="section-heading">
+      {%- if section.settings.eyebrow != blank -%}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.subtitle != blank -%}<p>{{ section.settings.subtitle }}</p>{%- endif -%}
+    </div>
+
+    <div class="furquiet-proof__grid">
+      <article class="furquiet-proof__item">
+        <img src="{{ 'furquiet-kit-flatlay-ai.jpg' | asset_url }}" alt="FurQuiet grooming vacuum kit with hose, brushes, clipper guards, filter, and storage dock" width="1254" height="1254" loading="lazy">
+        <div>
+          <span>Complete kit</span>
+          <h3>Everything in one grooming dock</h3>
+          <p>Vacuum base, transparent dust cup, hose, de-shedding brush, slicker brush, clipper body, guards, nozzle, filter, and cleaning brush.</p>
+        </div>
+      </article>
+
+      <article class="furquiet-proof__item">
+        <img src="{{ 'furquiet-grooming-lifestyle-ai.jpg' | asset_url }}" alt="Calm dog being brushed with FurQuiet pet grooming vacuum attachment" width="1448" height="1086" loading="lazy">
+        <div>
+          <span>Quiet routine</span>
+          <h3>Introduce sound before suction</h3>
+          <p>Built around short, calm sessions: sound first, brush contact second, low airflow last. Clear owner education lowers hesitation.</p>
+        </div>
+      </article>
+
+      <article class="furquiet-proof__item">
+        <img src="{{ 'furquiet-clean-home-ai.jpg' | asset_url }}" alt="Before and after clean sofa area after using a pet grooming vacuum" width="1672" height="941" loading="lazy">
+        <div>
+          <span>Visible proof</span>
+          <h3>Show the fur cup, not vague claims</h3>
+          <p>The best organic content is simple: brush pass, collected fur, cleaner sofa, calmer pet. That same proof supports SEO and AI search answers.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .furquiet-proof__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .furquiet-proof__item {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px -28px rgba(15, 23, 42, 0.35);
+  }
+  .furquiet-proof__item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .furquiet-proof__item div {
+    padding: 22px;
+  }
+  .furquiet-proof__item span {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--color-accent);
+    text-transform: uppercase;
+  }
+  .furquiet-proof__item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .furquiet-proof__item p {
+    color: #52615c;
+    font-size: 15px;
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .furquiet-proof__grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "FurQuiet proof",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Product proof" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A pet grooming vacuum customers can understand in seconds" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Use crisp product photography, calm pet context, and before/after cleanup evidence across the store and social content." },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FAFAF7" }
+  ],
+  "presets": [
+    { "name": "FurQuiet proof" }
+  ]
+}
+{% endschema %}

@@ -16,7 +16,11 @@
                  alt="{{ product.featured_media.alt | escape | default: product.title }}"
                  width="1400" height="1400">
           {%- else -%}
-            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            <img
+              src="{{ 'furquiet-product-hero-ai.jpg' | asset_url }}"
+              alt="FurQuiet pet grooming vacuum kit with hose and grooming attachments"
+              width="1586"
+              height="992">
           {%- endif -%}
           <button type="button" class="product-gallery__zoom" data-zoom-trigger aria-label="Zoom image">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -35,6 +39,21 @@
                 <img src="{{ media | image_url: width: 160 }}" alt="{{ media.alt | escape }}" width="160" height="160" loading="lazy">
               </div>
             {%- endfor -%}
+          </div>
+        {%- elsif product.media.size == 0 -%}
+          <div class="product-gallery__thumbs">
+            <div class="product-gallery__thumb active" data-gallery-thumb data-src="{{ 'furquiet-product-hero-ai.jpg' | asset_url }}" data-alt="FurQuiet pet grooming vacuum kit">
+              <img src="{{ 'furquiet-product-hero-ai.jpg' | asset_url }}" alt="FurQuiet pet grooming vacuum kit" width="160" height="160" loading="lazy">
+            </div>
+            <div class="product-gallery__thumb" data-gallery-thumb data-src="{{ 'furquiet-kit-flatlay-ai.jpg' | asset_url }}" data-alt="FurQuiet complete grooming kit attachments">
+              <img src="{{ 'furquiet-kit-flatlay-ai.jpg' | asset_url }}" alt="FurQuiet complete grooming kit attachments" width="160" height="160" loading="lazy">
+            </div>
+            <div class="product-gallery__thumb" data-gallery-thumb data-src="{{ 'furquiet-grooming-lifestyle-ai.jpg' | asset_url }}" data-alt="Dog being brushed with a grooming vacuum">
+              <img src="{{ 'furquiet-grooming-lifestyle-ai.jpg' | asset_url }}" alt="Dog being brushed with a grooming vacuum" width="160" height="160" loading="lazy">
+            </div>
+            <div class="product-gallery__thumb" data-gallery-thumb data-src="{{ 'furquiet-clean-home-ai.jpg' | asset_url }}" data-alt="Cleaner sofa after pet grooming vacuum use">
+              <img src="{{ 'furquiet-clean-home-ai.jpg' | asset_url }}" alt="Cleaner sofa after pet grooming vacuum use" width="160" height="160" loading="lazy">
+            </div>
           </div>
         {%- endif -%}
       </div>
@@ -199,7 +218,7 @@
 
       <div class="product-tabs__panel is-active" data-tab-panel="description">
         <div class="rte rte--lead">
-          {{ product.description | default: 'FurQuiet is a quiet-start pet grooming vacuum kit for heavy-shedding dogs and long-hair cats. It helps owners brush loose fur while suction collects hair into a dust cup, reducing cleanup after routine grooming sessions.' }}
+          {{ product.description | default: '<p>FurQuiet is a quiet-start pet grooming vacuum kit for heavy-shedding dogs and long-hair cats. It combines a compact vacuum base, transparent dust cup, flexible hose, de-shedding brush, slicker brush, clipper support, clipper guards, nozzle, washable filter care, and a storage dock.</p><p>The offer is built for pet owners who want calmer at-home brushing, less loose fur on sofas and rugs, and a visible fur-cup proof moment they can understand before buying.</p>' }}
         </div>
       </div>
 

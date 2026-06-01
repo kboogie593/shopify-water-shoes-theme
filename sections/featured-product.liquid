@@ -9,11 +9,26 @@
     <div class="featured-product">
       <div class="featured-product__media">
         {%- if section.settings.image_override != blank -%}
-          <img src="{{ section.settings.image_override | image_url: width: 1200 }}" alt="{{ section.settings.heading | default: 'Featured product' | escape }}" loading="lazy">
+          <img
+            src="{{ section.settings.image_override | image_url: width: 1200 }}"
+            alt="{{ section.settings.heading | default: 'Featured product' | escape }}"
+            width="{{ section.settings.image_override.width }}"
+            height="{{ section.settings.image_override.height }}"
+            loading="lazy">
         {%- elsif product.featured_media -%}
-          <img src="{{ product.featured_media | image_url: width: 1200 }}" alt="{{ product.title | escape }}" loading="lazy">
+          <img
+            src="{{ product.featured_media | image_url: width: 1200 }}"
+            alt="{{ product.title | escape }}"
+            width="{{ product.featured_media.width }}"
+            height="{{ product.featured_media.height }}"
+            loading="lazy">
         {%- else -%}
-          <img src="{{ 'furquiet-package-card.png' | asset_url }}" alt="{{ section.settings.heading | default: 'FurQuiet grooming kit' | escape }}" loading="lazy">
+          <img
+            src="{{ 'furquiet-kit-flatlay-ai.jpg' | asset_url }}"
+            alt="{{ section.settings.heading | default: 'FurQuiet grooming kit' | escape }}"
+            width="1254"
+            height="1254"
+            loading="lazy">
         {%- endif -%}
         {%- if section.settings.badge != blank -%}
           <span class="featured-product__badge">{{ section.settings.badge }}</span>

@@ -1,13 +1,13 @@
 {
   "current": {
     "logo_width": 140,
-    "color_primary": "#2DD4BF",
-    "color_primary_dark": "#0F766E",
-    "color_accent": "#F97316",
+    "color_primary": "#4F8F83",
+    "color_primary_dark": "#234E48",
+    "color_accent": "#D97745",
     "color_background": "#FFFFFF",
     "color_foreground": "#0F172A",
-    "color_border": "#E2E8F0",
-    "color_button": "#0F766E",
+    "color_border": "#E5E2DA",
+    "color_button": "#234E48",
     "color_button_text": "#FFFFFF",
     "body_font": "assistant_n4",
     "heading_font": "assistant_n7",
@@ -29,9 +29,9 @@
   },
   "presets": {
     "FurQuiet Default": {
-      "color_primary": "#2DD4BF",
-      "color_primary_dark": "#0F766E",
-      "color_accent": "#F97316"
+      "color_primary": "#4F8F83",
+      "color_primary_dark": "#234E48",
+      "color_accent": "#D97745"
     }
   }
 }

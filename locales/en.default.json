@@ -59,6 +59,7 @@
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
       "vendor": "Vendor",
+      "sale": "Sale",
       "quantity": {
         "label": "Quantity",
         "increase": "Increase quantity for {{ product }}",
@@ -161,6 +162,11 @@
       "post": "Post comment",
       "back_to_blog": "Back to blog",
       "share": "Share this article"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "{{ value }} gift card for {{ shop }}"
     }
   },
   "onboarding": {

@@ -7,6 +7,7 @@
           src="{{ section.settings.logo | image_url: width: section.settings.logo_width | times: 2 }}"
           alt="{{ shop.name }}"
           width="{{ section.settings.logo_width }}"
+          height="{{ section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio | round }}"
           style="max-width: {{ section.settings.logo_width }}px"
           loading="eager">
       {%- else -%}
@@ -15,6 +16,7 @@
           src="{{ default_logo | asset_url }}"
           alt="{{ shop.name | default: 'FurQuiet' }}"
           width="{{ section.settings.logo_width }}"
+          height="70"
           style="max-width: {{ section.settings.logo_width }}px"
           loading="eager">
       {%- endif -%}
@@ -69,10 +71,10 @@
 
       {%- if use_builtin -%}
         {%- comment -%} Built-in FurQuiet navigation {%- endcomment -%}
-        <a href="/" class="header-nav__link{% if request.path == '/' %} is-active{% endif %}">Home</a>
+        <a href="{{ routes.root_url }}" class="header-nav__link{% if request.path == '/' %} is-active{% endif %}">Home</a>
 
         <div class="header-nav__item has-submenu" data-mega-trigger>
-          <a href="/collections/all" class="header-nav__link{% if request.path contains '/collections' %} is-active{% endif %}">
+          <a href="{{ routes.all_products_collection_url }}" class="header-nav__link{% if request.path contains '/collections' %} is-active{% endif %}">
             Shop
             <svg class="header-nav__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
@@ -106,9 +108,9 @@
                   </ul>
                 </div>
                 <div class="mega-menu__col">
-                  <a href="/collections/all" class="mega-menu__heading">Shop All</a>
+                  <a href="{{ routes.all_products_collection_url }}" class="mega-menu__heading">Shop All</a>
                   <ul>
-                    <li><a href="/collections/all">All Products</a></li>
+                    <li><a href="{{ routes.all_products_collection_url }}">All Products</a></li>
                     <li><a href="{% render 'collection-url', handle: 'best-sellers' %}">Best Sellers</a></li>
                     <li><a href="{% render 'collection-url', handle: 'new-arrivals' %}">New Arrivals</a></li>
                     <li><a href="{% render 'collection-url', handle: 'sale' %}">Sale</a></li>
@@ -117,7 +119,12 @@
 
                 {%- if section.settings.mega_promo_image != blank -%}
                   <a href="{{ section.settings.mega_promo_link | default: '/collections/all' }}" class="mega-menu__promo">
-                    <img src="{{ section.settings.mega_promo_image | image_url: width: 600 }}" alt="{{ section.settings.mega_promo_heading | escape }}" loading="lazy">
+                    <img
+                      src="{{ section.settings.mega_promo_image | image_url: width: 600 }}"
+                      alt="{{ section.settings.mega_promo_heading | escape }}"
+                      width="{{ section.settings.mega_promo_image.width }}"
+                      height="{{ section.settings.mega_promo_image.height }}"
+                      loading="lazy">
                     <div class="mega-menu__promo-body">
                       <strong>{{ section.settings.mega_promo_heading }}</strong>
                       <span>{{ section.settings.mega_promo_cta | default: 'Shop now →' }}</span>
@@ -168,7 +175,12 @@
 
                     {%- if section.settings.mega_promo_image != blank -%}
                       <a href="{{ section.settings.mega_promo_link | default: '#' }}" class="mega-menu__promo">
-                        <img src="{{ section.settings.mega_promo_image | image_url: width: 600 }}" alt="{{ section.settings.mega_promo_heading | escape }}" loading="lazy">
+                        <img
+                          src="{{ section.settings.mega_promo_image | image_url: width: 600 }}"
+                          alt="{{ section.settings.mega_promo_heading | escape }}"
+                          width="{{ section.settings.mega_promo_image.width }}"
+                          height="{{ section.settings.mega_promo_image.height }}"
+                          loading="lazy">
                         <div class="mega-menu__promo-body">
                           <strong>{{ section.settings.mega_promo_heading }}</strong>
                           <span>{{ section.settings.mega_promo_cta | default: 'Shop now →' }}</span>

@@ -37,6 +37,8 @@
                        {{ article.image | image_url: width: 1800 }} 1800w"
                sizes="(min-width: 900px) 900px, 100vw"
                alt="{{ article.image.alt | escape | default: article.title }}"
+               width="{{ article.image.width }}"
+               height="{{ article.image.height }}"
                loading="eager">
         </div>
       {%- endif -%}
@@ -95,7 +97,12 @@
               <a href="{{ related.url }}" class="product-card">
                 <div class="product-card__media">
                   {%- if related.image -%}
-                    <img src="{{ related.image | image_url: width: 600 }}" alt="{{ related.image.alt | escape | default: related.title }}" loading="lazy">
+                    <img
+                      src="{{ related.image | image_url: width: 600 }}"
+                      alt="{{ related.image.alt | escape | default: related.title }}"
+                      width="{{ related.image.width }}"
+                      height="{{ related.image.height }}"
+                      loading="lazy">
                   {%- else -%}
                     {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
                   {%- endif -%}

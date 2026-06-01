@@ -40,19 +40,19 @@
         "type": "color",
         "id": "color_primary",
         "label": "Primary (brand)",
-        "default": "#2DD4BF"
+        "default": "#4F8F83"
       },
       {
         "type": "color",
         "id": "color_primary_dark",
         "label": "Primary dark",
-        "default": "#0F766E"
+        "default": "#234E48"
       },
       {
         "type": "color",
         "id": "color_accent",
         "label": "Accent",
-        "default": "#F97316"
+        "default": "#D97745"
       },
       {
         "type": "color",
@@ -70,13 +70,13 @@
         "type": "color",
         "id": "color_border",
         "label": "Border",
-        "default": "#E2E8F0"
+        "default": "#E5E2DA"
       },
       {
         "type": "color",
         "id": "color_button",
         "label": "Button background",
-        "default": "#0F766E"
+        "default": "#234E48"
       },
       {
         "type": "color",

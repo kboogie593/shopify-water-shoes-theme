@@ -8,7 +8,56 @@
         "show_recommendations": true,
         "recommendations_limit": 4
       }
+    },
+    "furquiet-proof": {
+      "type": "furquiet-proof",
+      "settings": {
+        "eyebrow": "In the box",
+        "heading": "A complete pet grooming vacuum kit, not a single brush.",
+        "subtitle": "Use the product gallery for product media and this proof section for fast buyer education."
+      }
+    },
+    "quiet-routine": {
+      "type": "image-with-text",
+      "settings": {
+        "layout": "reverse",
+        "builtin_image": "furquiet-grooming-lifestyle-ai.jpg",
+        "eyebrow": "Quiet-start routine",
+        "heading": "Make the first session feel calm and predictable.",
+        "text": "Start with the vacuum several feet away, reward calm behavior, brush with suction off, then introduce low airflow for short passes. This is the education angle nervous-pet owners need before checkout.",
+        "button_label": "View grooming guide",
+        "button_link": "/pages/quiet-start-guide"
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "✓", "heading": "Low-noise grooming path", "text": "Position the product around calmer at-home grooming instead of salon replacement claims." } },
+        "f2": { "type": "feature", "settings": { "icon": "✓", "heading": "Fur cup proof", "text": "Collected loose fur is a natural visual hook for product images, short videos, and review content." } },
+        "f3": { "type": "feature", "settings": { "icon": "✓", "heading": "Apartment-friendly storage", "text": "Compact dock and washable filter care support small-home buyers who want less cleanup." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "eyebrow": "Why it converts",
+        "heading": "Built for owner hesitation points.",
+        "subtitle": "Pet owners ask whether the product is loud, whether it actually catches fur, what comes in the box, and how hard cleanup is."
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "What comes in the kit?", "answer": "The launch kit is positioned as a vacuum base with transparent dust cup, hose, de-shedding brush, slicker brush, clipper body, clipper guards, nozzle, washable filter care, cleaning brush, and storage dock." } },
+        "q2": { "type": "question", "settings": { "question": "Is this for cats or dogs?", "answer": "The primary buyer is a heavy-shedding dog or long-hair cat household. The strongest angles are huskies, shepherds, retrievers, corgis, multi-pet homes, and long-hair cat owners." } },
+        "q3": { "type": "question", "settings": { "question": "Can it replace professional grooming?", "answer": "No. FurQuiet should be positioned for routine brushing, trimming support, and fur cleanup between professional grooming appointments." } },
+        "q4": { "type": "question", "settings": { "question": "What should be verified before scaling ads?", "answer": "Supplier sample quality, plug/certification labeling, actual noise reading, suction feel, replacement filters, packaging, shipping cost, and returns assumptions should be verified before aggressive paid scaling." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "eyebrow": "Product questions",
+        "heading": "Answer the objections before checkout.",
+        "subtitle": "Keep claims concrete and easy to prove with product photos and short video."
+      }
     }
   },
-  "order": ["main"]
+  "order": ["main", "furquiet-proof", "quiet-routine", "features", "faq"]
 }

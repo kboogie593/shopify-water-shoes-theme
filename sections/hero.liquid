@@ -29,6 +29,20 @@
       {%- endif -%}
     </div>
     <div class="hero-image">
+      {%- assign builtin_image = section.settings.builtin_image | default: 'furquiet-product-hero-ai.jpg' -%}
+      {%- assign builtin_width = 1586 -%}
+      {%- assign builtin_height = 992 -%}
+      {%- case builtin_image -%}
+        {%- when 'furquiet-kit-flatlay-ai.jpg' -%}
+          {%- assign builtin_width = 1254 -%}
+          {%- assign builtin_height = 1254 -%}
+        {%- when 'furquiet-grooming-lifestyle-ai.jpg' -%}
+          {%- assign builtin_width = 1448 -%}
+          {%- assign builtin_height = 1086 -%}
+        {%- when 'furquiet-clean-home-ai.jpg' -%}
+          {%- assign builtin_width = 1672 -%}
+          {%- assign builtin_height = 941 -%}
+      {%- endcase -%}
       {%- if section.settings.image != blank -%}
         <img
           src="{{ section.settings.image | image_url: width: 1200 }}"
@@ -38,10 +52,10 @@
           loading="eager">
       {%- else -%}
         <img
-          src="{{ 'furquiet-hero.png' | asset_url }}"
+          src="{{ builtin_image | asset_url }}"
           alt="{{ section.settings.heading | default: 'FurQuiet pet grooming vacuum' | escape }}"
-          width="1800"
-          height="1100"
+          width="{{ builtin_width }}"
+          height="{{ builtin_height }}"
           loading="eager">
       {%- endif -%}
     </div>
@@ -73,7 +87,20 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Custom image"
+    },
+    {
+      "type": "select",
+      "id": "builtin_image",
+      "label": "Built-in fallback image",
+      "options": [
+        { "value": "furquiet-product-hero-ai.jpg", "label": "Product hero" },
+        { "value": "furquiet-kit-flatlay-ai.jpg", "label": "Full kit flatlay" },
+        { "value": "furquiet-grooming-lifestyle-ai.jpg", "label": "Lifestyle grooming" },
+        { "value": "furquiet-clean-home-ai.jpg", "label": "Clean home comparison" },
+        { "value": "furquiet-hero.png", "label": "Legacy hero" }
+      ],
+      "default": "furquiet-product-hero-ai.jpg"
     },
     {
       "type": "text",

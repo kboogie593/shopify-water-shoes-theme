@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="robots" content="noindex, nofollow">
-    <title>{{ 'gift_cards.issued.title' | t: value: gift_card.initial_value | money, shop: shop.name }}</title>
+    {%- assign gift_card_initial_value = gift_card.initial_value | money -%}
+    <title>{{ 'gift_cards.issued.title' | t: value: gift_card_initial_value, shop: shop.name }}</title>
     <link rel="canonical" href="{{ canonical_url }}">
     {{ content_for_header }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
@@ -35,7 +36,12 @@
       {%- else -%}
         <p>Use the code below at checkout</p>
         <div class="gift-card__code">{{ gift_card.code | format_code }}</div>
-        <div class="gift-card__qr">{{ gift_card.qr_identifier | qr_code_tag }}</div>
+        <div class="gift-card__qr" aria-hidden="true">
+          <svg viewBox="0 0 120 120" role="img" focusable="false">
+            <rect width="120" height="120" rx="16" fill="#f0fdfa"/>
+            <path d="M18 18h28v28H18zM26 26v12h12V26zm48-8h28v28H74zM82 26v12h12V26zM18 74h28v28H18zM26 82v12h12V82zm48-18h10v10H74zm18 0h10v10H92zM56 74h10v10H56zm18 18h10v10H74zm18-10h10v20H92zM56 92h10v10H56z" fill="#0f766e"/>
+          </svg>
+        </div>
         <p style="font-size:13px;color:#64748b;">Current balance: {{ gift_card.balance | money }}</p>
       {%- endif -%}
       <a href="{{ shop.url }}" class="btn mt-4">Shop now</a>

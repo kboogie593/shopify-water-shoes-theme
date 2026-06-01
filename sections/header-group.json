@@ -11,7 +11,7 @@
       },
       "block_order": ["b1", "b2", "b3"],
       "settings": {
-        "bg_color": "#2DD4BF",
+        "bg_color": "#234E48",
         "text_color": "#FFFFFF"
       }
     },
@@ -30,7 +30,7 @@
         "menu": "main-menu",
         "mega_promo_heading": "First-batch grooming kit",
         "mega_promo_cta": "Join the list ->",
-        "mega_promo_link": "/collections/all"
+        "mega_promo_link": "/products/furquiet-grooming-vacuum-kit"
       }
     }
   },
