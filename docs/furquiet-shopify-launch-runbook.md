@@ -66,6 +66,12 @@ Automation note: Chrome verified the custom templates appear in the page templat
 
 Current status: passed and published on 2026-06-01.
 
+To verify the public storefront after GitHub theme sync:
+
+```bash
+python3 scripts/verify_furquiet_storefront.py
+```
+
 Before publishing the theme:
 
 1. Run `shopify theme check`.
@@ -75,6 +81,13 @@ Before publishing the theme:
 5. Confirm product media is present or fallback gallery renders correctly.
 6. Confirm add-to-cart works on the FurQuiet product.
 7. Publish only after product media and checkout policy are ready.
+
+## GitHub Sync and Storefront Cache Notes
+
+- GitHub push `7ed1a95` reached `kboogie593/shopify-water-shoes-theme`.
+- Shopify GitHub integration log for `2026-06-01 05:16 GMT-7` reported `6` successful theme file updates, `2` ignored non-theme files, and `0` failures.
+- Shopify Theme Editor shows the homepage template includes `First batch launch`.
+- Public storefront HTML still returned the previous homepage/header and product Liquid error during the immediate post-sync checks. Re-run `scripts/verify_furquiet_storefront.py` before treating the live storefront as updated.
 
 ## Search Setup
 
