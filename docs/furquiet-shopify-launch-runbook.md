@@ -88,6 +88,8 @@ Before publishing the theme:
 - Shopify GitHub integration log for `2026-06-01 05:16 GMT-7` reported `6` successful theme file updates, `2` ignored non-theme files, and `0` failures.
 - Shopify Theme Editor shows the homepage template includes `First batch launch`.
 - Public storefront HTML still returned the previous homepage/header and product Liquid error during the immediate post-sync checks. Re-run `scripts/verify_furquiet_storefront.py` before treating the live storefront as updated.
+- After commit `afa1df7`, the repository also contains the filter-care GEO guide template, but public storefront verification still returned the old homepage and product HTML.
+- Direct `shopify theme push` to theme `150848372905` is blocked until Shopify CLI authorization passes the Shopify Accounts human check or a Theme Access/Admin API token is available.
 
 ## Search Setup
 
