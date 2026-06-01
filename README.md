@@ -126,6 +126,7 @@ discovery link, and the URL is referenced in the JSON-LD).
 - `docs/furquiet-short-video-scripts.md` — first reusable short-video scripts
 - `docs/furquiet-social-asset-guide.md` — generated social image asset usage
 - `docs/furquiet-seo-blog-drafts.md` — first Shopify blog outlines for GEO support
+- `scripts/generate_furquiet_social_videos.py` — regenerates the MP4 placeholder videos from cover images
 
 Create `/pages/grooming-guides` first; it acts as the internal guide hub for
 all FurQuiet long-tail pages and should be linked from navigation once the
