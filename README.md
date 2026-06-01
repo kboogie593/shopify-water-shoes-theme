@@ -122,6 +122,7 @@ discovery link, and the URL is referenced in the JSON-LD).
 - `data/furquiet-geo-content-backlog.csv` — GEO/SEO page and FAQ backlog
 - `data/furquiet-supplier-scorecard.csv` — supplier reply and sample-readiness scoring table
 - `data/furquiet-video-shot-list.csv` — short-video production shot list
+- `data/furquiet-channel-funnel-model.csv` — monthly organic channel funnel and $10K target model
 - `data/furquiet-organic-channel-scoreboard.csv` — weekly organic traffic and revenue scoreboard
 - `data/furquiet-comment-to-content-log.csv` — comment/query-to-content tracking log
 - `data/furquiet-social-captions.csv` — first captions mapped to platform, page, and asset
@@ -132,12 +133,20 @@ discovery link, and the URL is referenced in the JSON-LD).
 - `docs/furquiet-social-asset-guide.md` — generated social image asset usage
 - `docs/furquiet-seo-blog-drafts.md` — first Shopify blog outlines for GEO support
 - `docs/furquiet-attribution-and-utm.md` — how the theme captures first/last-touch source data
+- `docs/furquiet-traffic-analysis-playbook.md` — weekly traffic analysis and revenue model workflow
 - `docs/furquiet-first-batch-email-flow.md` — waitlist capture, tags, and email sequence boundaries
+- `scripts/analyze_furquiet_funnel.py` — forecasts sessions, orders, revenue, and gap to $10K/month
 - `scripts/generate_furquiet_social_videos.py` — regenerates the MP4 placeholder videos from cover images
 
 Create `/pages/grooming-guides` first; it acts as the internal guide hub for
 all FurQuiet long-tail pages and should be linked from navigation once the
 theme is published.
+
+Run the organic funnel model before choosing the next content batch:
+
+```bash
+python3 scripts/analyze_furquiet_funnel.py
+```
 
 ## Sections you can add to any page
 

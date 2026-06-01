@@ -63,6 +63,7 @@ Every week, combine Shopify form submissions and platform analytics into:
 
 - `data/furquiet-organic-channel-scoreboard.csv`
 - `data/furquiet-comment-to-content-log.csv`
+- `data/furquiet-channel-funnel-model.csv`
 
 Review questions:
 
@@ -71,6 +72,14 @@ Review questions:
 3. Which post created add-to-cart traffic?
 4. Which repeated comments should become guide updates?
 5. Which sources produced no qualified action and should be deprioritized?
+
+Run the channel model before deciding the next content batch:
+
+```bash
+python3 scripts/analyze_furquiet_funnel.py
+```
+
+The model converts expected content volume into sessions, email captures, add to carts, orders, revenue, and the remaining gap to the $10K/month target.
 
 ## Limits
 

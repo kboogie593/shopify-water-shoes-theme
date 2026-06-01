@@ -172,6 +172,7 @@ Checkout should not be opened aggressively until these are verified:
 
 Tracking files:
 
+- `data/furquiet-channel-funnel-model.csv` models monthly content units, expected sessions, capture rates, conversion rates, and revenue by channel.
 - `data/furquiet-organic-channel-scoreboard.csv` tracks weekly output, traffic, capture, add-to-cart, orders, and learning by channel.
 - `data/furquiet-comment-to-content-log.csv` turns repeated comments and search queries into guide updates and new short-video scripts.
 - `data/furquiet-video-shot-list.csv` separates ready founder/X content from sample-blocked product demo content.
@@ -184,6 +185,7 @@ Tracking files:
 - `docs/furquiet-short-video-scripts.md` gives reusable scripts for TikTok, Reels, Shorts, Facebook Reels, Pinterest, and X.
 - `docs/furquiet-seo-blog-drafts.md` gives the first blog outlines that support the guide hub.
 - `docs/furquiet-attribution-and-utm.md` documents the first-touch and last-touch fields injected into Shopify contact/newsletter forms.
+- `docs/furquiet-traffic-analysis-playbook.md` documents the weekly channel review and the `scripts/analyze_furquiet_funnel.py` revenue model.
 - `docs/furquiet-first-batch-email-flow.md` documents the first-batch capture sequence and claim boundaries.
 - `docs/furquiet-1688-supplier-message-cn.md` gives the Chinese supplier outreach message for sample purchase and QA evidence.
 
