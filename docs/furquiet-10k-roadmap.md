@@ -171,8 +171,10 @@ Tracking files:
 - `data/furquiet-video-shot-list.csv` separates ready founder/X content from sample-blocked product demo content.
 - `data/furquiet-geo-content-backlog.csv` keeps the long-tail page queue tied to intent and CTA.
 - `data/furquiet-social-captions.csv` maps first social posts to platform, destination URL, and image asset.
+- `data/furquiet-utm-naming.csv` keeps UTM naming consistent across TikTok, Instagram, Facebook, YouTube, X, Pinterest, search, and AI sources.
 - `docs/furquiet-short-video-scripts.md` gives the first six reusable scripts for TikTok, Reels, Shorts, Facebook Reels, and X.
 - `docs/furquiet-seo-blog-drafts.md` gives the first blog outlines that support the guide hub.
+- `docs/furquiet-attribution-and-utm.md` documents the first-touch and last-touch fields injected into Shopify contact/newsletter forms.
 
 ## Current Gaps
 

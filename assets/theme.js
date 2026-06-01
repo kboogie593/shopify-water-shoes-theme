@@ -1,6 +1,7 @@
 // FurQuiet Theme JS
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTrafficAttribution();
   initMenuToggle();
   initQuantityInputs();
   initProductGallery();
@@ -23,6 +24,183 @@ document.addEventListener('DOMContentLoaded', () => {
   initArticleTOC();
   initScrollSpy();
 });
+
+/* ---------- Traffic attribution ---------- */
+function initTrafficAttribution() {
+  const STORAGE_KEY = 'furquiet_attribution_v1';
+  if (localStorage.getItem('furquiet_cookie_consent') === 'reject') {
+    localStorage.removeItem(STORAGE_KEY);
+    return;
+  }
+  const SOCIAL_SOURCES = ['tiktok', 'instagram', 'facebook', 'youtube', 'x', 'twitter', 'pinterest'];
+  const SEARCH_SOURCES = ['google', 'bing', 'duckduckgo', 'yahoo', 'ecosia'];
+  const AI_SOURCES = ['chatgpt', 'openai', 'perplexity', 'claude', 'gemini', 'copilot'];
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+  const now = new Date().toISOString();
+  const params = new URLSearchParams(window.location.search);
+  const stored = readAttribution();
+  const current = buildCurrentTouch();
+  const firstTouch = stored.first_touch || current;
+  const payload = {
+    first_touch: firstTouch,
+    last_touch: current,
+    updated_at: now,
+  };
+
+  writeAttribution(payload);
+  injectAttributionFields(payload);
+  document.addEventListener('submit', (event) => {
+    const form = event.target.closest('form');
+    if (form) injectFormAttribution(form, readAttribution());
+  }, true);
+
+  function readAttribution() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { return {}; }
+  }
+
+  function writeAttribution(data) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+  }
+
+  function buildCurrentTouch() {
+    const utm = {};
+    UTM_KEYS.forEach((key) => {
+      const value = clip(params.get(key) || '');
+      if (value) utm[key] = value;
+    });
+
+    const referrerHost = getReferrerHost();
+    const detectedSource = normalizeSource(utm.utm_source || referrerHost || 'direct');
+    const detectedMedium = normalizeMedium(utm.utm_medium, detectedSource, referrerHost);
+
+    return {
+      source: detectedSource,
+      medium: detectedMedium,
+      campaign: clip(utm.utm_campaign || ''),
+      content: clip(utm.utm_content || ''),
+      term: clip(utm.utm_term || ''),
+      landing_page: clip(window.location.pathname),
+      landing_query: clip(window.location.search),
+      referrer: clip(referrerHost || 'direct'),
+      captured_at: now,
+    };
+  }
+
+  function getReferrerHost() {
+    if (!document.referrer) return '';
+    try {
+      const referrerUrl = new URL(document.referrer);
+      if (referrerUrl.hostname === window.location.hostname) return '';
+      return referrerUrl.hostname.replace(/^www\./, '');
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function normalizeSource(value) {
+    const source = String(value || 'direct').toLowerCase()
+      .replace(/^www\./, '')
+      .replace('.com', '')
+      .replace('.co', '')
+      .replace(/[^a-z0-9_-]+/g, '_')
+      .replace(/^_+|_+$/g, '');
+
+    if (source.includes('tiktok')) return 'tiktok';
+    if (source.includes('instagram')) return 'instagram';
+    if (source.includes('facebook') || source === 'fb') return 'facebook';
+    if (source.includes('youtube')) return 'youtube';
+    if (source === 'twitter' || source === 'x' || source === 't' || source.includes('t_co')) return 'x';
+    if (source.includes('pinterest')) return 'pinterest';
+    if (source.includes('google')) return 'google';
+    if (source.includes('bing')) return 'bing';
+    if (source.includes('duckduckgo')) return 'duckduckgo';
+    if (source.includes('perplexity')) return 'perplexity';
+    if (source.includes('openai') || source.includes('chatgpt')) return 'chatgpt';
+    if (source.includes('claude')) return 'claude';
+    if (source.includes('gemini')) return 'gemini';
+    if (source.includes('copilot')) return 'copilot';
+    return source || 'direct';
+  }
+
+  function normalizeMedium(value, source, referrerHost) {
+    const medium = clip(value || '').toLowerCase().replace(/[^a-z0-9_-]+/g, '_');
+    if (medium) return medium;
+    if (SOCIAL_SOURCES.includes(source)) return 'organic_social';
+    if (SEARCH_SOURCES.includes(source)) return 'organic_search';
+    if (AI_SOURCES.includes(source)) return 'ai_search';
+    if (referrerHost) return 'referral';
+    return 'direct';
+  }
+
+  function injectAttributionFields(data) {
+    document.querySelectorAll('form').forEach((form) => injectFormAttribution(form, data));
+  }
+
+  function injectFormAttribution(form, data) {
+    if (!form || !data || !data.last_touch) return;
+    const emailInput = form.querySelector('input[name="contact[email]"]');
+    const contactInput = form.querySelector('[name^="contact["]');
+    if (!emailInput && !contactInput) return;
+
+    const first = data.first_touch || {};
+    const last = data.last_touch || {};
+    const fields = {
+      'contact[traffic_first_source]': first.source || 'direct',
+      'contact[traffic_first_medium]': first.medium || 'direct',
+      'contact[traffic_first_landing]': first.landing_page || '/',
+      'contact[traffic_last_source]': last.source || 'direct',
+      'contact[traffic_last_medium]': last.medium || 'direct',
+      'contact[traffic_campaign]': last.campaign || first.campaign || '',
+      'contact[traffic_referrer]': last.referrer || first.referrer || 'direct',
+      'contact[traffic_snapshot]': JSON.stringify({
+        first_source: first.source || 'direct',
+        first_medium: first.medium || 'direct',
+        first_landing: first.landing_page || '/',
+        last_source: last.source || 'direct',
+        last_medium: last.medium || 'direct',
+        campaign: last.campaign || first.campaign || '',
+      }),
+    };
+
+    Object.entries(fields).forEach(([name, value]) => upsertHiddenInput(form, name, clip(value, 480)));
+    enrichContactTags(form, first, last);
+  }
+
+  function enrichContactTags(form, first, last) {
+    const tagInput = form.querySelector('input[name="contact[tags]"]');
+    if (!tagInput) return;
+    const existing = tagInput.value.split(',').map((tag) => tag.trim()).filter(Boolean);
+    const additions = [
+      sourceTag('first_src', first.source),
+      sourceTag('last_src', last.source),
+      sourceTag('last_med', last.medium),
+      sourceTag('camp', last.campaign || first.campaign),
+    ].filter(Boolean);
+    tagInput.value = Array.from(new Set([...existing, ...additions])).join(',');
+  }
+
+  function sourceTag(prefix, value) {
+    const clean = String(value || '').toLowerCase().replace(/[^a-z0-9_-]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 36);
+    return clean ? `${prefix}_${clean}` : '';
+  }
+
+  function upsertHiddenInput(form, name, value) {
+    let input = form.querySelector(`input[name="${name}"]`);
+    if (!input) {
+      input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.dataset.trafficAttribution = 'true';
+      form.appendChild(input);
+    }
+    input.value = value;
+  }
+
+  function clip(value, max = 160) {
+    return String(value || '').slice(0, max);
+  }
+}
 
 /* ---------- Menu ---------- */
 function initMenuToggle() {
@@ -807,6 +985,17 @@ function initCookieBanner() {
     const action = e.target.closest('[data-cookie-action]');
     if (!action) return;
     localStorage.setItem('furquiet_cookie_consent', action.dataset.cookieAction);
+    if (action.dataset.cookieAction === 'reject') {
+      localStorage.removeItem('furquiet_attribution_v1');
+      document.querySelectorAll('[data-traffic-attribution]').forEach((input) => input.remove());
+      document.querySelectorAll('input[name="contact[tags]"]').forEach((input) => {
+        input.value = input.value
+          .split(',')
+          .map((tag) => tag.trim())
+          .filter((tag) => tag && !/^(first_src|last_src|last_med|camp)_/.test(tag))
+          .join(',');
+      });
+    }
     banner.hidden = true;
   });
 }

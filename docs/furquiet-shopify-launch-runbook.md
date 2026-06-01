@@ -65,6 +65,16 @@ After publishing:
 4. Track query impressions weekly.
 5. Add content only where impressions or social comments show demand.
 
+## Organic Attribution Setup
+
+Before posting organic content:
+
+1. Use `data/furquiet-utm-naming.csv` to create links for each platform.
+2. Test one newsletter form submission with a UTM link.
+3. Confirm Shopify receives source tags such as `first_src_tiktok` and `last_med_organic_social`.
+4. Check whether custom fields such as `traffic_snapshot` are visible in the Shopify contact/customer record.
+5. If Shopify does not retain custom fields for newsletter customers, rely on tags plus the weekly scoreboard until a dedicated email platform is connected.
+
 ## Weekly Admin Checklist
 
 - Check orders, add-to-cart, and conversion.
