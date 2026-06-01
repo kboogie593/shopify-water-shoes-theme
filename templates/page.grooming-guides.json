@@ -83,9 +83,19 @@
             "link_label": "Find routine",
             "link": "/pages/routine-finder"
           }
+        },
+        "g8": {
+          "type": "column",
+          "settings": {
+            "icon": "08",
+            "heading": "Filter and dust cup care",
+            "text": "How to empty the dust cup, clear brush heads, dry washable parts, and avoid unsupported filter claims.",
+            "link_label": "Read care guide",
+            "link": "/pages/clean-pet-grooming-vacuum-filter"
+          }
         }
       },
-      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6", "g7"],
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8"],
       "settings": {
         "eyebrow": "Start here",
         "heading": "Choose the guide that matches the problem",

@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Filter and dust cup care" } },
+        "h1": { "type": "heading", "settings": { "text": "How to clean a pet grooming vacuum filter and dust cup" } },
+        "p1": { "type": "paragraph", "settings": { "text": "A grooming vacuum is only useful if the airflow, brush head, dust cup, and filter stay clean enough for the next session. This guide gives FurQuiet shoppers a conservative care routine before sample-specific filter instructions are published." } },
+        "cta": { "type": "button", "settings": { "text": "View FurQuiet kit", "link": "/products/furquiet-grooming-vacuum-kit", "style": "primary" } }
+      },
+      "block_order": ["e1", "h1", "p1", "cta"],
+      "settings": { "alignment": "center", "bg_color": "#FAFAF7" }
+    },
+    "care-steps": {
+      "type": "features",
+      "blocks": {
+        "s1": { "type": "feature", "settings": { "icon": "1", "heading": "Empty after each session", "text": "Do not leave loose fur packed inside the dust cup. Empty the cup after grooming so airflow and odor control are easier to manage." } },
+        "s2": { "type": "feature", "settings": { "icon": "2", "heading": "Clear the brush head", "text": "Remove wrapped hair from the brush teeth and moving parts before storing the kit. This prevents the next session from starting with a clogged attachment." } },
+        "s3": { "type": "feature", "settings": { "icon": "3", "heading": "Check the filter label", "text": "Wash only the filter parts that the product instructions mark as washable. If a supplier part is replacement-only, do not rinse it." } },
+        "s4": { "type": "feature", "settings": { "icon": "4", "heading": "Dry completely", "text": "Never reinstall a damp filter. Let washable parts dry fully before the next grooming session to protect airflow and avoid odor." } },
+        "s5": { "type": "feature", "settings": { "icon": "5", "heading": "Replace when airflow drops", "text": "If suction feels weaker after normal cleaning, the filter may need replacement. FurQuiet should confirm replacement-filter availability before checkout scales." } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5"],
+      "settings": {
+        "eyebrow": "Care routine",
+        "heading": "The simple sequence: empty, clear, check, dry, replace",
+        "subtitle": "This page avoids exact replacement intervals until the supplier sample, filter material, and manual are verified.",
+        "bg_color": "#FFFFFF"
+      }
+    },
+    "claim-boundary": {
+      "type": "image-with-text",
+      "settings": {
+        "builtin_image": "furquiet-kit-flatlay-ai.jpg",
+        "layout": "reverse",
+        "eyebrow": "Buyer trust",
+        "heading": "Do not promise washable filters until the real sample proves it.",
+        "text": "Some pet vacuum listings use broad filter language, but the launch page should stay precise. Say to empty the cup after each session, clean brush heads, and wash only the parts that the final manual identifies as washable.",
+        "button_label": "Read sample QA gate",
+        "button_link": "/pages/sample-qa-log"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "How often should I empty the dust cup?", "answer": "Empty it after each grooming session. If a heavy-shedding dog fills the cup during a session, pause and empty it before continuing." } },
+        "q2": { "type": "question", "settings": { "question": "Can I wash the filter?", "answer": "Only wash filter parts that the final FurQuiet manual confirms are washable. If the part is replacement-only, tapping out loose dust and replacing it on schedule is safer than rinsing it." } },
+        "q3": { "type": "question", "settings": { "question": "Why does the filter need to dry completely?", "answer": "A damp filter can reduce airflow and create odor. Reinstall only after washable parts are fully dry." } },
+        "q4": { "type": "question", "settings": { "question": "What should a filter-care video show?", "answer": "Show the dust cup being emptied, hair removed from the brush head, the filter being checked, and the kit stored cleanly. Do not show water washing unless the real sample manual allows it." } },
+        "q5": { "type": "question", "settings": { "question": "What must FurQuiet verify before scaling checkout?", "answer": "The sample QA gate should confirm filter type, spare filter availability, dust cup fit, airflow after cleaning, and whether the manual allows washing specific filter parts." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"],
+      "settings": {
+        "eyebrow": "Filter care FAQ",
+        "heading": "Questions buyers ask before trusting a pet vacuum",
+        "subtitle": "Maintenance content helps convert cautious shoppers and gives AI search a clear answer page.",
+        "cta_label": "Join first batch",
+        "cta_link": "/pages/first-batch"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "First batch updates",
+        "heading": "Get the real sample-care notes when FurQuiet tests the kit",
+        "text": "Join for filter, dust cup, attachment, noise, packaging, and sample QA updates before checkout scales.",
+        "button_label": "Join the list"
+      }
+    }
+  },
+  "order": ["intro", "care-steps", "claim-boundary", "faq", "newsletter"]
+}

@@ -127,3 +127,21 @@ Length: 4-frame Instagram Story, TikTok slideshow, or Pinterest idea pin
 | 4 | FurQuiet guide hub or kit image | Save your routine and first-batch notes. |
 
 Caption: Not every pet home needs the same first step. Match the routine to the pet, sound tolerance, and room problem.
+
+## Script 8: Filter and Dust Cup Care
+
+Status: blocked by sample for real closeups; ready as a founder/X checklist thread.
+
+Destination: `/pages/clean-pet-grooming-vacuum-filter`
+
+Length: 18 seconds
+
+| Time | Visual | Voiceover / On-screen Text |
+|---:|---|---|
+| 0-3s | Dust cup close-up or checklist card | Empty the cup after each grooming session. |
+| 3-6s | Brush head close-up | Clear wrapped hair from the brush head. |
+| 6-10s | Filter shown beside manual | Wash only parts the manual says are washable. |
+| 10-14s | Filter drying on towel | Never reinstall a damp filter. |
+| 14-18s | Care guide card | Save the filter-care guide before buying. |
+
+Caption: Maintenance is a buyer objection. The safest claim is simple: empty the cup, clear hair, check the manual, and dry washable parts completely.

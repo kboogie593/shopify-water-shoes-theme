@@ -25,6 +25,7 @@ This map turns the FurQuiet product into long-tail pages that can answer AI-sear
 | Apartment pet hair control | `/pages/apartment-pet-hair-control` | How do I reduce pet hair in an apartment? | Template added |
 | Vacuum vs brush comparison | `/pages/pet-grooming-vacuum-vs-deshedding-brush` | Is a pet grooming vacuum better than a de-shedding brush? | Template added |
 | Routine finder | `/pages/routine-finder` | Which pet grooming vacuum routine is right for my pet and home? | Template added |
+| Filter and dust cup care | `/pages/clean-pet-grooming-vacuum-filter` | How do I clean a pet grooming vacuum filter and dust cup? | Template added |
 | AI-readable brief | `/pages/llms` | What should AI crawlers know about FurQuiet? | Template exists |
 | Guide hub | `/pages/grooming-guides` | Where can I find FurQuiet grooming guides? | Template added |
 
@@ -48,6 +49,7 @@ For each page above:
 - pet grooming vacuum vs deshedding brush
 - what comes in a pet grooming vacuum kit
 - how to clean a pet grooming vacuum dust cup
+- can I wash a pet grooming vacuum filter
 - can a grooming vacuum replace a groomer
 - does a pet grooming vacuum stop shedding
 - pet grooming vacuum guide
