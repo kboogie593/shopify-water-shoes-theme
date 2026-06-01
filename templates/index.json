@@ -8,7 +8,7 @@
         "subtitle": "FurQuiet combines a low-noise grooming vacuum, de-shedding brushes, clipper support, washable filter care, and a compact dock so loose fur goes into the cup before it reaches the sofa.",
         "builtin_image": "furquiet-product-hero-ai.jpg",
         "button_label": "Join first batch — $89",
-        "button_link": "/products/furquiet-grooming-vacuum-kit",
+        "button_link": "/pages/first-batch",
         "button_label_2": "See what is included",
         "button_link_2": "#furquiet-proof",
         "trust_text": "For husky, shepherd, retriever, corgi, multi-pet, and long-hair cat homes"
@@ -33,7 +33,7 @@
         "price": "$89",
         "compare_at_price": "$129",
         "cta_label": "Join first batch",
-        "cta_link": "/products/furquiet-grooming-vacuum-kit"
+        "cta_link": "/pages/first-batch"
       }
     },
     "furquiet-proof": {

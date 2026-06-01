@@ -7,7 +7,8 @@
       <h2>{{ section.settings.heading }}</h2>
       <p>{{ section.settings.text }}</p>
       {% form 'customer', class: 'newsletter-form' %}
-        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input type="hidden" name="contact[tags]" value="newsletter,first_batch">
+        <input type="hidden" name="contact[recommended_next_step]" value="/pages/first-batch">
         <input type="email" name="contact[email]" id="NewsletterForm--{{ section.id }}" placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}" required>
         <button type="submit" name="commit">{{ section.settings.button_label }}</button>
         {%- if form.posted_successfully? -%}

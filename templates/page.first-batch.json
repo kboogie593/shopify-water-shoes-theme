@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "first_batch": {
+      "type": "first-batch-launch",
+      "blocks": {
+        "b1": {
+          "type": "include",
+          "settings": {
+            "heading": "Sample-test notes",
+            "text": "Noise, dust cup, filter, plug, label, and packaging findings before checkout scales."
+          }
+        },
+        "b2": {
+          "type": "include",
+          "settings": {
+            "heading": "Quiet-start routine",
+            "text": "The gradual introduction plan for nervous pets and first-time grooming vacuum owners."
+          }
+        },
+        "b3": {
+          "type": "include",
+          "settings": {
+            "heading": "First availability window",
+            "text": "Target pricing, launch markets, filter availability, and the next order window."
+          }
+        }
+      },
+      "block_order": ["b1", "b2", "b3"],
+      "settings": {
+        "eyebrow": "First batch list",
+        "heading": "Join the FurQuiet first batch before checkout opens wide.",
+        "text": "This is the safest conversion path while sample QA, shipping cost, and product media are still being verified. Join for launch timing, sample-test notes, and the quiet-start guide.",
+        "builtin_image": "furquiet-kit-flatlay-ai.jpg",
+        "image_alt": "FurQuiet grooming vacuum kit first batch",
+        "status_label": "Launch status",
+        "status_text": "Collecting first-batch interest while sample QA is documented",
+        "price_text": "$89 target",
+        "market_text": "US / CA / UK / AU",
+        "gate_text": "Sample QA",
+        "email_label": "Get first-batch access and sample-test notes",
+        "email_placeholder": "you@example.com",
+        "button_label": "Join first batch",
+        "includes_heading": "What the list gets",
+        "secondary_label": "Find your routine",
+        "secondary_link": "/pages/routine-finder",
+        "product_label": "View kit details",
+        "product_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    },
+    "qa_boundaries": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Why join the list instead of buying immediately?",
+            "answer": "FurQuiet should scale checkout after sample QA, real product media, shipping cost, and return policy details are verified. The list lets interested shoppers follow the launch without unsupported promises."
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "What will be tested before the launch window?",
+            "answer": "The launch gate includes noise at low and high settings, dust cup fit, filter care, plug and voltage labeling, packaging, replacement filters, and a short grooming flow."
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Which shoppers should join first?",
+            "answer": "Heavy-shedding dog homes, long-hair cat homes, apartment pet owners, and nervous-pet owners who want the quiet-start routine before choosing a grooming vacuum kit."
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Launch boundaries",
+        "heading": "No fake urgency, no untested claims",
+        "subtitle": "The list is built to capture qualified demand while the product proof catches up.",
+        "cta_label": "Read product QA plan",
+        "cta_link": "/pages/faq"
+      }
+    },
+    "routine_finder": {
+      "type": "rich-text",
+      "blocks": {
+        "e1": { "type": "eyebrow", "settings": { "text": "Not sure where to start?" } },
+        "h1": { "type": "heading", "settings": { "text": "Match the routine before choosing the kit." } },
+        "p1": { "type": "paragraph", "settings": { "text": "A nervous pet, a long-hair cat, a double-coat dog, and a small apartment do not need the same first message. Use the routine finder to route yourself to the best guide." } },
+        "b1": { "type": "button", "settings": { "text": "Open routine finder", "link": "/pages/routine-finder", "style": "primary" } }
+      },
+      "block_order": ["e1", "h1", "p1", "b1"],
+      "settings": {
+        "alignment": "center",
+        "bg_color": "#F4F1EA"
+      }
+    }
+  },
+  "order": ["first_batch", "qa_boundaries", "routine_finder"]
+}

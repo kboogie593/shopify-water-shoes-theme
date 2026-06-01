@@ -125,10 +125,12 @@ discovery link, and the URL is referenced in the JSON-LD).
 - `data/furquiet-social-captions.csv` — first captions mapped to platform, page, and asset
 - `data/furquiet-utm-naming.csv` — UTM naming convention for organic and GEO traffic
 - `data/furquiet-routine-finder-content-map.csv` — routine finder routing, tags, and follow-up angles
+- `data/furquiet-first-batch-email-flow.csv` — first-batch email sequence and proof gates
 - `docs/furquiet-short-video-scripts.md` — first reusable short-video scripts
 - `docs/furquiet-social-asset-guide.md` — generated social image asset usage
 - `docs/furquiet-seo-blog-drafts.md` — first Shopify blog outlines for GEO support
 - `docs/furquiet-attribution-and-utm.md` — how the theme captures first/last-touch source data
+- `docs/furquiet-first-batch-email-flow.md` — waitlist capture, tags, and email sequence boundaries
 - `scripts/generate_furquiet_social_videos.py` — regenerates the MP4 placeholder videos from cover images
 
 Create `/pages/grooming-guides` first; it acts as the internal guide hub for

@@ -125,6 +125,7 @@ Current theme already includes:
 - Product schema without fake reviews.
 - GEO page templates for dog shedding, husky, long-hair cat, apartment hair control, vacuum vs brush, and quiet-start guide.
 - `/pages/routine-finder` template to route social, search, and AI-answer traffic by pet type, temperament, and home problem.
+- `/pages/first-batch` template to capture qualified first-batch demand while sample QA and real media are still incomplete.
 
 Next required execution:
 
@@ -174,9 +175,11 @@ Tracking files:
 - `data/furquiet-social-captions.csv` maps first social posts to platform, destination URL, and image asset.
 - `data/furquiet-utm-naming.csv` keeps UTM naming consistent across TikTok, Instagram, Facebook, YouTube, X, Pinterest, search, and AI sources.
 - `data/furquiet-routine-finder-content-map.csv` maps routine finder outcomes to guide pages, lead tags, hooks, queries, and follow-up email angles.
+- `data/furquiet-first-batch-email-flow.csv` maps first-batch email timing, segment, CTA, and proof gate.
 - `docs/furquiet-short-video-scripts.md` gives the first seven reusable scripts for TikTok, Reels, Shorts, Facebook Reels, Pinterest, and X.
 - `docs/furquiet-seo-blog-drafts.md` gives the first blog outlines that support the guide hub.
 - `docs/furquiet-attribution-and-utm.md` documents the first-touch and last-touch fields injected into Shopify contact/newsletter forms.
+- `docs/furquiet-first-batch-email-flow.md` documents the first-batch capture sequence and claim boundaries.
 
 ## Current Gaps
 

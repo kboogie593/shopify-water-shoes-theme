@@ -1,0 +1,255 @@
+<section class="section-padding first-batch-section">
+  <div class="page-width">
+    <div class="first-batch-layout">
+      <div class="first-batch-copy">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h1>{{ section.settings.heading }}</h1>
+        <p>{{ section.settings.text }}</p>
+
+        <div class="first-batch-media">
+          <img
+            src="{{ section.settings.builtin_image | default: 'furquiet-kit-flatlay-ai.jpg' | asset_url }}"
+            alt="{{ section.settings.image_alt | default: 'FurQuiet grooming vacuum kit first batch' | escape }}"
+            width="1254"
+            height="1254"
+            loading="lazy">
+        </div>
+      </div>
+
+      <div class="first-batch-panel">
+        <div class="first-batch-status">
+          <span>{{ section.settings.status_label }}</span>
+          <strong>{{ section.settings.status_text }}</strong>
+        </div>
+
+        <div class="first-batch-metrics" aria-label="First batch launch facts">
+          <div>
+            <span>Target price</span>
+            <strong>{{ section.settings.price_text }}</strong>
+          </div>
+          <div>
+            <span>Launch markets</span>
+            <strong>{{ section.settings.market_text }}</strong>
+          </div>
+          <div>
+            <span>Before scale</span>
+            <strong>{{ section.settings.gate_text }}</strong>
+          </div>
+        </div>
+
+        {%- form 'customer', class: 'first-batch-form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter,first_batch,furquiet_launch">
+          <input type="hidden" name="contact[first_batch_interest]" value="FurQuiet Grooming Vacuum Kit">
+          <input type="hidden" name="contact[first_batch_offer]" value="{{ section.settings.price_text | escape }}">
+          <input type="hidden" name="contact[sample_gate_acknowledged]" value="Checkout after sample QA and policy confirmation">
+          <label for="FirstBatchEmail--{{ section.id }}">{{ section.settings.email_label }}</label>
+          <div class="first-batch-form__row">
+            <input
+              type="email"
+              name="contact[email]"
+              id="FirstBatchEmail--{{ section.id }}"
+              placeholder="{{ section.settings.email_placeholder }}"
+              autocomplete="email"
+              required>
+            <button type="submit" name="commit">{{ section.settings.button_label }}</button>
+          </div>
+          {%- if form.posted_successfully? -%}
+            <p class="first-batch-form__success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+          {%- endif -%}
+        {%- endform -%}
+
+        <div class="first-batch-includes">
+          <h2>{{ section.settings.includes_heading }}</h2>
+          <ul>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'include' -%}
+                <li {{ block.shopify_attributes }}>
+                  <span aria-hidden="true">✓</span>
+                  <div>
+                    <strong>{{ block.settings.heading }}</strong>
+                    <p>{{ block.settings.text }}</p>
+                  </div>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        <div class="first-batch-actions">
+          <a href="{{ section.settings.secondary_link | default: '/pages/routine-finder' }}" class="btn btn--secondary">{{ section.settings.secondary_label }}</a>
+          <a href="{{ section.settings.product_link | default: '/products/furquiet-grooming-vacuum-kit' }}" class="btn">{{ section.settings.product_label }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "First batch launch",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "First batch list"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join the FurQuiet first batch before checkout opens wide."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Get sample-test notes, launch timing, quiet-start routines, and the first availability window for the FurQuiet grooming vacuum kit."
+    },
+    {
+      "type": "select",
+      "id": "builtin_image",
+      "label": "Built-in image",
+      "options": [
+        { "value": "furquiet-kit-flatlay-ai.jpg", "label": "Kit flatlay" },
+        { "value": "furquiet-product-hero-ai.jpg", "label": "Product hero" },
+        { "value": "furquiet-grooming-lifestyle-ai.jpg", "label": "Lifestyle grooming" },
+        { "value": "furquiet-clean-home-ai.jpg", "label": "Clean home" }
+      ],
+      "default": "furquiet-kit-flatlay-ai.jpg"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "FurQuiet grooming vacuum kit first batch"
+    },
+    {
+      "type": "text",
+      "id": "status_label",
+      "label": "Status label",
+      "default": "Launch status"
+    },
+    {
+      "type": "text",
+      "id": "status_text",
+      "label": "Status text",
+      "default": "Collecting first-batch interest while sample QA is documented"
+    },
+    {
+      "type": "text",
+      "id": "price_text",
+      "label": "Price text",
+      "default": "$89 target"
+    },
+    {
+      "type": "text",
+      "id": "market_text",
+      "label": "Market text",
+      "default": "US / CA / UK / AU"
+    },
+    {
+      "type": "text",
+      "id": "gate_text",
+      "label": "Gate text",
+      "default": "Sample QA"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Email label",
+      "default": "Get first-batch access and sample-test notes"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email placeholder",
+      "default": "you@example.com"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Join first batch"
+    },
+    {
+      "type": "text",
+      "id": "includes_heading",
+      "label": "Includes heading",
+      "default": "What the list gets"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary label",
+      "default": "Find your routine"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary link"
+    },
+    {
+      "type": "text",
+      "id": "product_label",
+      "label": "Product label",
+      "default": "View kit details"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "include",
+      "name": "List benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Sample-test notes"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Noise, dust cup, filter, plug, and packaging findings before checkout scales."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "First batch launch",
+      "blocks": [
+        {
+          "type": "include",
+          "settings": {
+            "heading": "Sample-test notes",
+            "text": "Noise, dust cup, filter, plug, and packaging findings before checkout scales."
+          }
+        },
+        {
+          "type": "include",
+          "settings": {
+            "heading": "Quiet-start routine",
+            "text": "The gradual introduction plan for nervous pets and first-time grooming vacuum owners."
+          }
+        },
+        {
+          "type": "include",
+          "settings": {
+            "heading": "Launch window",
+            "text": "First availability, target pricing, and replacement filter updates."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

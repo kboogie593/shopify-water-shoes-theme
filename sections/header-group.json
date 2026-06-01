@@ -18,8 +18,8 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "text": "First-batch FurQuiet grooming vacuum kit · Free shipping over $79 after launch",
-        "link": "/pages/grooming-guides"
+        "text": "First-batch FurQuiet grooming vacuum kit · Sample QA before scale",
+        "link": "/pages/first-batch"
       }
     },
     "header": {
@@ -30,7 +30,7 @@
         "menu": "main-menu",
         "mega_promo_heading": "First-batch grooming kit",
         "mega_promo_cta": "Join the list ->",
-        "mega_promo_link": "/products/furquiet-grooming-vacuum-kit"
+        "mega_promo_link": "/pages/first-batch"
       }
     }
   },

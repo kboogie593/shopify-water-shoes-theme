@@ -32,6 +32,7 @@ Create these Shopify pages and assign the matching theme template:
 
 | Title | Handle | Template |
 |---|---|---|
+| First Batch | `first-batch` | `page.first-batch` |
 | Grooming Guides | `grooming-guides` | `page.grooming-guides` |
 | Routine Finder | `routine-finder` | `page.routine-finder` |
 | Quiet Start Guide | `quiet-start-guide` | `page.quiet-start-guide` |
@@ -61,7 +62,7 @@ Before publishing the theme:
 After publishing:
 
 1. Add sitemap in Google Search Console.
-2. Inspect `/pages/llms`, product page, `/pages/routine-finder`, and the six guide pages.
+2. Inspect `/pages/llms`, product page, `/pages/first-batch`, `/pages/routine-finder`, and the six guide pages.
 3. Submit page URLs for indexing.
 4. Track query impressions weekly.
 5. Add content only where impressions or social comments show demand.
@@ -73,8 +74,9 @@ Before posting organic content:
 1. Use `data/furquiet-utm-naming.csv` to create links for each platform.
 2. Test one newsletter form submission with a UTM link.
 3. Confirm Shopify receives source tags such as `first_src_tiktok` and `last_med_organic_social`.
-4. Check whether custom fields such as `traffic_snapshot` are visible in the Shopify contact/customer record.
-5. If Shopify does not retain custom fields for newsletter customers, rely on tags plus the weekly scoreboard until a dedicated email platform is connected.
+4. Test `/pages/first-batch` and confirm tags such as `first_batch` plus custom fields such as `first_batch_interest`.
+5. Check whether custom fields such as `traffic_snapshot` are visible in the Shopify contact/customer record.
+6. If Shopify does not retain custom fields for newsletter customers, rely on tags plus the weekly scoreboard until a dedicated email platform is connected.
 
 ## Weekly Admin Checklist
 

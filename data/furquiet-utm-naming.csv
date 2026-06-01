@@ -2,12 +2,15 @@ Channel,utm_source,utm_medium,utm_campaign,utm_content,Destination,Use Case
 TikTok,tiktok,organic_social,quiet_start_week1,fur_cup_hook,/pages/quiet-start-guide,Quiet-start short video
 TikTok,tiktok,organic_social,fur_cup_week1,dust_cup_reveal,/products/furquiet-grooming-vacuum-kit,Fur cup proof short video
 TikTok,tiktok,organic_social,routine_finder_week1,quiz_hook,/pages/routine-finder,Broad routine finder video
+TikTok,tiktok,organic_social,first_batch_week1,launch_list_hook,/pages/first-batch,First-batch waitlist video
 Instagram Reels,instagram,organic_social,apartment_week1,small_home_hook,/pages/apartment-pet-hair-control,Apartment pet hair reel
 Instagram Carousel,instagram,organic_social,guide_hub_week1,buyer_checklist,/pages/grooming-guides,Guide hub save/share carousel
 Instagram Stories,instagram,organic_social,routine_finder_week1,poll_sticker,/pages/routine-finder,Story poll route to finder
+Instagram Stories,instagram,organic_social,first_batch_week1,qa_notes_sticker,/pages/first-batch,First-batch QA signup story
 YouTube Shorts,youtube,organic_social,kit_tour_week1,attachment_tour,/products/furquiet-grooming-vacuum-kit,Kit tour short
 Facebook Reels,facebook,organic_social,apartment_week1,sofa_reset,/pages/apartment-pet-hair-control,Facebook reel repost
 X,x,organic_social,claim_boundary_week1,no_fake_claims,/pages/faq,Trust thread
+X,x,organic_social,first_batch_week1,qa_gate_thread,/pages/first-batch,First-batch QA boundary thread
 Pinterest,pinterest,organic_social,guide_hub_week1,vertical_pin,/pages/grooming-guides,Guide hub pin
 Pinterest,pinterest,organic_social,routine_finder_week1,decision_pin,/pages/routine-finder,Routine decision pin
 Google Organic,google,organic_search,grooming_guides,search_result,/pages/grooming-guides,Search click tracking

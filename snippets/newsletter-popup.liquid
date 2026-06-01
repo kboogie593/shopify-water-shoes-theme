@@ -8,10 +8,12 @@
     <div class="newsletter-popup__art" aria-hidden="true">FQ</div>
     <span class="eyebrow">FurQuiet launch list</span>
     <h2>Get first-batch grooming updates</h2>
-    <p>Join for quiet-start grooming tips, sample-test notes, replacement filter updates, and launch access.</p>
+    <p>Join for quiet-start grooming tips, sample-test notes, replacement filter updates, and first-batch access.</p>
 
     {%- form 'customer', class: 'newsletter-popup__form' -%}
-      <input type="hidden" name="contact[tags]" value="newsletter,popup">
+      <input type="hidden" name="contact[tags]" value="newsletter,popup,first_batch">
+      <input type="hidden" name="contact[first_batch_interest]" value="FurQuiet Grooming Vacuum Kit">
+      <input type="hidden" name="contact[recommended_next_step]" value="/pages/first-batch">
       <input type="email" name="contact[email]" placeholder="your@email.com" required>
       <button type="submit" class="btn">Join first batch</button>
       {%- if form.posted_successfully? -%}

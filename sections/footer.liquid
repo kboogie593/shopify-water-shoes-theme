@@ -22,7 +22,8 @@
             <h4 class="footer-script">{{ block.settings.heading }}</h4>
             <p>{{ block.settings.text }}</p>
             {%- form 'customer', class: 'footer-newsletter' -%}
-              <input type="hidden" name="contact[tags]" value="newsletter,footer">
+              <input type="hidden" name="contact[tags]" value="newsletter,footer,first_batch">
+              <input type="hidden" name="contact[recommended_next_step]" value="/pages/first-batch">
               <input type="email" name="contact[email]" placeholder="Your email" required>
               <button type="submit" aria-label="Subscribe">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>

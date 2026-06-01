@@ -4051,11 +4051,214 @@ input[type="tel"], input[type="text"], input[type="email"], input[type="number"]
   color: var(--color-primary-dark);
   font-weight: 700;
 }
+
+/* ---- FurQuiet first-batch landing page ---- */
+.first-batch-section {
+  background: #fff;
+}
+.first-batch-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+  gap: 44px;
+  align-items: start;
+}
+.first-batch-copy h1 {
+  max-width: 780px;
+  margin: 12px 0 18px;
+  color: var(--color-primary-dark);
+  font-size: 56px;
+  line-height: 1.04;
+}
+.first-batch-copy > p {
+  max-width: 660px;
+  color: #334155;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.first-batch-media {
+  margin-top: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: #f8fafc;
+  aspect-ratio: 1;
+}
+.first-batch-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.first-batch-panel {
+  padding: 26px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: #f8fafc;
+  box-shadow: 0 22px 60px -42px rgba(15, 23, 42, 0.38);
+}
+.first-batch-status {
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+}
+.first-batch-status span {
+  display: block;
+  margin-bottom: 5px;
+  color: #ea580c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.first-batch-status strong {
+  color: #7c2d12;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.first-batch-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.first-batch-metrics div {
+  min-width: 0;
+  min-height: 78px;
+  padding: 13px 12px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+}
+.first-batch-metrics span {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 12px;
+}
+.first-batch-metrics strong {
+  display: block;
+  color: #0f172a;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.first-batch-form {
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+}
+.first-batch-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 800;
+}
+.first-batch-form__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+.first-batch-form__row input,
+.first-batch-form__row button {
+  min-height: 52px;
+  border-radius: 8px;
+}
+.first-batch-form__row input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  padding: 0 15px;
+  color: #0f172a;
+  font-size: 15px;
+}
+.first-batch-form__row input:focus {
+  border-color: var(--color-primary);
+  outline: 3px solid rgba(15, 118, 110, 0.16);
+}
+.first-batch-form__row button {
+  border: 0;
+  background: var(--color-primary-dark);
+  color: #fff;
+  padding: 0 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.first-batch-form__success {
+  margin: 10px 0 0;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+.first-batch-includes {
+  margin-top: 24px;
+}
+.first-batch-includes h2 {
+  margin: 0 0 13px;
+  color: #0f172a;
+  font-size: 22px;
+}
+.first-batch-includes ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.first-batch-includes li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 12px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+}
+.first-batch-includes li > span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef7f4;
+  color: var(--color-primary-dark);
+  font-weight: 900;
+}
+.first-batch-includes strong {
+  display: block;
+  color: #0f172a;
+  font-size: 15px;
+}
+.first-batch-includes p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.first-batch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.first-batch-actions .btn {
+  min-height: 48px;
+  justify-content: center;
+  padding-inline: 20px;
+}
 @media (max-width: 980px) {
   .routine-finder-layout {
     grid-template-columns: 1fr;
   }
+  .first-batch-layout {
+    grid-template-columns: 1fr;
+  }
   .routine-finder-copy h1 {
+    font-size: 42px;
+  }
+  .first-batch-copy h1 {
     font-size: 42px;
   }
 }
@@ -4063,7 +4266,13 @@ input[type="tel"], input[type="text"], input[type="email"], input[type="number"]
   .routine-finder-panel {
     padding: 18px;
   }
+  .first-batch-panel {
+    padding: 18px;
+  }
   .routine-finder-copy h1 {
+    font-size: 34px;
+  }
+  .first-batch-copy h1 {
     font-size: 34px;
   }
   .routine-choice-group {
@@ -4076,7 +4285,16 @@ input[type="tel"], input[type="text"], input[type="email"], input[type="number"]
   .routine-finder-email-row {
     grid-template-columns: 1fr;
   }
+  .first-batch-metrics {
+    grid-template-columns: 1fr;
+  }
+  .first-batch-form__row {
+    grid-template-columns: 1fr;
+  }
   .routine-finder-email-row button {
+    width: 100%;
+  }
+  .first-batch-form__row button {
     width: 100%;
   }
 }
