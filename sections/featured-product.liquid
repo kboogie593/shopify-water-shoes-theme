@@ -43,8 +43,8 @@
 
         {%- if product -%}
           <div class="featured-product__rating">
-            <span class="stars">★★★★★</span>
-            <span>4.9 · {{ section.settings.review_count | default: '1,247' }} reviews</span>
+            <span class="stars" aria-hidden="true">✓✓✓</span>
+            <span>{{ section.settings.proof_text | default: 'Quiet-start kit · first batch testing' }}</span>
           </div>
           <div class="featured-product__price">
             {%- if product.compare_at_price > product.price -%}
@@ -230,7 +230,7 @@
     { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "A quieter grooming vacuum kit for heavy-shedding pets. Brush, trim, and capture loose fur before it lands on the sofa." },
     { "type": "image_picker", "id": "image_override", "label": "Image override (uses product image if blank)" },
     { "type": "text", "id": "badge", "label": "Corner badge", "default": "Trending now" },
-    { "type": "text", "id": "review_count", "label": "Review count text", "default": "1,247" },
+    { "type": "text", "id": "proof_text", "label": "Proof text", "default": "Quiet-start kit · first batch testing" },
     { "type": "text", "id": "price", "label": "Price (used only if no product picked)", "default": "$89" },
     { "type": "text", "id": "compare_at_price", "label": "Compare-at price (used only if no product picked)", "default": "$129" },
     { "type": "text", "id": "cta_label", "label": "CTA label (used only if no product picked)", "default": "Join first batch" },

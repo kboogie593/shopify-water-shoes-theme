@@ -10,7 +10,6 @@
     <div class="testimonials-grid">
       {%- for block in section.blocks -%}
         <div class="testimonial" {{ block.shopify_attributes }}>
-          <div class="stars">★★★★★</div>
           <p class="testimonial-text">{{ block.settings.text }}</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">{{ block.settings.name | slice: 0, 1 }}</div>
@@ -33,7 +32,7 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "Loved by 50,000+ customers"
+      "default": "Early customer language"
     },
     {
       "type": "text",
@@ -52,7 +51,7 @@
           "type": "textarea",
           "id": "text",
           "label": "Quote",
-          "default": "These are the most comfortable pet grooming vacuums I have ever owned. They dry incredibly fast and the grip is amazing."
+          "default": "The quiet-start routine is the part I need. I want less loose fur without turning grooming into a fight."
         },
         {
           "type": "text",
@@ -78,7 +77,7 @@
           "settings": {
             "text": "The quiet-start routine is the part I needed. I want less loose fur without turning grooming into a fight.",
             "name": "Sarah K.",
-            "role": "Groominger, San Diego"
+            "role": "Husky owner"
           }
         },
         {
@@ -86,15 +85,15 @@
           "settings": {
             "text": "I want one tool that makes brushing less stressful and leaves less loose fur on the sofa.",
             "name": "Marcus T.",
-            "role": "Verified Buyer"
+            "role": "Apartment dog owner"
           }
         },
         {
           "type": "testimonial",
           "settings": {
-            "text": "They look way cooler than I expected. I wear them around town too — people always ask where I got them. The teal color is gorgeous.",
+            "text": "If it cuts down the fur tumbleweeds after brushing, this is the type of tool I would keep by the mudroom.",
             "name": "Emma R.",
-            "role": "Yoga Instructor, Miami"
+            "role": "Retriever household"
           }
         }
       ]

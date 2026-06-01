@@ -85,7 +85,7 @@
           if (!entry.isIntersecting) return;
           const el = entry.target;
           const raw = el.textContent.trim();
-          // Try to parse: 50K+, 4.8/5, FREE, 60-day -> handle K/+ suffixes and decimals
+          // Try to parse: 50K+, QA, FREE, 30-day -> handle K/+ suffixes and decimals
           const match = raw.match(/^([+\-]?\d*\.?\d+)([KMk]?\+?)/);
           if (!match) { obs.unobserve(el); return; }
           const target = parseFloat(match[1]);

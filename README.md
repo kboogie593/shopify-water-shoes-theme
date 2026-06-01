@@ -28,7 +28,7 @@ Built to be discoverable and citable by **ChatGPT, Perplexity, Google AI
 Overviews, Bing Copilot, and Claude**:
 
 - Comprehensive **JSON-LD schema.org** markup: `Organization`, `WebSite`,
-  `Product` (with offers, brand, aggregateRating), `Article`,
+  `Product` (with offers and brand until real reviews exist), `Article`,
   `CollectionPage`, `BreadcrumbList`, `FAQPage`
 - `llms.txt` page template — drop-in factual brief for AI crawlers
 - Enhanced `<meta>` tags: `max-snippet`, `max-image-preview`,
@@ -112,6 +112,14 @@ page exists with that handle. To publish an AI-discoverable brief:
 Then add `<link rel="alternate" type="text/plain" href="/pages/llms">` to
 your homepage (already wired into `meta-tags.liquid` via the sitemap
 discovery link, and the URL is referenced in the JSON-LD).
+
+## FurQuiet execution docs
+
+- `docs/furquiet-10k-roadmap.md` — $10K/month revenue math, traffic system, and current gaps
+- `docs/furquiet-product-development-qa.md` — 1688 supplier screening, sample tests, and claim policy
+- `docs/furquiet-shopify-launch-runbook.md` — Shopify page/media/theme launch checklist
+- `data/furquiet-geo-content-backlog.csv` — GEO/SEO page and FAQ backlog
+- `data/furquiet-video-shot-list.csv` — short-video production shot list
 
 ## Sections you can add to any page
 
