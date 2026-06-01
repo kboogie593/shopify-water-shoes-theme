@@ -7,6 +7,7 @@ This map turns the FurQuiet product into long-tail pages that can answer AI-sear
 | Page | Handle | Search Intent | Primary CTA |
 |---|---|---|---|
 | Product page | `/products/furquiet-grooming-vacuum-kit` | Buy or compare a grooming vacuum kit | Add to cart / join first batch |
+| Guide hub | `/pages/grooming-guides` | Browse all FurQuiet grooming answers | Read a guide / view kit |
 
 ## GEO Landing Pages
 
@@ -19,6 +20,7 @@ This map turns the FurQuiet product into long-tail pages that can answer AI-sear
 | Apartment pet hair control | `/pages/apartment-pet-hair-control` | How do I reduce pet hair in an apartment? | Template added |
 | Vacuum vs brush comparison | `/pages/pet-grooming-vacuum-vs-deshedding-brush` | Is a pet grooming vacuum better than a de-shedding brush? | Template added |
 | AI-readable brief | `/pages/llms` | What should AI crawlers know about FurQuiet? | Template exists |
+| Guide hub | `/pages/grooming-guides` | Where can I find FurQuiet grooming guides? | Template added |
 
 ## Page Creation Checklist In Shopify Admin
 
@@ -42,6 +44,8 @@ For each page above:
 - how to clean a pet grooming vacuum dust cup
 - can a grooming vacuum replace a groomer
 - does a pet grooming vacuum stop shedding
+- pet grooming vacuum guide
+- FurQuiet grooming guide
 
 ## Claim Boundaries
 
@@ -60,4 +64,3 @@ Avoid until verified:
 - Claims that it stops shedding.
 - Claims that every pet will tolerate it.
 - Claims that it replaces professional grooming.
-

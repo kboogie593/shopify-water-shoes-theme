@@ -1,0 +1,113 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "eyebrow": { "type": "eyebrow", "settings": { "text": "FurQuiet guide hub" } },
+        "heading": { "type": "heading", "settings": { "text": "Practical grooming answers for heavy-shedding homes." } },
+        "copy": { "type": "paragraph", "settings": { "text": "Use this hub to choose the right routine before buying a pet grooming vacuum kit. Each guide answers one specific search question with conservative claims until sample testing and real customer evidence are available." } },
+        "cta": { "type": "button", "settings": { "text": "View FurQuiet kit", "link": "/products/furquiet-grooming-vacuum-kit", "style": "primary" } }
+      },
+      "block_order": ["eyebrow", "heading", "copy", "cta"],
+      "settings": { "alignment": "center", "bg_color": "#F4F1EA" }
+    },
+    "primary-guides": {
+      "type": "multicolumn",
+      "blocks": {
+        "g1": {
+          "type": "column",
+          "settings": {
+            "icon": "01",
+            "heading": "Quiet-start guide",
+            "text": "How to introduce a nervous dog or cat to a grooming vacuum without rushing the first session.",
+            "link_label": "Read guide",
+            "link": "/pages/quiet-start-guide"
+          }
+        },
+        "g2": {
+          "type": "column",
+          "settings": {
+            "icon": "02",
+            "heading": "Shedding dogs",
+            "text": "What heavy-shedding dog homes should look for in a grooming vacuum routine.",
+            "link_label": "Read guide",
+            "link": "/pages/pet-grooming-vacuum-for-shedding-dogs"
+          }
+        },
+        "g3": {
+          "type": "column",
+          "settings": {
+            "icon": "03",
+            "heading": "Husky undercoat",
+            "text": "A practical answer page for husky and double-coat dog owners dealing with seasonal fur.",
+            "link_label": "Read guide",
+            "link": "/pages/husky-grooming-vacuum"
+          }
+        },
+        "g4": {
+          "type": "column",
+          "settings": {
+            "icon": "04",
+            "heading": "Long-hair cats",
+            "text": "Why tolerance and short sessions matter more than speed when grooming long-hair cats.",
+            "link_label": "Read guide",
+            "link": "/pages/long-hair-cat-grooming-vacuum"
+          }
+        },
+        "g5": {
+          "type": "column",
+          "settings": {
+            "icon": "05",
+            "heading": "Apartment hair control",
+            "text": "How pet owners in small spaces can reduce loose fur before it spreads across sofas and rugs.",
+            "link_label": "Read guide",
+            "link": "/pages/apartment-pet-hair-control"
+          }
+        },
+        "g6": {
+          "type": "column",
+          "settings": {
+            "icon": "06",
+            "heading": "Vacuum vs brush",
+            "text": "A clear comparison between normal de-shedding brushes and grooming vacuum kits.",
+            "link_label": "Compare",
+            "link": "/pages/pet-grooming-vacuum-vs-deshedding-brush"
+          }
+        }
+      },
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
+      "settings": {
+        "eyebrow": "Start here",
+        "heading": "Choose the guide that matches the problem",
+        "subtitle": "This structure gives organic social captions, Google, and AI answer engines a clean internal link path.",
+        "columns": 3
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "Why create a guide hub before the product is fully scaled?", "answer": "The hub gives every short video, AI-search answer, and buyer objection a stable page to link to. It also keeps the claims conservative until sample testing is complete." } },
+        "q2": { "type": "question", "settings": { "question": "Which guide should a new visitor read first?", "answer": "A nervous-pet owner should start with the quiet-start guide. A heavy-shedding dog owner should start with the shedding dog or husky guide. A cat owner should start with the long-hair cat guide." } },
+        "q3": { "type": "question", "settings": { "question": "Do these pages replace product proof?", "answer": "No. These pages create search and education coverage, but checkout should still wait for sample QA, real product media, shipping math, and clear return wording." } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "How to use this hub",
+        "heading": "Built for SEO, AI search, and short-video captions",
+        "subtitle": "Each page should be updated when social comments reveal a repeated objection.",
+        "cta_label": "Join first batch",
+        "cta_link": "/products/furquiet-grooming-vacuum-kit"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "First batch",
+        "heading": "Get sample-test notes and grooming content ideas",
+        "text": "Subscribe for quiet-start routines, sample QA updates, and the first FurQuiet launch offer.",
+        "button_label": "Join the list"
+      }
+    }
+  },
+  "order": ["intro", "primary-guides", "faq", "newsletter"]
+}

@@ -32,6 +32,7 @@ Create these Shopify pages and assign the matching theme template:
 
 | Title | Handle | Template |
 |---|---|---|
+| Grooming Guides | `grooming-guides` | `page.grooming-guides` |
 | Quiet Start Guide | `quiet-start-guide` | `page.quiet-start-guide` |
 | Pet Grooming Vacuum for Shedding Dogs | `pet-grooming-vacuum-for-shedding-dogs` | `page.pet-grooming-vacuum-for-shedding-dogs` |
 | Husky Grooming Vacuum Guide | `husky-grooming-vacuum` | `page.husky-grooming-vacuum` |

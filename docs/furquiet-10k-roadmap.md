@@ -164,6 +164,13 @@ Checkout should not be opened aggressively until these are verified:
 | Product-page CVR | 1.5%+ before sample proof, 2%+ after proof |
 | Orders | 30+ first month test goal |
 
+Tracking files:
+
+- `data/furquiet-organic-channel-scoreboard.csv` tracks weekly output, traffic, capture, add-to-cart, orders, and learning by channel.
+- `data/furquiet-comment-to-content-log.csv` turns repeated comments and search queries into guide updates and new short-video scripts.
+- `data/furquiet-video-shot-list.csv` separates ready founder/X content from sample-blocked product demo content.
+- `data/furquiet-geo-content-backlog.csv` keeps the long-tail page queue tied to intent and CTA.
+
 ## Current Gaps
 
 - Product media upload to Shopify is blocked by Chrome extension file URL permission.

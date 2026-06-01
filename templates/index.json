@@ -29,7 +29,7 @@
         "heading": "FurQuiet Grooming Vacuum Kit",
         "subtitle": "A complete at-home grooming vacuum kit for households where shedding never stops. Start quiet, brush slowly, and collect fur before it reaches the couch.",
         "badge": "First batch",
-        "review_count": "early testers",
+        "proof_text": "Quiet-start kit · first batch testing",
         "price": "$89",
         "compare_at_price": "$129",
         "cta_label": "Join first batch",
@@ -121,6 +121,49 @@
       "block_order": ["p1","p2","p3","p4","p5","p6"],
       "settings": { "heading": "Built for search questions pet owners already ask", "scroll": true }
     },
+    "guide-hub": {
+      "type": "multicolumn",
+      "blocks": {
+        "g1": {
+          "type": "column",
+          "settings": {
+            "icon": "01",
+            "heading": "Start with a nervous pet",
+            "text": "A gradual routine for pets that need distance, low airflow, and rewards before brushing.",
+            "link_label": "Read quiet-start guide",
+            "link": "/pages/quiet-start-guide"
+          }
+        },
+        "g2": {
+          "type": "column",
+          "settings": {
+            "icon": "02",
+            "heading": "Solve shedding by breed",
+            "text": "Guides for huskies, double-coat dogs, long-hair cats, and homes where loose fur never stops.",
+            "link_label": "Open guide hub",
+            "link": "/pages/grooming-guides"
+          }
+        },
+        "g3": {
+          "type": "column",
+          "settings": {
+            "icon": "03",
+            "heading": "Compare the right tool",
+            "text": "Understand when a grooming vacuum kit is different from a normal de-shedding brush.",
+            "link_label": "Compare tools",
+            "link": "/pages/pet-grooming-vacuum-vs-deshedding-brush"
+          }
+        }
+      },
+      "block_order": ["g1", "g2", "g3"],
+      "settings": {
+        "eyebrow": "Grooming guides",
+        "heading": "Turn every buyer question into an answer page",
+        "subtitle": "These pages support AI-search citations, Google long-tail queries, and short-video captions.",
+        "columns": 3,
+        "bg_color": "#F4F1EA"
+      }
+    },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
@@ -174,6 +217,7 @@
     "collection-list",
     "featured-collection",
     "press-logos",
+    "guide-hub",
     "testimonials",
     "faq",
     "newsletter"

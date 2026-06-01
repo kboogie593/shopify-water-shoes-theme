@@ -120,6 +120,12 @@ discovery link, and the URL is referenced in the JSON-LD).
 - `docs/furquiet-shopify-launch-runbook.md` — Shopify page/media/theme launch checklist
 - `data/furquiet-geo-content-backlog.csv` — GEO/SEO page and FAQ backlog
 - `data/furquiet-video-shot-list.csv` — short-video production shot list
+- `data/furquiet-organic-channel-scoreboard.csv` — weekly organic traffic and revenue scoreboard
+- `data/furquiet-comment-to-content-log.csv` — comment/query-to-content tracking log
+
+Create `/pages/grooming-guides` first; it acts as the internal guide hub for
+all FurQuiet long-tail pages and should be linked from navigation once the
+theme is published.
 
 ## Sections you can add to any page
 
